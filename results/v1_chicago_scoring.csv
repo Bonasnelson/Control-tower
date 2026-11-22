@@ -1,0 +1,13 @@
+city,seed,scorer,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,score_seconds,epochs,buffer_size,buffer_rule,scenario
+chicago,0,recon_error,0.013523344987664755,0.05,-9.299528121948242,0.0,0.9,359.9,0.09,30,2000,random,linear
+chicago,0,field_surprisal,0.4239597965414471,0.45,-3.3730900287628174,0.0,0.2,359.9,0.76,30,2000,random,linear
+chicago,0,latent_distance,0.2861774373214717,0.55,-2.6240043401318895,0.0,0.8,359.9,0.86,30,2000,random,linear
+chicago,0,isolation_forest,0.23539535648797763,0.45,0.010949111237727016,0.0,1.0,359.9,0.77,30,2000,random,linear
+chicago,1,recon_error,0.009609363949271048,0.0,-7.739252090454102,0.0,1.0,407.5,0.1,30,2000,random,linear
+chicago,1,field_surprisal,0.7111033363087491,0.8,-1.1313204765319824,0.0,0.4,407.5,0.64,30,2000,random,linear
+chicago,1,latent_distance,0.1896760997904077,0.45,-1.815149826395169,0.0,0.8,407.5,0.58,30,2000,random,linear
+chicago,1,isolation_forest,0.16620426273108574,0.45,0.03171655700933146,0.0,1.0,407.5,0.92,30,2000,random,linear
+chicago,2,recon_error,0.00999071591617434,0.0,-9.442185878753662,0.0,1.0,490.5,0.1,30,2000,random,linear
+chicago,2,field_surprisal,0.6209231574051186,0.75,-3.6184046268463135,0.0,0.4,490.5,0.66,30,2000,random,linear
+chicago,2,latent_distance,0.28735354871959523,0.6,-2.3623373542486856,0.0,0.8,490.5,0.56,30,2000,random,linear
+chicago,2,isolation_forest,0.2755964067602496,0.4,0.014178322987327296,0.0,1.0,490.5,0.68,30,2000,random,linear

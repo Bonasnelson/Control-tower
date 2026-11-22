@@ -48,6 +48,19 @@ Preliminary M1 check (1 seed, 10 epochs, `results/baselines_philadelphia_masked_
 masked-feature model over the 10 experiences gives AUPRC 0.74 and Recall@1% 0.95. In
 `scripts/check_reason_codes.py`, 70% of its top-3 reason codes on global anomalies are the corrupted fields.
 
+### Week 2 result: model v1 scoring comparison (`results/v1_scoring_summary.md`)
+
+v1 = masked-feature model (`configs/train.yaml` `masked`, 30 epochs), sequential fine-tuning over the 10 experiences
+of the linear scenario with a 2,000-record random replay buffer; scored on E10, seeds 0, 1, 2
+(`python scripts/run_v1.py`). The reference/fit set for latent distance and isolation forest is E1..E9.
+
+| Scorer | Philadelphia AUPRC | Philadelphia Recall@1% | Chicago AUPRC | Chicago Recall@1% |
+|---|---|---|---|---|
+| Reconstruction error | 0.14 ± 0.06 | 0.25 ± 0.05 | 0.01 ± 0.00 | 0.02 ± 0.03 |
+| Field surprisal | 0.67 ± 0.07 | 0.80 ± 0.05 | 0.59 ± 0.15 | 0.67 ± 0.19 |
+| Latent k-NN distance | 0.23 ± 0.03 | 0.32 ± 0.06 | 0.25 ± 0.06 | 0.53 ± 0.08 |
+| Isolation forest | 0.36 ± 0.07 | 0.53 ± 0.03 | 0.23 ± 0.06 | 0.43 ± 0.03 |
+
 ## Layout
 
 ```

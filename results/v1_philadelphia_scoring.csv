@@ -1,0 +1,13 @@
+city,seed,scorer,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,score_seconds,epochs,buffer_size,buffer_rule,scenario
+philadelphia,0,recon_error,0.08574752530122513,0.25,-0.09731292724609375,0.0,1.0,464.1,0.13,30,2000,random,linear
+philadelphia,0,field_surprisal,0.7305570465455407,0.85,3.1240434646606445,0.0,0.2,464.1,1.09,30,2000,random,linear
+philadelphia,0,latent_distance,0.2108267558077489,0.25,-0.949588794408394,0.0,0.6,464.1,1.11,30,2000,random,linear
+philadelphia,0,isolation_forest,0.4104635766897001,0.5,-0.01811722093761181,0.0,1.0,464.1,1.04,30,2000,random,linear
+philadelphia,1,recon_error,0.13576544187080072,0.2,-0.4490699768066406,0.0,0.8,560.1,0.15,30,2000,random,linear
+philadelphia,1,field_surprisal,0.5970410090780052,0.8,2.4721908569335938,0.0,0.3,560.1,0.99,30,2000,random,linear
+philadelphia,1,latent_distance,0.2581762705214267,0.35,-0.48773580968466246,0.0,0.7,560.1,0.73,30,2000,random,linear
+philadelphia,1,isolation_forest,0.38497338941115467,0.55,-0.022664625746332046,0.0,1.0,560.1,0.76,30,2000,random,linear
+philadelphia,2,recon_error,0.2009970208921073,0.3,-0.1529536247253418,0.0,0.5,414.2,0.09,30,2000,random,linear
+philadelphia,2,field_surprisal,0.6823789096341195,0.75,2.8598084449768066,0.0,0.2,414.2,0.76,30,2000,random,linear
+philadelphia,2,latent_distance,0.2072949806951665,0.35,-1.2900217030256345,0.0,0.8,414.2,0.52,30,2000,random,linear
+philadelphia,2,isolation_forest,0.2772356189613285,0.55,-0.02706536412999777,0.0,1.0,414.2,0.47,30,2000,random,linear
