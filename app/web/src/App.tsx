@@ -3,15 +3,17 @@ import Overview from "./pages/Overview";
 import Stream from "./pages/Stream";
 import Scoring from "./pages/Scoring";
 import Alerts from "./pages/Alerts";
+import Elliptic from "./pages/Elliptic";
 
 export { PageHeader } from "./components/ui";
 
-export type Page = "overview" | "stream" | "scoring" | "alerts";
+export type Page = "overview" | "stream" | "scoring" | "alerts" | "elliptic";
 const NAV: { id: Page; label: string }[] = [
   { id: "overview", label: "Overview" },
   { id: "stream", label: "Data stream" },
   { id: "scoring", label: "Scoring" },
   { id: "alerts", label: "Alerts" },
+  { id: "elliptic", label: "Elliptic" },
 ];
 const LATER = ["Drift gate", "Analyst feedback", "Canary and rollback"];
 
@@ -44,7 +46,7 @@ export default function App() {
           <div className="font-display text-lg font-semibold leading-tight text-ink">Control Tower</div>
           <div className="text-xs text-ink-3">Continual anomaly detection for city payments</div>
           <nav aria-label="Pages" className="mt-4 lg:mt-10">
-            <ul className="flex gap-1 overflow-x-auto lg:flex-col">
+            <ul className="flex flex-wrap gap-1 lg:flex-col">
               {NAV.map((n) => {
                 const on = page === n.id;
                 return (
@@ -74,6 +76,7 @@ export default function App() {
           {page === "stream" && <Stream />}
           {page === "scoring" && <Scoring />}
           {page === "alerts" && <Alerts />}
+          {page === "elliptic" && <Elliptic />}
         </main>
       </div>
     </div>

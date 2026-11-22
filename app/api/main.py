@@ -8,6 +8,7 @@ with the command that produces them.
 """
 from __future__ import annotations
 
+import ast
 import csv
 import json
 import math
@@ -189,3 +190,61 @@ def v1_record(city: str, row: int) -> dict:
     if rec is None:
         raise HTTPException(404, "record not among the exported alerts")
     return {"status": "ok", "city": city, **rec}
+
+
+# ------------------------------------------------------------------ Elliptic (blocked until data)
+ELLIPTIC_FILES = ["elliptic_txs_features.csv", "elliptic_txs_classes.csv", "elliptic_txs_edgelist.csv"]
+ELLIPTIC_READY = [
+    ("load_elliptic_cached", "parses the three CSVs once and caches them in data/processed/elliptic.npz"),
+    ("edge_features", "in/out degree and the mean local features of each transaction's neighbours"),
+    ("delayed_label_stream", "predict-then-learn stream: score step t, then reveal labels of step t - delay"),
+]
+
+
+def _module_info(path: Path) -> dict:
+    """Constants and docstring of the loader, read with ast (no import, no data needed)."""
+    if not path.exists():
+        return {"constants": {}, "doc": ""}
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    consts = {}
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and len(node.targets) == 1 and isinstance(node.targets[0], ast.Name):
+            try:
+                consts[node.targets[0].id] = ast.literal_eval(node.value)
+            except ValueError:
+                pass
+    return {"constants": consts, "doc": ast.get_docstring(tree) or ""}
+
+
+def _test_names(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    return [n.name for n in tree.body if isinstance(n, ast.FunctionDef) and n.name.startswith("test_")]
+
+
+@app.get("/api/elliptic")
+def elliptic() -> dict:
+    data_dir = ROOT / "data" / "elliptic"
+    files = [{"name": f, "present": (data_dir / f).exists()} for f in ELLIPTIC_FILES]
+    info = _module_info(ROOT / "src" / "controltower" / "data" / "elliptic.py")
+    c = info["constants"]
+    results = sorted(p.name for p in RESULTS.glob("elliptic_*"))
+    status = "blocked" if not all(f["present"] for f in files) else ("results_present" if results else "data_present")
+    return {
+        "status": status,
+        "data_dir": "data/elliptic/",
+        "files": files,
+        "source": {"name": "Kaggle: ellipticco/elliptic-data-set", "url": "https://www.kaggle.com/datasets/ellipticco/elliptic-data-set",
+                   "note": "needs a Kaggle login; download and unzip the three CSV files into data/elliptic/"},
+        "expected": {  # from the loader's constants and docstring, not measured
+            "local_features": c.get("N_LOCAL"), "aggregated_features": c.get("N_AGG"),
+            "time_steps": "1..49", "drift_step": c.get("SHUTDOWN_STEP"),
+            "labels": {k: v for k, v in (c.get("LABEL_MAP") or {}).items()},
+            "from": "src/controltower/data/elliptic.py",
+        },
+        "ready": [{"function": f, "what": w} for f, w in ELLIPTIC_READY],
+        "tests": {"file": "tests/test_elliptic.py", "names": _test_names(ROOT / "tests" / "test_elliptic.py"),
+                  "data": "synthetic CSVs the tests write (6 time steps × 20 transactions)"},
+        "results_files": results,
+    }

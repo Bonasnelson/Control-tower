@@ -75,3 +75,15 @@ export const SCORER_LABEL: Record<string, string> = {
 export const fmt = (v: number | null | undefined, d = 3) => (v === null || v === undefined ? "—" : v.toFixed(d));
 export const pm = (m?: MeanStd, d = 3) => (m && m.mean !== null ? `${fmt(m.mean, d)} ± ${fmt(m.std, d)}` : "—");
 
+
+export type EllipticResp = {
+  status: "blocked" | "data_present" | "results_present";
+  data_dir: string;
+  files: { name: string; present: boolean }[];
+  source: { name: string; url: string; note: string };
+  expected: { local_features: number | null; aggregated_features: number | null; time_steps: string;
+    drift_step: number | null; labels: Record<string, number>; from: string };
+  ready: { function: string; what: string }[];
+  tests: { file: string; names: string[]; data: string };
+  results_files: string[];
+};

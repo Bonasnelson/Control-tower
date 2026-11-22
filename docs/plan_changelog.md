@@ -1,0 +1,31 @@
+# Plan changelog
+
+Kept by the master agent and given to the requirements auditor at every audit. One row per change to the plan:
+tasks added, removed, reassigned, reordered, delayed or re-scoped. "Weakens" marks a change that lowers how well a
+requirement (R1–R5) or a milestone check is met. Commit hashes refer to `origin/master`.
+
+Original plan: the user's Week 1–2 plan (Nov 9–22). Its items are W1-C1…C5, W1-R1…R2, W1-S1, W1-M, W2-C1…C4,
+W2-R1…R4 and W2-M. The status table and work order are in the master's plan file.
+
+| # | Date | Change | Type | Reason | Agent | Weakens? |
+|---|---|---|---|---|---|---|
+| 1 | 2026-11-22 | Done-check marks W1-C1…C5, W1-R2, W1-S1 and W2-R4 DONE. W1-R1, W1-M, W2-C2 and W2-C3 are PARTIAL; W2-C1, W2-C4, W2-R1…R3 and W2-M are TODO | baseline | First audit of the existing repo (commits `1fbb327`, `3245068`) | master | – |
+| 2 | 2026-11-22 | Milestones slipped. All Week 1 and Week 2 work is committed on Nov 22, after the Nov 13 and Nov 20 dates | delayed | The work started late; the git history has no earlier commits | – | Yes: both milestone dates missed |
+| 3 | 2026-11-22 | W1-R1 re-scoped from "check the template" to "migrate main.tex into ProjReportTemplate" | re-scoped | The user supplied ProjReportTemplate.zip and the instruction PDF mid-session | user → report agent | – |
+| 4 | 2026-11-22 | "Report template compiles" check moved from the agents to the user, on Overleaf | reassigned | No LaTeX distribution on this machine; the user's choice | user | Yes: compile not verified by agents |
+| 5 | 2026-11-22 | W2-C2 Elliptic is tested on synthetic CSVs only; the real-data run is blocked | re-scoped | The Kaggle download needs a student login; the user's choice | user | Yes: R4, Elliptic has no results yet |
+| 6 | 2026-11-22 | Commit policy changed from "one commit per week block, no push" to "push when told", then to standing permission to commit and push in this repo | re-scoped | User instructions ("push the code", later standing permission) | user | – |
+| 7 | 2026-11-22 | Reordered: the fresh-clone check (W1-M) ran in parallel with W1-R1, and W2-R1…R3 ran before the Week 2 code commit instead of after | reordered | The files don't overlap and the report items didn't depend on code results, so this saves time | master | – |
+| 8 | 2026-11-22 | W2-C4 "model v1" defined as the masked model, sequential fine-tuning, random replay (2,000), linear scenario, 30 epochs, seeds 0–2, both cities | re-scoped (made concrete) | The plan didn't define v1 | master | – |
+| 9 | 2026-11-22 | W2-M was not marked met when the user said it passed, because v1 was still running. It was marked met after v1 finished and was verified (`1d6198c`) | – | Rule: no unverified claims | master | – |
+| 10 | 2026-11-22 | New milestone: demo dashboard after Week 2, with FastAPI and React (not Streamlit) | added | User request; the user dislikes Streamlit's design | user | – |
+| 11 | 2026-11-22 | Dashboard build started early, in parallel with the v1 run | reordered | User request ("while it is still training") | user → code agent | – |
+| 12 | 2026-11-22 | Dashboard process changed to plan first (done-check, skills, plan, master approval), then build. The scaffold built before the stop is kept and revised, not rebuilt | re-scoped | User instruction | user → code agent | – |
+| 13 | 2026-11-22 | Skills installed at project level: frontend-design, web-design-guidelines, composition-patterns, webapp-testing. Superpowers and others rejected | added | User approved the install; Superpowers is a workflow plugin that conflicts with master coordination | user / code agent / master | – |
+| 14 | 2026-11-22 | Dashboard plan approved with changes: T10 repo hygiene first; T3 and T4 revise rather than rebuild; D1 export allowed; T12 paper values to be confirmed by the report agent | re-scoped | Master review of docs/dashboard_plan.md | master | – |
+| 15 | 2026-11-22 | D2 strategy comparison (none / EWC / replay × 3 rules / EWC+replay) runs with 1 seed in both cities, not 3 | re-scoped | User's choice, to limit CPU time to about 2 h | user | Yes: R3, the ablation has no seed variance yet |
+| 16 | 2026-11-22 | Playwright and Chromium installed for the dashboard smoke tests (T11) | added | User approval | user | – |
+| 17 | 2026-11-22 | Display rule: v1 metrics shown with 2 decimals; baseline SEL rows merged into one in the dashboard | re-scoped | Readability; consistent with the README and the report | master | – |
+| 19 | 2026-11-22 | T12 (paper reference values) moved ahead of T7 (Strategies page) | reordered | T7 depends on the D2 runs, which are still training; T12 has no dependency on D2 | master | – |
+| 20 | 2026-11-22 | Auditor launch postponed to 08:20 on Nov 22 (one-shot, session-only schedule). The first launch was stopped by the user before it reported | delayed | User instruction | user | – |
+| 18 | 2026-11-22 | New role: requirements auditor (4th agent, read-only) auditing R1–R5 and, from this change on, the plan and its evolution. Reports go in docs/audit/ | added | User instruction | user | – |

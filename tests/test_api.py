@@ -64,3 +64,32 @@ def test_pending_and_files(monkeypatch, tmp_path):
     assert c.get("/api/v1/record/x/7").json()["fields"][0]["surprisal"] == 3.0
     assert c.get("/api/v1/record/x/8").status_code == 404
     assert c.get("/api/v1/alerts/x?scorer=nope").status_code == 404
+
+
+def test_elliptic_states(monkeypatch, tmp_path):
+    # real repo: the expected structure comes from the loader; no metrics are reported in any state
+    c = load_app(monkeypatch, ROOT)
+    e = c.get("/api/elliptic").json()
+    assert e["status"] in ("blocked", "data_present", "results_present")
+    assert e["expected"]["local_features"] == 93 and e["expected"]["aggregated_features"] == 72
+    assert e["expected"]["drift_step"] == 43 and e["tests"]["file"] == "tests/test_elliptic.py"
+    assert "test_stream_no_leakage" in e["tests"]["names"]
+    assert {r["function"] for r in e["ready"]} == {"load_elliptic_cached", "edge_features", "delayed_label_stream"}
+    assert not any(k in e for k in ("auprc", "metrics", "scores"))
+
+    # temp root: blocked -> data present -> results present
+    (tmp_path / "results").mkdir()
+    c = load_app(monkeypatch, tmp_path)
+    e = c.get("/api/elliptic").json()
+    assert e["status"] == "blocked" and not any(f["present"] for f in e["files"])
+    d = tmp_path / "data" / "elliptic"
+    d.mkdir(parents=True)
+    (d / "elliptic_txs_features.csv").write_text("1,1")
+    assert c.get("/api/elliptic").json()["status"] == "blocked"  # one of three is not enough
+    for f in ("elliptic_txs_classes.csv", "elliptic_txs_edgelist.csv"):
+        (d / f).write_text("x")
+    e = c.get("/api/elliptic").json()
+    assert e["status"] == "data_present" and all(f["present"] for f in e["files"]) and e["results_files"] == []
+    (tmp_path / "results" / "elliptic_stream.csv").write_text("step")
+    e = c.get("/api/elliptic").json()
+    assert e["status"] == "results_present" and e["results_files"] == ["elliptic_stream.csv"]
