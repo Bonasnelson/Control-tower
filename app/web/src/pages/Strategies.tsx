@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Bar, BarChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, ErrorBar, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { ScoringResp, StrategiesResp } from "../api";
 import { isPending, useApi } from "../api";
-import { BETTER, METRIC_LABEL, STRATEGY_METRICS, type StrategyMetric, afterE10, fmt2, pct, strategyCells, usedForE10 } from "../strategies";
+import { BETTER, METRIC_LABEL, STRATEGY_METRICS, type StrategyMetric, afterE10, fmtMS, pctMS, strategyCells, usedForE10 } from "../strategies";
 import { ChartPanel, DataTable, Loader, PageHeader, Panel, Segmented, Source, axisProps, tooltipProps } from "../components/ui";
 import { CHART, CITY_COLOR, CONTEXT, EMPHASIS } from "../palette";
 
@@ -49,24 +49,28 @@ function CityLegend({ cities }: { cities: string[] }) {
 function StrategyChart({ s, cities }: { s: StrategiesResp; cities: string[] }) {
   const [metric, setMetric] = useState<StrategyMetric>("auprc");
   const labels = s.cities[cities[0]].rows.map((r) => r.label);
+  const cell = (c: string, label: string) => s.cities[c].rows.find((r) => r.label === label)?.[metric];
   const data = labels.map((label) => ({
     label,
-    ...Object.fromEntries(cities.map((c) => [c, s.cities[c].rows.find((r) => r.label === label)?.[metric] ?? null])),
+    ...Object.fromEntries(cities.flatMap((c) => [[c, cell(c, label)?.mean ?? null], [`${c}_sd`, cell(c, label)?.std ?? 0]])),
   }));
+  const multi = cities.some((c) => s.cities[c].seeds.length > 1);
+  const seedText = cities.map((c) => `${CITY_NAME[c] ?? c}: seeds ${s.cities[c].seeds.join(", ")}`).join("; ");
   const better = BETTER[metric] === "higher" ? "Higher is better." : "Lower is better.";
   const narrow = useNarrow();
   const valueAxis = { ...axisProps, domain: (metric === "delta_fp" ? ["auto", "auto"] : [0, 1]) as [number | string, number | string],
     tickFormatter: (v: number) => v.toFixed(metric === "delta_fp" ? 0 : 2) };
   return (
     <ChartPanel title={`${METRIC_LABEL[metric]} on E10 by strategy`}
-      lead={`One seed per bar (seed 0), so there are no error bars. ${better}`}
+      lead={multi ? `Bars are means over seeds (${seedText}); whiskers are ± 1 standard deviation. ${better}`
+        : `One seed per bar (${seedText}), so there are no error bars. ${better}`}
       source={cities.map((c) => s.cities[c].source).join(", ")}>
       <div className="mb-4">
         <Segmented label="Metric" value={metric} onChange={setMetric}
           options={STRATEGY_METRICS.map((m) => ({ value: m, label: METRIC_LABEL[m] }))} />
       </div>
       <ChartPanel.Chart height={narrow ? 520 : 360}
-        summary={`Grouped bar chart of ${METRIC_LABEL[metric]} for six strategies in ${cities.map((c) => CITY_NAME[c] ?? c).join(" and ")}, seed 0.`}>
+        summary={`Grouped bar chart of ${METRIC_LABEL[metric]} for ${labels.length} strategies in ${cities.map((c) => CITY_NAME[c] ?? c).join(" and ")}; ${seedText}.`}>
         <CityLegend cities={cities} />
         <ResponsiveContainer width="100%" height="86%">
           <BarChart data={data} layout={narrow ? "vertical" : "horizontal"} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
@@ -84,19 +88,22 @@ function StrategyChart({ s, cities }: { s: StrategiesResp; cities: string[] }) {
               </>
             )}
             {metric === "delta_fp" && (narrow ? <ReferenceLine x={0} stroke={CHART.ink3} /> : <ReferenceLine y={0} stroke={CHART.ink3} />)}
-            <Tooltip {...tooltipProps} formatter={(v: number, k: string) => [fmt2(v), CITY_NAME[k] ?? k]} />
+            <Tooltip {...tooltipProps} formatter={(_v: number, k: string, item: { payload?: { label: string } }) =>
+              [fmtMS(cell(k, item.payload?.label ?? "")), CITY_NAME[k] ?? k]} />
             {cities.map((c) => (
-              <Bar key={c} dataKey={c} name={c} fill={CITY_COLOR[c]} radius={narrow ? [0, 4, 4, 0] : [4, 4, 0, 0]} isAnimationActive={false} maxBarSize={40} />
+              <Bar key={c} dataKey={c} name={c} fill={CITY_COLOR[c]} radius={narrow ? [0, 4, 4, 0] : [4, 4, 0, 0]} isAnimationActive={false} maxBarSize={40}>
+                {multi && <ErrorBar dataKey={`${c}_sd`} width={5} strokeWidth={1.5} stroke={CHART.ink2} direction={narrow ? "x" : "y"} />}
+              </Bar>
             ))}
           </BarChart>
         </ResponsiveContainer>
       </ChartPanel.Chart>
       <ChartPanel.Table>
-        <DataTable caption={`${METRIC_LABEL[metric]} by strategy, seed 0`}
+        <DataTable caption={`${METRIC_LABEL[metric]} by strategy, mean ± std over seeds`}
           columns={[{ key: "label", label: "Strategy" }, ...cities.map((c) => ({ key: c, label: CITY_NAME[c] ?? c, align: "right" as const }))]}
           rows={labels.map((label) => ({
             label,
-            ...Object.fromEntries(cities.map((c) => [c, fmt2(s.cities[c].rows.find((r) => r.label === label)?.[metric])])),
+            ...Object.fromEntries(cities.map((c) => [c, fmtMS(cell(c, label))])),
           }))} />
       </ChartPanel.Table>
     </ChartPanel>
@@ -107,8 +114,8 @@ function FullTable({ s, city }: { s: StrategiesResp; city: string }) {
   const c = s.cities[city];
   return (
     <Panel title={`All metrics, ${CITY_NAME[city] ?? city}`}
-      lead={`Seed ${c.seeds.join(", ")}; ${c.epochs} epochs per experience; scored with ${c.scorer.replace("_", " ")}.`}>
-      <DataTable caption={`Strategy comparison on E10, ${CITY_NAME[city] ?? city}, seed 0`}
+      lead={`${c.seeds.length > 1 ? `Mean ± std over seeds ${c.seeds.join(", ")}` : `Seed ${c.seeds.join(", ")}`}; ${c.epochs} epochs per experience; scored with ${c.scorer.replace("_", " ")}.`}>
+      <DataTable caption={`Strategy comparison on E10, ${CITY_NAME[city] ?? city}`}
         columns={[
           { key: "label", label: "Strategy" }, { key: "auprc", label: "AUPRC", align: "right" },
           { key: "recall_at_1pct", label: "Recall@1%", align: "right" }, { key: "delta_fp", label: "ΔFP", align: "right" },
@@ -149,14 +156,17 @@ function BufferSection({ s, cities }: { s: StrategiesResp; cities: string[] }) {
 function BufferChart({ b, city }: { b: NonNullable<StrategiesResp["cities"][string]["buffer"]>; city: string }) {
   const narrow = useNarrow();
   const data = b.runs.map((r) => {
-    const e9 = usedForE10(r.experiences)!;
-    return { label: r.label, target: e9.target_share * 100, other: (e9.other_share + e9.injected_share) * 100, e9 };
+    const t = (usedForE10(r.experiences)?.target_share.mean ?? 0) * 100;
+    return { label: r.label, target: t, other: 100 - t };   // E9 has no injected records (checked)
   });
-  const injectedE10 = b.runs.map((r) => ({ label: r.label, n: afterE10(r.experiences)?.injected ?? 0 })).filter((x) => x.n > 0);
+  const injectedE10 = b.runs.map((r) => ({ label: r.label, m: afterE10(r.experiences)?.injected }))
+    .filter((x) => (x.m?.mean ?? 0) > 0);
+  const seeds = [...new Set(b.runs.flatMap((r) => r.seeds))].sort();
+  const seedText = seeds.length > 1 ? `Mean over seeds ${seeds.join(", ")}.` : `Seed ${seeds.join(", ")}.`;
   const exps = b.runs[0]?.experiences.map((e) => e.experience) ?? [];
   return (
     <ChartPanel title={`Buffer used while training E10 (state after E9), ${CITY_NAME[city] ?? city}`}
-      lead={`Buffer size ${b.buffer_size ?? "?"}. Target department: ${b.target_department}. Seed 0.`} source={b.source}>
+      lead={`Buffer size ${b.buffer_size ?? "?"}. Target department: ${b.target_department}. ${seedText}`} source={b.source}>
       <ChartPanel.Chart height={300}
         summary={`Stacked bars of the E9 replay buffer per rule: share of target department ${b.target_department} versus other departments.`}>
         <ul aria-label="Legend" className="mb-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-ink-2">
@@ -180,14 +190,14 @@ function BufferChart({ b, city }: { b: NonNullable<StrategiesResp["cities"][stri
             { key: "inj", label: "Injected in E10 buffer", align: "right" }]}
           rows={b.runs.map((r) => ({
             label: r.label,
-            ...Object.fromEntries(r.experiences.map((e) => [e.experience, pct(e.target_share)])),
-            inj: String(afterE10(r.experiences)?.injected ?? 0),
+            ...Object.fromEntries(r.experiences.map((e) => [e.experience, pctMS(e.target_share)])),
+            inj: fmtMS(afterE10(r.experiences)?.injected, seeds.length > 1 ? 1 : 0),
           }))} />
       </ChartPanel.Table>
       <p className="mt-4 max-w-[80ch] text-xs text-ink-3">
         The E10 entry is the buffer after its refresh at the end of E10; no model shown here trained on it.
         {injectedE10.length > 0
-          ? ` It contains injected anomalies for ${injectedE10.map((x) => `${x.label} (${x.n})`).join(", ")}, because those rules select from E10 records.`
+          ? ` It contains injected anomalies for ${injectedE10.map((x) => `${x.label} (${fmtMS(x.m, seeds.length > 1 ? 1 : 0)})`).join(", ")}, because those rules select from E10 records.`
           : " It contains no injected anomalies."}
       </p>
     </ChartPanel>
@@ -208,12 +218,22 @@ export default function Strategies() {
           return (
             <div className="space-y-8">
               <div role="note" className="rounded-panel border border-line-strong bg-surface-1 px-5 py-4">
-                <h2 className="text-lg font-semibold">One seed (seed 0), no variance</h2>
-                <p className="mt-1 max-w-[76ch] text-sm text-ink-2">
-                  Each number comes from a single run, so small differences between strategies may be run-to-run noise.
-                  {v1s && <> For scale: over seeds {v1s.cities[cities[0]]?.seeds.join(", ")}, model v1 (the same setup as “Replay, random”) had a field-surprisal AUPRC standard deviation of{" "}
-                    {cities.map((c, i) => <span key={c}>{i > 0 && " and "}{fmt2(v1s.cities[c]?.scorers.field_surprisal?.auprc.std)} ({CITY_NAME[c] ?? c})</span>)}.</>}
-                </p>
+                {(() => {
+                  const seedsAll = [...new Set(cities.flatMap((c) => s.cities[c].seeds))].sort();
+                  const multi = seedsAll.length > 1;
+                  return (
+                    <>
+                      <h2 className="text-lg font-semibold">{multi ? `Seeds ${seedsAll.join(", ")}: mean ± standard deviation` : `One seed (seed ${seedsAll.join(", ")}), no variance`}</h2>
+                      <p className="mt-1 max-w-[76ch] text-sm text-ink-2">
+                        {multi
+                          ? `Each number is the mean over ${seedsAll.length} runs with different seeds; ± is the standard deviation across them. Differences smaller than that spread may be run-to-run noise.`
+                          : "Each number comes from a single run, so small differences between strategies may be run-to-run noise."}
+                        {!multi && v1s && <> For scale: over seeds {v1s.cities[cities[0]]?.seeds.join(", ")}, model v1 (the same setup as “Replay, random”) had a field-surprisal AUPRC standard deviation of{" "}
+                          {cities.map((c, i) => <span key={c}>{i > 0 && " and "}{fmtMS(v1s.cities[c]?.scorers.field_surprisal?.auprc ? { mean: v1s.cities[c].scorers.field_surprisal.auprc.std, std: 0, n: 1 } : undefined)} ({CITY_NAME[c] ?? c})</span>)}.</>}
+                      </p>
+                    </>
+                  );
+                })()}
               </div>
               <StrategyChart s={s} cities={cities} />
               {cities.map((c) => <FullTable key={c} s={s} city={c} />)}

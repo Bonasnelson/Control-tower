@@ -286,32 +286,44 @@ def strategy_label(strategy: str, rule: str | None) -> str:
     return f"{base}, {rule_txt}" if strategy == "replay" else f"{base} ({rule_txt})"
 
 
+def _ms(values: list[float]) -> dict:
+    return mean_std([v for v in values if v is not None])
+
+
 def _buffer_summary(path: Path) -> dict | None:
+    """Buffer composition per configuration, averaged over the seeds present (mean ± std, ddof=1)."""
     if not path.exists():
         return None
     d = json.loads(path.read_text(encoding="utf-8"))
     target = d["target_department"]
-    runs = []
+    groups: dict[tuple, list] = {}
     for r in d["runs"]:
-        exps = []
-        for e in r["experiences"]:
-            counts = e["counts"]
-            size = sum(counts.values()) or 1
-            injected = sum(counts.get(k, 0) for k in ANOMALY_GROUPS)
-            t = counts.get(target, 0)
-            exps.append({"experience": e["experience"], "size": e["size"], "target": t, "injected": injected,
-                         "other": size - t - injected, "target_share": t / size, "injected_share": injected / size,
-                         "other_share": (size - t - injected) / size})
-        runs.append({"strategy": r["strategy"], "buffer_rule": r["buffer_rule"], "seed": r["seed"],
-                     "label": strategy_label(r["strategy"], r["buffer_rule"]), "experiences": exps})
+        groups.setdefault((r["strategy"], r["buffer_rule"]), []).append(r)
+    runs = []
+    for (strategy, rule), rs in groups.items():
+        per_exp: dict[str, list[dict]] = {}
+        for r in rs:
+            for e in r["experiences"]:
+                counts = e["counts"]
+                size = sum(counts.values()) or 1
+                injected = sum(counts.get(k, 0) for k in ANOMALY_GROUPS)
+                t = counts.get(target, 0)
+                per_exp.setdefault(e["experience"], []).append(
+                    {"size": e["size"], "target": t, "injected": injected, "target_share": t / size})
+        exps = [{"experience": k, "size": v[0]["size"],
+                 **{f: _ms([x[f] for x in v]) for f in ("target", "injected", "target_share")}}
+                for k, v in per_exp.items()]
+        runs.append({"strategy": strategy, "buffer_rule": rule, "label": strategy_label(strategy, rule),
+                     "seeds": sorted(r["seed"] for r in rs), "experiences": exps})
     return {"source": f"results/dashboard/{path.name}", "target_department": target,
             "buffer_size": d.get("buffer_size"), "runs": runs}
 
 
 @app.get("/api/strategies")
 def strategies() -> dict:
-    files = sorted(RESULTS.glob("strategies_*.csv"))
-    files = [p for p in files if not p.stem.endswith("_quick")]
+    """Standard strategy comparison (results/strategies_<city>.csv only; scenario variants such as
+    *_linear_spread.csv and *_quick.csv are separate studies). Mean ± std over seeds per configuration."""
+    files = [p for p in sorted(RESULTS.glob("strategies_*.csv")) if re.fullmatch(r"strategies_[a-z]+\.csv", p.name)]
     if not files:
         return pending("results/strategies_<city>.csv", "python scripts/run_strategies.py --seeds 0")
     out = {}
@@ -320,14 +332,18 @@ def strategies() -> dict:
         if not rows:
             continue
         city = rows[0]["city"]
+        configs: dict[tuple, list] = {}
+        for r in rows:
+            configs.setdefault((r["strategy"], r["buffer_rule"] or None), []).append(r)
         out[city] = {
             "source": f"results/{p.name}",
             "seeds": sorted({int(r["seed"]) for r in rows}),
             "epochs": int(float(rows[0]["epochs"])),
             "scorer": rows[0].get("scorer", ""),
-            "rows": [{"strategy": r["strategy"], "buffer_rule": r["buffer_rule"] or None,
-                      "label": strategy_label(r["strategy"], r["buffer_rule"] or None), "seed": int(r["seed"]),
-                      **{m: num(r.get(m)) for m in STRATEGY_METRICS}} for r in rows],
+            "rows": [{"strategy": s_, "buffer_rule": rule, "label": strategy_label(s_, rule),
+                      "seeds": sorted(int(r["seed"]) for r in rs),
+                      **{m: _ms([num(r.get(m)) for r in rs]) for m in STRATEGY_METRICS}}
+                     for (s_, rule), rs in configs.items()],
             "buffer": _buffer_summary(RESULTS / "dashboard" / f"{city}_buffer.json"),
         }
     return {"status": "ok", "metrics": STRATEGY_METRICS, "cities": out}

@@ -1,0 +1,40 @@
+--append: kept 6 rows and 4 buffer runs of other seeds
+philadelphia: 180,884 records, cfg={'d_embed': 16, 'hidden': [256, 128], 'latent': 32, 'mask_ratio': 0.3, 'dropout': 0.1, 'lr': 0.001, 'weight_decay': 1e-05, 'batch_size': 256, 'epochs': 30, 'ewc_lambda': 10000.0, 'ewc_samples': 2048, 'buffer_size': 2000, 'buffer_rule': 'random', 'buffer_candidates': 5000}
+[philadelphia s1 none       -         ] AUPRC=0.604 R@1%=0.75 dFP=+1.7626 FP=0.00 FN=0.40 (471s)
+[philadelphia s1 ewc        -         ] AUPRC=0.573 R@1%=0.65 dFP=-0.4095 FP=0.00 FN=0.30 (644s)
+[philadelphia s1 replay     random    ] AUPRC=0.595 R@1%=0.80 dFP=+2.4741 FP=0.00 FN=0.30 (492s)
+[philadelphia s1 replay     diversity ] AUPRC=0.692 R@1%=0.80 dFP=+1.2024 FP=0.00 FN=0.20 (519s)
+[philadelphia s1 replay     high_error] AUPRC=0.560 R@1%=0.75 dFP=+2.5032 FP=0.00 FN=0.20 (515s)
+[philadelphia s1 ewc+replay random    ] AUPRC=0.531 R@1%=0.55 dFP=-0.3357 FP=0.00 FN=0.30 (661s)
+[philadelphia s2 none       -         ] AUPRC=0.625 R@1%=0.70 dFP=+0.9323 FP=0.00 FN=0.30 (372s)
+[philadelphia s2 ewc        -         ] AUPRC=0.611 R@1%=0.65 dFP=-0.6860 FP=0.00 FN=0.10 (479s)
+[philadelphia s2 replay     random    ] AUPRC=0.683 R@1%=0.75 dFP=+2.8560 FP=0.00 FN=0.20 (447s)
+[philadelphia s2 replay     diversity ] AUPRC=0.655 R@1%=0.80 dFP=+1.1961 FP=0.00 FN=0.20 (409s)
+[philadelphia s2 replay     high_error] AUPRC=0.662 R@1%=0.80 dFP=+3.4564 FP=0.10 FN=0.20 (306s)
+[philadelphia s2 ewc+replay random    ] AUPRC=0.624 R@1%=0.70 dFP=-0.4529 FP=0.00 FN=0.10 (403s)
+# Continual strategies: masked model, fine-tuning, last experience E10 (field-surprisal score)
+
+Mean ± std over seeds (std 0 with one seed). Hyper-parameters from configs/train.yaml `masked`.
+
+## philadelphia (seeds [0, 1, 2], epochs 30)
+
+| strategy | buffer rule | auprc | recall_at_1pct | delta_fp | fp_ratio | fn_ratio | train_seconds |
+|---|---|---|---|---|---|---|---|
+| none | - | 0.6677 ± 0.093 | 0.7833 ± 0.1 | 1.272 ± 0.44 | 0 ± 0 | 0.2667 ± 0.15 | 406.2 ± 56 |
+| ewc | - | 0.5992 ± 0.023 | 0.6833 ± 0.058 | -0.6832 ± 0.27 | 0 ± 0 | 0.2 ± 0.1 | 550.4 ± 85 |
+| replay | random | 0.6691 ± 0.069 | 0.8 ± 0.05 | 2.818 ± 0.33 | 0 ± 0 | 0.2333 ± 0.058 | 482.9 ± 33 |
+| replay | diversity | 0.7339 ± 0.11 | 0.8333 ± 0.058 | 1.346 ± 0.25 | 0 ± 0 | 0.1667 ± 0.058 | 489.8 ± 71 |
+| replay | high_error | 0.629 ± 0.06 | 0.7833 ± 0.029 | 3.021 ± 0.48 | 0.03333 ± 0.058 | 0.2 ± 3.4e-17 | 465.8 ± 1.4e+02 |
+| ewc+replay | random | 0.5709 ± 0.048 | 0.6 ± 0.087 | -0.3836 ± 0.061 | 0 ± 0 | 0.2 ± 0.1 | 500.9 ± 1.4e+02 |
+
+## chicago (seeds [0, 1, 2], epochs 30)
+
+| strategy | buffer rule | auprc | recall_at_1pct | delta_fp | fp_ratio | fn_ratio | train_seconds |
+|---|---|---|---|---|---|---|---|
+| none | - | 0.41 ± 0.051 | 0.5 ± 0 | -3.451 ± 0.83 | 0 ± 0 | 0.4667 ± 0.15 | 323.4 ± 28 |
+| ewc | - | 0.8015 ± 0.13 | 0.8833 ± 0.058 | -8.093 ± 0.94 | 0 ± 0 | 0.2 ± 0.17 | 459.8 ± 85 |
+| replay | random | 0.5878 ± 0.15 | 0.6667 ± 0.19 | -2.715 ± 1.4 | 0 ± 0 | 0.3333 ± 0.12 | 382.7 ± 24 |
+| replay | diversity | 0.497 ± 0.076 | 0.5833 ± 0.14 | -2.832 ± 0.95 | 0.03333 ± 0.058 | 0.3667 ± 0.12 | 400.4 ± 24 |
+| replay | high_error | 0.5863 ± 0.18 | 0.6167 ± 0.23 | -3.363 ± 0.61 | 0 ± 0 | 0.4667 ± 0.21 | 399.4 ± 32 |
+| ewc+replay | random | 0.8111 ± 0.094 | 0.9167 ± 0.029 | -8.048 ± 1.2 | 0 ± 0 | 0.2 ± 0.1 | 513.3 ± 63 |
+

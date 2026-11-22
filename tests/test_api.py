@@ -134,7 +134,8 @@ def test_strategies(monkeypatch, tmp_path):
     s = load_app(monkeypatch, ROOT).get("/api/strategies").json()
     if s["status"] == "ok":
         for city, c in s["cities"].items():
-            assert len(c["rows"]) == 6 and c["seeds"] == [0]
+            assert len(c["rows"]) == 6 and c["seeds"][0] == 0
+            assert all(r["seeds"] and r["auprc"]["n"] == len(r["seeds"]) for r in c["rows"])
             assert [r["label"] for r in c["rows"]] == ["None (plain fine-tuning)", "EWC", "Replay, random",
                                                        "Replay, diversity", "Replay, high error", "EWC + replay (random)"]
             if c["buffer"]:
@@ -148,11 +149,16 @@ def test_strategies(monkeypatch, tmp_path):
     assert c.get("/api/strategies").json()["status"] == "pending"
     (tmp_path / "results" / "strategies_x.csv").write_text(
         "city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,epochs,scorer\n"
-        "x,0,none,,0.5,0.6,1.5,0,0.1,10,2,field_surprisal\nx,0,replay,high_error,0.7,0.8,-1,0,0.2,12,2,field_surprisal\n")
+        "x,0,none,,0.5,0.6,1.5,0,0.1,10,2,field_surprisal\nx,0,replay,high_error,0.7,0.8,-1,0,0.2,12,2,field_surprisal\n"
+        "x,1,none,,0.7,0.6,0.5,0,0.3,12,2,field_surprisal\n")
+    (tmp_path / "results" / "strategies_x_linear_spread.csv").write_text("city,seed\ny,0\n")  # scenario variant: ignored
     s = c.get("/api/strategies").json()
     rows = s["cities"]["x"]["rows"]
-    assert s["status"] == "ok" and [r["label"] for r in rows] == ["None (plain fine-tuning)", "Replay, high error"]
-    assert rows[0]["buffer_rule"] is None and rows[1]["delta_fp"] == -1.0 and s["cities"]["x"]["buffer"] is None
+    assert s["status"] == "ok" and set(s["cities"]) == {"x"}
+    assert [r["label"] for r in rows] == ["None (plain fine-tuning)", "Replay, high error"]
+    assert rows[0]["buffer_rule"] is None and rows[0]["seeds"] == [0, 1] and rows[1]["seeds"] == [0]
+    assert rows[0]["auprc"]["mean"] == pytest.approx(0.6) and rows[0]["auprc"]["std"] == pytest.approx(0.1414, abs=1e-4)
+    assert rows[1]["delta_fp"] == {"mean": -1.0, "std": 0.0, "n": 1} and s["cities"]["x"]["buffer"] is None
     (tmp_path / "results" / "dashboard" / "x_buffer.json").write_text(json.dumps({
         "city": "x", "buffer_size": 10, "departments": ["a", "b"], "target_department": "a",
         "runs": [{"strategy": "replay", "buffer_rule": "high_error", "seed": 0, "experiences": [
@@ -160,5 +166,6 @@ def test_strategies(monkeypatch, tmp_path):
             {"experience": "E10", "size": 10, "counts": {"a": 1, "b": 6, "GLOBAL_ANOM": 2, "LOCAL_ANOM": 1}}]}]}))
     b = c.get("/api/strategies").json()["cities"]["x"]["buffer"]
     e9, e10 = b["runs"][0]["experiences"]
-    assert (e9["target_share"], e9["injected"], e9["other"]) == (0.4, 0, 6)
-    assert (e10["target"], e10["injected"], e10["other"]) == (1, 3, 6) and e10["injected_share"] == 0.3
+    assert b["runs"][0]["seeds"] == [0]
+    assert (e9["target_share"]["mean"], e9["injected"]["mean"]) == (0.4, 0)
+    assert (e10["target"]["mean"], e10["injected"]["mean"]) == (1, 3)

@@ -92,19 +92,15 @@ export type EllipticResp = {
 };
 
 export type StrategyRow = {
-  strategy: string; buffer_rule: string | null; label: string; seed: number;
-  auprc: number | null; recall_at_1pct: number | null; delta_fp: number | null;
-  fp_ratio: number | null; fn_ratio: number | null; train_seconds: number | null;
+  strategy: string; buffer_rule: string | null; label: string; seeds: number[];
+  auprc: MeanStd; recall_at_1pct: MeanStd; delta_fp: MeanStd; fp_ratio: MeanStd; fn_ratio: MeanStd; train_seconds: MeanStd;
 };
-export type BufferExp = {
-  experience: string; size: number; target: number; injected: number; other: number;
-  target_share: number; injected_share: number; other_share: number;
-};
+export type BufferExp = { experience: string; size: number; target: MeanStd; injected: MeanStd; target_share: MeanStd };
 export type StrategiesResp = {
   status: "ok"; metrics: string[];
   cities: Record<string, {
     source: string; seeds: number[]; epochs: number; scorer: string; rows: StrategyRow[];
     buffer: { source: string; target_department: string; buffer_size: number | null;
-      runs: { strategy: string; buffer_rule: string; seed: number; label: string; experiences: BufferExp[] }[] } | null;
+      runs: { strategy: string; buffer_rule: string; seeds: number[]; label: string; experiences: BufferExp[] }[] } | null;
   }>;
 };
