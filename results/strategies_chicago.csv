@@ -1,0 +1,7 @@
+city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,final_train_loss,epochs,ewc_lambda,buffer_size,scenario,scorer
+chicago,0,none,,0.4193225662529057,0.5,-3.535362958908081,0.0,0.3,295.5,1.081871701789915,30,,,linear,field_surprisal
+chicago,0,ewc,,0.8964093012680476,0.95,-9.016677618026733,0.0,0.1,399.6,1.652431439296902,30,10000.0,,linear,field_surprisal
+chicago,0,replay,random,0.4237851923143348,0.45,-3.3736839294433594,0.0,0.2,399.9,1.0762978816488462,30,,2000.0,linear,field_surprisal
+chicago,0,replay,diversity,0.4510442595802617,0.5,-3.2510998249053955,0.0,0.3,423.9,1.1317346656386027,30,,2000.0,linear,field_surprisal
+chicago,0,replay,high_error,0.4663640670413384,0.4,-3.5569915771484375,0.0,0.3,428.8,1.1912113764174646,30,,2000.0,linear,field_surprisal
+chicago,0,ewc+replay,random,0.8502318125550696,0.9,-9.113563299179077,0.0,0.2,581.8,1.5742792399858898,30,10000.0,2000.0,linear,field_surprisal

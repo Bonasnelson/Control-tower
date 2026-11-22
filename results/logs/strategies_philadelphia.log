@@ -1,0 +1,33 @@
+philadelphia: 180,884 records, cfg={'d_embed': 16, 'hidden': [256, 128], 'latent': 32, 'mask_ratio': 0.3, 'dropout': 0.1, 'lr': 0.001, 'weight_decay': 1e-05, 'batch_size': 256, 'epochs': 30, 'ewc_lambda': 10000.0, 'ewc_samples': 2048, 'buffer_size': 2000, 'buffer_rule': 'random', 'buffer_candidates': 5000}
+[philadelphia s0 none       -         ] AUPRC=0.774 R@1%=0.90 dFP=+1.1211 FP=0.00 FN=0.10 (375s)
+[philadelphia s0 ewc        -         ] AUPRC=0.614 R@1%=0.75 dFP=-0.9540 FP=0.00 FN=0.20 (528s)
+[philadelphia s0 replay     random    ] AUPRC=0.730 R@1%=0.85 dFP=+3.1230 FP=0.00 FN=0.20 (510s)
+[philadelphia s0 replay     diversity ] AUPRC=0.855 R@1%=0.90 dFP=+1.6383 FP=0.00 FN=0.10 (541s)
+[philadelphia s0 replay     high_error] AUPRC=0.665 R@1%=0.80 dFP=+3.1033 FP=0.00 FN=0.20 (576s)
+[philadelphia s0 ewc+replay random    ] AUPRC=0.558 R@1%=0.55 dFP=-0.3621 FP=0.00 FN=0.20 (439s)
+# Continual strategies: masked model, fine-tuning, last experience E10 (field-surprisal score)
+
+Mean ± std over seeds (std 0 with one seed). Hyper-parameters from configs/train.yaml `masked`.
+
+## philadelphia (seeds [0], epochs 30)
+
+| strategy | buffer rule | auprc | recall_at_1pct | delta_fp | fp_ratio | fn_ratio | train_seconds |
+|---|---|---|---|---|---|---|---|
+| none | - | 0.7742 ± 0 | 0.9 ± 0 | 1.121 ± 0 | 0 ± 0 | 0.1 ± 0 | 374.7 ± 0 |
+| ewc | - | 0.6139 ± 0 | 0.75 ± 0 | -0.954 ± 0 | 0 ± 0 | 0.2 ± 0 | 528.3 ± 0 |
+| replay | random | 0.7302 ± 0 | 0.85 ± 0 | 3.123 ± 0 | 0 ± 0 | 0.2 ± 0 | 509.8 ± 0 |
+| replay | diversity | 0.8551 ± 0 | 0.9 ± 0 | 1.638 ± 0 | 0 ± 0 | 0.1 ± 0 | 541.3 ± 0 |
+| replay | high_error | 0.6652 ± 0 | 0.8 ± 0 | 3.103 ± 0 | 0 ± 0 | 0.2 ± 0 | 576.4 ± 0 |
+| ewc+replay | random | 0.5582 ± 0 | 0.55 ± 0 | -0.3621 ± 0 | 0 ± 0 | 0.2 ± 0 | 439 ± 0 |
+
+## chicago (seeds [0], epochs 30)
+
+| strategy | buffer rule | auprc | recall_at_1pct | delta_fp | fp_ratio | fn_ratio | train_seconds |
+|---|---|---|---|---|---|---|---|
+| none | - | 0.4193 ± 0 | 0.5 ± 0 | -3.535 ± 0 | 0 ± 0 | 0.3 ± 0 | 295.5 ± 0 |
+| ewc | - | 0.8964 ± 0 | 0.95 ± 0 | -9.017 ± 0 | 0 ± 0 | 0.1 ± 0 | 399.6 ± 0 |
+| replay | random | 0.4238 ± 0 | 0.45 ± 0 | -3.374 ± 0 | 0 ± 0 | 0.2 ± 0 | 399.9 ± 0 |
+| replay | diversity | 0.451 ± 0 | 0.5 ± 0 | -3.251 ± 0 | 0 ± 0 | 0.3 ± 0 | 423.9 ± 0 |
+| replay | high_error | 0.4664 ± 0 | 0.4 ± 0 | -3.557 ± 0 | 0 ± 0 | 0.3 ± 0 | 428.8 ± 0 |
+| ewc+replay | random | 0.8502 ± 0 | 0.9 ± 0 | -9.114 ± 0 | 0 ± 0 | 0.2 ± 0 | 581.8 ± 0 |
+

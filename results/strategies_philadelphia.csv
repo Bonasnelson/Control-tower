@@ -1,0 +1,7 @@
+city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,final_train_loss,epochs,ewc_lambda,buffer_size,scenario,scorer
+philadelphia,0,none,,0.7742197547062196,0.9,1.1211133003234863,0.0,0.1,374.7,0.7909538511418259,30,,,linear,field_surprisal
+philadelphia,0,ewc,,0.6139016979571903,0.75,-0.9540190696716309,0.0,0.2,528.3,1.1431532388151588,30,10000.0,,linear,field_surprisal
+philadelphia,0,replay,random,0.7301776916965813,0.85,3.122951030731201,0.0,0.2,509.8,0.7753095715882737,30,,2000.0,linear,field_surprisal
+philadelphia,0,replay,diversity,0.855088243818871,0.9,1.6383318901062012,0.0,0.1,541.3,0.8591160195441156,30,,2000.0,linear,field_surprisal
+philadelphia,0,replay,high_error,0.6651897318972482,0.8,3.1032590866088867,0.0,0.2,576.4,0.8693496522140828,30,,2000.0,linear,field_surprisal
+philadelphia,0,ewc+replay,random,0.5582042517596693,0.55,-0.3620729446411133,0.0,0.2,439.0,1.1494895910068754,30,10000.0,2000.0,linear,field_surprisal
