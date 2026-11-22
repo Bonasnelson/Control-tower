@@ -1,10 +1,10 @@
 """Start the demo dashboard: FastAPI backend (uvicorn) + Vite dev server, one command.
 
-    py -3.12 scripts/run_dashboard.py            # http://localhost:5173 ; Ctrl+C stops both
-    py -3.12 scripts/run_dashboard.py --open     # also open the browser
-    py -3.12 scripts/run_dashboard.py --check    # start, verify /api/health through the Vite proxy, stop
+    python scripts/run_dashboard.py            # http://127.0.0.1:5173 ; Ctrl+C stops both
+    python scripts/run_dashboard.py --open     # also open the browser
+    python scripts/run_dashboard.py --check    # start, verify /api/health through the Vite proxy, stop
 
-Needs the backend packages (``py -3.12 -m pip install -r app/requirements.txt``) and the
+Needs the backend packages (``python -m pip install -r app/requirements.txt``) and the
 front-end packages (``npm ci`` in app/web; ``--install`` runs it if node_modules is missing).
 The dashboard is read-only: it serves files from configs/ and results/; nothing is trained.
 Works on Windows, macOS and Linux (each server runs in its own process group so that

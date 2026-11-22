@@ -9,7 +9,7 @@ The proposal is in `Control tower project.pdf` and the timeline in `Control towe
 ```bash
 python -m pip install -r requirements.txt
 python -m pip install -e .
-python -m pytest                        # 12 tests on synthetic data, no download needed (~20 s)
+python -m pytest                        # unit tests on synthetic data, no download needed
 
 python scripts/download_data.py         # Philadelphia FY2017 + Chicago payments -> data/raw/
 python scripts/prepare_data.py          # encode + print the 10-experience benchmarks
