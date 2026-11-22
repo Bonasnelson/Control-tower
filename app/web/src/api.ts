@@ -20,7 +20,10 @@ export type BaselineRow = {
 };
 export type BaselinesResp = {
   status: "ok"; source: string; rows: BaselineRow[];
-  paper: { source: string; SEL: { delta_fp_x1e3: string; L_rec_target_x1e3: number }; JEL: { delta_fp_x1e3: string; L_rec_target_x1e3: number } };
+  /** null when results/paper_reference_philadelphia.json is missing */
+  paper: { source: string; file: string; verified: boolean; verified_by: string; verified_date: string;
+    verified_note: string; unit_note: string;
+    SEL: { delta_fp_x1e3: string; L_rec_target_x1e3: number }; JEL: { delta_fp_x1e3: string; L_rec_target_x1e3: number } } | null;
   m1check: { source: string; rows: Record<string, number | string | null>[] } | null;
 };
 

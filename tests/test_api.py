@@ -93,3 +93,37 @@ def test_elliptic_states(monkeypatch, tmp_path):
     (tmp_path / "results" / "elliptic_stream.csv").write_text("step")
     e = c.get("/api/elliptic").json()
     assert e["status"] == "results_present" and e["results_files"] == ["elliptic_stream.csv"]
+
+
+def test_paper_reference(monkeypatch, tmp_path):
+    # real repo: values come from results/paper_reference_philadelphia.json, flagged until checked against the PDF
+    p = load_app(monkeypatch, ROOT).get("/api/baselines").json()["paper"]
+    ref = json.loads((ROOT / "results" / "paper_reference_philadelphia.json").read_text(encoding="utf-8"))
+    assert p["file"] == "results/paper_reference_philadelphia.json"
+    assert p["verified"] is bool(ref["verified"]) is True
+    assert p["verified_by"] == "report agent + master, against research paper.pdf (page 6)"
+    assert ref["SEL"]["delta_fp_x1e3"]["linear"]["std"] == 0.115 and ref["JEL"]["delta_fp_x1e3"]["std"] == 0.047
+    assert (ref["SEL"]["L_rec_target_x1e3"]["std"], ref["JEL"]["L_rec_target_x1e3"]["std"]) == (0.125, 0.042)
+    assert "Table 2" in p["source"] and "Table 3" in p["source"] and p["unit_note"].startswith("The paper states no unit")
+    assert p["SEL"]["delta_fp_x1e3"] == "+1.45 / +1.40 / +1.45"
+    assert p["JEL"]["delta_fp_x1e3"] == "-1.36 ± 0.05"
+    assert (p["SEL"]["L_rec_target_x1e3"], p["JEL"]["L_rec_target_x1e3"]) == (6.59, 2.04)
+
+    # temp root: no file -> paper is null; a verified file -> flag and note pass through
+    (tmp_path / "results").mkdir()
+    (tmp_path / "results" / "summary_philadelphia_baseline_ae.md").write_text(
+        "| regime | scenario | seeds | DeltaFP (times10^{3}) | FP ratio | FN ratio | AUPRC | Recall@1% |\n"
+        "|---|---|---|---|---|---|---|---|\n| JEL | full | 5 | -1.0 ± 0.1 | 0 ± 0 | 1 ± 0 | 0.5 ± 0.1 | 0.6 ± 0.1 |\n",
+        encoding="utf-8")
+    c = load_app(monkeypatch, tmp_path)
+    assert c.get("/api/baselines").json()["paper"] is None
+    (tmp_path / "results" / "paper_reference_philadelphia.json").write_text(json.dumps({
+        "paper": "P", "city": "philadelphia", "verified": False, "verified_by": "", "verified_note": "", "unit_note": "u",
+        "SEL": {"delta_fp_x1e3": {k: {"mean": v, "std": 0.1} for k, v in
+                                  (("linear", 1.0), ("exponential", -0.5), ("instant", 2.0))},
+                "L_rec_target_x1e3": {"mean": 1.0, "std": 0.1}},
+        "JEL": {"delta_fp_x1e3": {"mean": -1.0, "std": 0.1}, "L_rec_target_x1e3": {"mean": 0.5, "std": 0.01}}}),
+        encoding="utf-8")
+    p = c.get("/api/baselines").json()["paper"]
+    assert p["verified"] is False and p["unit_note"] == "u" and p["JEL"]["L_rec_target_x1e3_std"] == 0.01
+    assert p["SEL"]["delta_fp_x1e3"] == "+1.00 / -0.50 / +2.00" and p["JEL"]["delta_fp_x1e3"] == "-1.00 ± 0.10"

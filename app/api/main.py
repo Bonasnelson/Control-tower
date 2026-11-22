@@ -26,12 +26,35 @@ CONFIGS = ROOT / "configs"
 SCORERS = ["recon_error", "field_surprisal", "latent_distance", "isolation_forest"]
 V1_METRICS = ["auprc", "recall_at_1pct", "delta_fp", "fp_ratio", "fn_ratio", "score_seconds", "train_seconds"]
 
-# Hemati et al. (2022), Table 2, Philadelphia, as quoted in README.md (Week 1 result).
-PAPER_REFERENCE = {
-    "source": "Hemati et al. (2022), Table 2, Philadelphia (as quoted in README.md)",
-    "SEL": {"delta_fp_x1e3": "+1.45 / +1.40 / +1.45", "L_rec_target_x1e3": 6.59},
-    "JEL": {"delta_fp_x1e3": "-1.36 ± 0.05", "L_rec_target_x1e3": 2.04},
-}
+PAPER_FILE = "paper_reference_philadelphia.json"
+SEL_ORDER = ["linear", "exponential", "instant"]
+
+
+def paper_reference() -> dict | None:
+    """Paper values from results/paper_reference_philadelphia.json (None if the file is missing),
+    with display strings added. ``verified`` says whether they were checked against the PDF."""
+    path = RESULTS / PAPER_FILE
+    if not path.exists():
+        return None
+    d = json.loads(path.read_text(encoding="utf-8"))
+    sel, jel = d["SEL"]["delta_fp_x1e3"], d["JEL"]["delta_fp_x1e3"]
+    src = d.get("sources", {})
+    return {
+        "source": f"{d.get('paper', '')}: ΔFP from {src.get('delta_fp', '?')}; L_Rec(A′) from {src.get('L_rec_target', '?')}",
+        "file": f"results/{PAPER_FILE}",
+        "verified": bool(d.get("verified")), "verified_by": d.get("verified_by", ""),
+        "verified_date": d.get("verified_date", ""), "verified_note": d.get("verified_note", ""),
+        "unit_note": d.get("unit_note", ""),
+        "SEL": {"delta_fp_x1e3": " / ".join(f"{sel[k]['mean']:+.2f}" for k in SEL_ORDER if k in sel),
+                "delta_fp_x1e3_by_scenario": sel,
+                "L_rec_target_x1e3": d["SEL"]["L_rec_target_x1e3"]["mean"],
+                "L_rec_target_x1e3_std": d["SEL"]["L_rec_target_x1e3"]["std"]},
+        "JEL": {"delta_fp_x1e3": f"{jel['mean']:.2f} ± {jel['std']:.2f}",
+                "delta_fp_x1e3_std": jel["std"],
+                "L_rec_target_x1e3": d["JEL"]["L_rec_target_x1e3"]["mean"],
+                "L_rec_target_x1e3_std": d["JEL"]["L_rec_target_x1e3"]["std"]},
+    }
+
 
 app = FastAPI(title="Control Tower demo API", version="0.1")
 
@@ -133,7 +156,7 @@ def baselines() -> dict:
                        for k in ("regime", "scenario", "seed", "model", "epochs", "auprc", "recall_at_1pct",
                                  "delta_fp", "fp_ratio", "fn_ratio", "train_seconds")})
     return {"status": "ok", "city": "philadelphia", "model": "baseline_ae", "source": f"results/{path.name}",
-            "rows": rows, "paper": PAPER_REFERENCE,
+            "rows": rows, "paper": paper_reference(),
             "m1check": {"source": f"results/{m1_path.name}", "rows": m1} if m1 else None}
 
 

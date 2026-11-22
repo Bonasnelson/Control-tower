@@ -31,7 +31,24 @@ for (const c of mdRows) {
   eq(`${k} dFP`, pm(r.delta_fp_x1e3), c[3]); eq(`${k} FP`, pm(r.fp_ratio), c[4]);
   eq(`${k} FN`, pm(r.fn_ratio), c[5]); eq(`${k} AUPRC`, pm(r.auprc), c[6]); eq(`${k} R@1%`, pm(r.recall_at_1pct), c[7]);
 }
-eq("paper SEL string vs README", base.paper.SEL.delta_fp_x1e3, "+1.45 / +1.40 / +1.45");
+// paper values: API strings vs results/paper_reference_philadelphia.json and vs the README Week-1 table
+const paperFile = JSON.parse(read("results/paper_reference_philadelphia.json"));
+const sgn = (v: number) => (v >= 0 ? "+" : "") + v.toFixed(2);
+eq("paper SEL vs JSON", base.paper.SEL.delta_fp_x1e3,
+  ["linear", "exponential", "instant"].map((k) => sgn(paperFile.SEL.delta_fp_x1e3[k].mean)).join(" / "));
+eq("paper L_Rec SEL vs JSON", String(base.paper.SEL.L_rec_target_x1e3), String(paperFile.SEL.L_rec_target_x1e3.mean));
+eq("paper L_Rec JEL vs JSON", String(base.paper.JEL.L_rec_target_x1e3), String(paperFile.JEL.L_rec_target_x1e3.mean));
+eq("paper unit note vs JSON", base.paper.unit_note, paperFile.unit_note);
+eq("paper JEL vs JSON", base.paper.JEL.delta_fp_x1e3,
+  `${paperFile.JEL.delta_fp_x1e3.mean.toFixed(2)} ± ${paperFile.JEL.delta_fp_x1e3.std.toFixed(2)}`);
+eq("paper verified flag vs JSON", String(base.paper.verified), String(paperFile.verified));
+const readmeW1 = read("README.md").split(/\r?\n/).filter((l) => /^\| (SEL|JEL)\b/.test(l)).map(cells);
+const minus = (s: string) => s.replace(/−/g, "-");
+const rSel = readmeW1.find((c) => c[0].startsWith("SEL"))!, rJel = readmeW1.find((c) => c[0] === "JEL")!;
+eq("paper SEL vs README", base.paper.SEL.delta_fp_x1e3, minus(rSel[2]));
+eq("paper JEL vs README", base.paper.JEL.delta_fp_x1e3, minus(rJel[2]));
+eq("paper L_Rec SEL vs README", String(base.paper.SEL.L_rec_target_x1e3), rSel[3].split("/")[1].trim());
+eq("paper L_Rec JEL vs README", String(base.paper.JEL.L_rec_target_x1e3), rJel[3].split("/")[1].trim());
 
 // (b) v1 from the CSVs
 const v1 = await (await fetch("http://127.0.0.1:8765/api/v1/scoring")).json();

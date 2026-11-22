@@ -28,14 +28,16 @@ function BaselineSection() {
         const jel = b.rows.find((r) => r.regime === "JEL");
         const sel = b.rows.find((r) => r.regime === "SEL" && r.scenario === "linear");
         const rows = collapseSel(b.rows);
+        const paper = b.paper;
+        const paperFor = (regime: string) => (paper ? (regime === "JEL" ? paper.JEL : paper.SEL).delta_fp_x1e3 : "—");
         return (
           <Panel title="Week 1: baseline reproduction"
             lead="One-hot autoencoder of Hemati et al. (2022) on Philadelphia, evaluated on E10. ΔFP above 0 means the shrinking department is ranked above every other department, which produces false positives.">
             <div className="grid gap-6 sm:grid-cols-3">
               <Figure label="ΔFP ×10³, trained on E10 only (SEL)" value={fmt(sel?.delta_fp_x1e3.mean, 3)}
-                note={`Paper: ${b.paper.SEL.delta_fp_x1e3}`} />
+                note={`Paper: ${paperFor("SEL")}`} />
               <Figure label="ΔFP ×10³, trained on E1–E10 (JEL)" value={fmt(jel?.delta_fp_x1e3.mean, 3)}
-                note={`Paper: ${b.paper.JEL.delta_fp_x1e3}`} />
+                note={`Paper: ${paperFor("JEL")}`} />
               <Figure label="AUPRC, JEL" value={fmt(jel?.auprc.mean, 3)} note={`± ${fmt(jel?.auprc.std, 3)} over ${jel?.seeds ?? "?"} seeds`} />
             </div>
             <div className="mt-8">
@@ -49,7 +51,7 @@ function BaselineSection() {
                 ]}
                 rows={rows.map((r) => ({
                   regime: <span className="font-medium">{r.regime}</span>, scenario: r.scenario, seeds: r.seeds,
-                  dfp: pm(r.delta_fp_x1e3), paper: r.regime === "JEL" ? b.paper.JEL.delta_fp_x1e3 : b.paper.SEL.delta_fp_x1e3,
+                  dfp: pm(r.delta_fp_x1e3), paper: paperFor(r.regime),
                   fp: pm(r.fp_ratio), fn: pm(r.fn_ratio), auprc: pm(r.auprc), r1: pm(r.recall_at_1pct),
                 }))} />
             </div>
@@ -57,8 +59,23 @@ function BaselineSection() {
               {rows.length < b.rows.length
                 ? "SEL is shown once: it trains only on E10, which is the same in all three decay scenarios, so its results are identical. "
                 : ""}
-              Paper values: {b.paper.source}; the three SEL values are the paper's linear, exponential and instant runs.
+              {paper
+                ? <>Paper values: {paper.source}; the three SEL values are the paper's linear, exponential and instant runs.</>
+                : <>Paper values are not available: <code className="font-code">results/paper_reference_philadelphia.json</code> is missing.</>}
             </p>
+            {paper?.unit_note && <p className="mt-2 max-w-[80ch] text-xs text-ink-3">Units: {paper.unit_note}</p>}
+            {paper && !paper.verified && (
+              <p role="note" className="mt-2 flex items-center gap-1.5 text-xs text-ink-2">
+                <svg aria-hidden="true" viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="8" cy="8" r="6" /><path d="M8 7v4M8 5v.2" strokeLinecap="round" /></svg>
+                Paper values not yet checked against the PDF.
+              </p>
+            )}
+            {paper?.verified && (
+              <p className="mt-2 max-w-[80ch] text-xs text-ink-3">
+                Paper values checked: {paper.verified_by}{paper.verified_date ? `, ${paper.verified_date}` : ""}.
+              </p>
+            )}
+            {paper && <div className="mt-1"><Source path={paper.file} /></div>}
             <div className="mt-2"><Source path={b.source} /></div>
             {b.m1check && (
               <p className="mt-4 max-w-[80ch] text-sm text-ink-2">

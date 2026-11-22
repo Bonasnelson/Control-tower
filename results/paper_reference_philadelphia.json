@@ -1,0 +1,27 @@
+{
+  "paper": "Hemati, Schreyer, Borth (2022)",
+  "city": "philadelphia",
+  "model": "baseline_ae",
+  "sources": {
+    "delta_fp": "Table 2 (Discontinued Operations - Philadelphia Payments DA)",
+    "L_rec_target": "Table 3 (Anomalous Postings - Philadelphia Payments DA, column L_Rec(A′))"
+  },
+  "quoted_from": "README.md, Week 1 result table",
+  "verified": true,
+  "verified_by": "report agent + master, against research paper.pdf (page 6)",
+  "verified_date": "2026-11-22",
+  "verified_note": "All quoted values match the paper.",
+  "unit_note": "The paper states no unit or scale; ×10³ is our convention, chosen because our mean-BCE values ×10³ land on the paper's scale.",
+  "SEL": {
+    "delta_fp_x1e3": {
+      "linear": {"mean": 1.45, "std": 0.115, "paper_column": "S1"},
+      "exponential": {"mean": 1.40, "std": 0.064, "paper_column": "S2"},
+      "instant": {"mean": 1.45, "std": 0.062, "paper_column": "S3"}
+    },
+    "L_rec_target_x1e3": {"mean": 6.59, "std": 0.125}
+  },
+  "JEL": {
+    "delta_fp_x1e3": {"mean": -1.36, "std": 0.047, "note": "same value in all three scenario columns"},
+    "L_rec_target_x1e3": {"mean": 2.04, "std": 0.042}
+  }
+}
