@@ -1,0 +1,10 @@
+# Discontinued-operations scenario "full" (Hemati et al., 2022; values copied from
+# github.com/GitiHubi/deepContinualAuditing BenchmarkConfigs/full*.yml).
+reduction_type: "full"
+n_experiences: 10
+n_dept_samples_per_exp: 1000      # 10,000 samples in total per department
+min_sampling_perc: 0.9            # non-target departments keep U[0.9, 1.0] of their slice
+# share of the target department's slice kept in each experience
+target_dept_data_perc: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+# share of the injected anomaly pools placed in each experience (last one only)
+anomaly_dept_data_perc: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1]

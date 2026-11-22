@@ -1,0 +1,19 @@
+# Baseline autoencoder (Hemati et al., 2022 / reference code defaults)
+baseline_ae:
+  encoder_dim: [128, 64, 32, 16, 8, 4, 2]
+  bottleneck: tanh
+  lr: 1.0e-4
+  weight_decay: 1.0e-6
+  batch_size: 128
+  epochs: 100
+# Masked-feature tabular model (M1)
+masked:
+  d_embed: 16
+  hidden: [256, 128]
+  latent: 32
+  mask_ratio: 0.3
+  dropout: 0.1
+  lr: 1.0e-3
+  weight_decay: 1.0e-5
+  batch_size: 256
+  epochs: 30

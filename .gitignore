@@ -1,0 +1,31 @@
+# data (downloaded / generated; see scripts/download_data.py)
+data/raw/
+data/processed/
+data/elliptic/
+# outputs
+results/runs/
+*.pt
+mlruns/
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+# latex
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.toc
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+report/main.pdf
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

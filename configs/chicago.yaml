@@ -1,0 +1,9 @@
+city: chicago
+raw_file: data/raw/chicago_payments.csv
+n_departments: 10
+target_dept: "DEPT OF GENERAL SERVICES"   # 2nd-largest department (Philadelphia analogue)
+categorical: [department_name, vendor_name, contract_number, voucher_prefix, check_year, check_month]
+numerical: [amount]
+max_vocab: 2000            # contract_number has ~31k values; rarer ones -> __OTHER__
+n_global_anomalies: 100
+n_local_anomalies: 100

@@ -1,0 +1,9 @@
+city: philadelphia
+raw_file: data/raw/philadelphia_city_payments_fy2017.csv
+n_departments: 10          # tau: the 10 departments with the most payments
+target_dept: "10"          # A' (decaying department); same as the reference code
+categorical: [fm, dept, char_, sub_obj, vendor_name, doc_ref_no_prefix, contract_number]
+numerical: [transaction_amount]
+max_vocab: null            # no cap: full one-hot, as in the paper
+n_global_anomalies: 100    # pool; 10% (=10) enter the last experience
+n_local_anomalies: 100

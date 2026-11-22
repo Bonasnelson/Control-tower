@@ -1,0 +1,143 @@
+% =====================================================================
+% COMP 5116 project report -- Control Tower / DriftLedger
+% Section skeleton (Week 1). Font size 10 pt as required by the schedule.
+%
+% NOTE: ProjReportTemplate.zip was not available when this skeleton was
+% created (Nov 2026). Once the course template is added to report/template/,
+% move the \section bodies below into it and keep the 10pt option.
+% Page budget (12--14 pages total, references <= 2 pages):
+%   title+abstract 0.5 | intro 1.25 | related 1.25 | approach 3.5
+%   experiments 4.25 | conclusion 0.5 | references 1.5
+% =====================================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\title{Control Tower: A Drift-Aware, Explainable Continual-Learning System\\
+for Fraud and Journal-Entry Risk Monitoring in Banks}
+\author{Bonas Djamadjeu Djietcheu \and Chang Seob Lee\\[2pt]
+\small COMP 5116 Machine Learning, Carleton University, Fall 2026}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ---------------------------------------------------------------------
+\begin{abstract}
+\todo{At most 300 words; write in Week 5. Problem, gap (CL for audit
+anomaly detection without drift handling, explanations or safe updates),
+method (M1--M5), datasets, headline result vs.\ quarterly retraining.}
+\end{abstract}
+
+% ---------------------------------------------------------------------
+\section{Introduction}\label{sec:intro}
+% Budget: 1.25 pages. Owner: Bonaventure (Week 4).
+\todo{Problem: fraud losses \citep{acfe2020}, business change breaks fixed
+rules and scheduled retraining; Elliptic step-43 shutdown \citep{weber2019elliptic}.}
+\todo{Challenges: catastrophic forgetting \citep{kirkpatrick2017overcoming};
+regulatory need for auditable, reversible updates \citep{osfi2025e23}.}
+\todo{Contributions (bullet list): masked-feature continual detector; drift-vs-anomaly
+gate; per-field reason codes with analyst feedback; canary rollback; open benchmark.}
+
+% ---------------------------------------------------------------------
+\section{Related Work}\label{sec:related}
+% Budget: 1.25 pages (two subsections of about 0.6 page each).
+\subsection{Continual learning}\label{sec:related-cl}
+% Owner: Bonaventure (Week 2).
+\todo{Regularisation (EWC \citep{kirkpatrick2017overcoming}), replay
+\citep{rolnick2019experience}, libraries \citep{lomonaco2021avalanche}, CL for
+anomaly detection \citep{pezze2022continual}, CL for audit data
+\citep{hemati2022continual,schreyer2022federated}.}
+
+\subsection{Anomaly detection and fraud auditing}\label{sec:related-ad}
+% Owner: Chang Lee (Week 2).
+\todo{Autoencoders for journal entries \citep{schreyer2017detection}; tabular
+deep models and masked reconstruction \citep{gorishniy2021revisiting,thimonier2024beyond};
+Isolation Forest \citep{liu2008isolation}; supervised fraud models under drift
+and feedback \citep{dalpozzolo2018credit,chen2016xgboost}; drift detection
+\citep{bifet2007adwin,gama2014survey}; AML benchmarks \citep{weber2019elliptic,altman2023realistic}.}
+
+% ---------------------------------------------------------------------
+\section{Approach}\label{sec:approach}
+% Budget: 3.5 pages. Owner: Bonaventure (Week 3). Dataset descriptions go in Sec. 4, not here.
+\todo{Hypothesis: a drift-gated, explainable CL detector cuts alert volume by
+$\geq$20\% vs.\ quarterly retraining at equal recall.}
+\todo{Figure 1: model architecture. Figure 2: pipeline (feed $\rightarrow$ score
+$\rightarrow$ reasons $\rightarrow$ analyst $\rightarrow$ drift gate $\rightarrow$ update/rollback).}
+
+\subsection{M1: Masked-feature continual detector}
+Each record has categorical fields $c_1,\dots,c_F$ and numerical fields
+$x_1,\dots,x_K$. Field $j$ is mapped to a token $t_j\in\mathbb{R}^d$ (an
+embedding for categorical fields, $t_j = x_j w_j + b_j$ for numerical ones).
+A random mask $m\in\{0,1\}^{F+K}$ with rate $\rho$ replaces tokens by a learned
+vector, and the model minimises
+\begin{equation}
+\mathcal{L}_{\text{rec}} = \frac{1}{\lVert m\rVert_1}\sum_{j} m_j\,\ell_j,\qquad
+\ell_j = \begin{cases}-\log p_\theta(c_j \mid \tilde t) & \text{categorical}\\
+(\hat x_j - x_j)^2 & \text{numerical}\end{cases}
+\label{eq:mfr}
+\end{equation}
+\todo{Eq.~2 EWC penalty; Eq.~3 replay objective; Eq.~4 drift statistic; Eq.~5 fused score.}
+
+\subsection{M2: Privacy-aware memory}
+\todo{Buffer selection rules: random, diversity, high error. Memory in MB.}
+\subsection{M3: Drift versus anomaly}
+\todo{ADWIN on latent statistics, distribution distance, regime-change confirmation.}
+\subsection{M4: Reason codes and feedback}
+\todo{Per-field surprisal $\ell_j$ gives the top-3 reasons; feedback re-ranking.}
+\subsection{M5: Governance and safety}
+\todo{Canary set, versioning, rollback rule, model-card report \citep{mitchell2019model} aligned with E-23.}
+
+% ---------------------------------------------------------------------
+\section{Experiments}\label{sec:experiments}
+% Budget: 4.25 pages. Setup drafted Week 4 (Chang Lee); results Week 4 (both).
+\subsection{Datasets}
+\todo{Philadelphia (238,894) and Chicago payments, 10 experiences each, department
+decay (linear / exponential / instant) and injected global/local anomalies
+\citep{hemati2022continual}; Elliptic (203,769 tx, 49 steps, drift at 43).}
+\subsection{Baselines}
+\todo{Quarterly retraining, sliding window, SEL, JEL, SFT, EWC, ER, Isolation Forest, XGBoost.}
+\subsection{Setup and metrics}
+\todo{Predict-then-learn stream with delayed labels; AUPRC, recall at top 1\%,
+alert volume at equal recall, recovery time, forgetting, reason-code accuracy,
+labels needed, time, memory. Mean $\pm$ std over 5 seeds.}
+\subsection{Results}
+\todo{Main table generated by script; Table~\ref{tab:baselines} below is the Week-1 reproduction placeholder.}
+\begin{table}[h]
+\centering\small
+\caption{Reproduced baselines on Philadelphia (last experience, 5 seeds); filled from \texttt{results/}.}
+\label{tab:baselines}
+\begin{tabular}{llcc}
+\toprule
+Regime & Scenario & $\Delta$FP & FP ratio \\
+\midrule
+SEL & linear & -- & -- \\
+JEL & full   & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Ablations}
+\todo{1 drift gate, 2 scoring function, 3 replay buffer, 4 EWC strength,
+5 analyst feedback, 6 mask ratio, 7 percentile calibration, 8 canary rollback.}
+
+% ---------------------------------------------------------------------
+\section{Conclusion}\label{sec:conclusion}
+% Budget: 0.5 page. Week 5.
+\todo{Findings, limits (no real bank labels), path to a shadow-mode pilot.}
+
+% ---------------------------------------------------------------------
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
