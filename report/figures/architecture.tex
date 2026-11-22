@@ -1,0 +1,70 @@
+% Figure 1: architecture of the masked-feature model (M1, MaskedFeatureModel).
+% Included from main.tex via \input{figures/architecture}.
+% Needs \usepackage{tikz} and \usetikzlibrary{positioning,arrows.meta}.
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=1.6mm]},
+  node distance=6mm and 5mm,
+  box/.style={draw, rounded corners=2pt, align=center, text width=2.3cm,
+              minimum height=1.5cm, inner sep=2pt},
+  latent/.style={draw, circle, align=center, inner sep=1pt, minimum size=1.1cm},
+  note/.style={align=left, text width=3.2cm, font=\scriptsize}
+]
+% ---- row 1: record -> tokens -> masking -> encoder -> latent ----
+\node[box] (in) {\textbf{Record}\\[1pt]
+  categorical $c_1,\dots,c_F$\\
+  numerical $x_1,\dots,x_K$};
+\node[box, right=of in] (tok) {\textbf{Tokenizer}\\[1pt]
+  $c_j \mapsto$ embedding\\
+  $x_j \mapsto x_j w_j + b_j$\\
+  $t_j \in \mathbb{R}^{16}$};
+\node[box, right=of tok] (mask) {\textbf{Masking} (training)\\[1pt]
+  share $\rho = 0.3$ of tokens\\
+  ($\geq 1$ per row)\\
+  $t_j \mapsto \texttt{[MASK]}_j$};
+\node[box, right=of mask] (enc) {\textbf{Encoder}\\[1pt]
+  flatten $(F{+}K)\times 16$\\
+  MLP $256 \to 128$\\
+  GELU, dropout 0.1};
+\node[latent, right=of enc] (z) {$z$\\ $\in \mathbb{R}^{32}$};
+\node[box, dashed, right=of z, minimum height=0.9cm] (lat) {latent distance\\ (score)};
+% ---- row 2 (right to left): decoder -> heads -> scoring ----
+\node[box, below=of z] (dec) {\textbf{Decoder}\\[1pt]
+  MLP $128 \to 256$\\
+  GELU};
+\node[box, left=of dec] (heads) {\textbf{Output heads}\\[1pt]
+  softmax per $c_j$ (CE)\\
+  linear for $x_j$ (SE)};
+\node[box, left=of heads] (score) {\textbf{Scoring} (inference)\\[1pt]
+  mask one field at a time\\
+  error $=$ surprisal $\ell_j$\\
+  score $= \sum_j \ell_j$\\
+  top-3 $\ell_j$ $=$ reasons};
+\node[note, left=of score] (legend) {Training loss: mean error over the
+  masked fields, Eq.~\eqref{eq:mfr}.\\[2pt]
+  Philadelphia: $F = 7$, $K = 1$.\\
+  Chicago: $F = 6$, $K = 1$.};
+% ---- arrows ----
+\draw[->] (in) -- (tok);
+\draw[->] (tok) -- (mask);
+\draw[->] (mask) -- (enc);
+\draw[->] (enc) -- (z);
+\draw[->, dashed] (z) -- (lat);
+\draw[->] (z) -- (dec);
+\draw[->] (dec) -- (heads);
+\draw[->] (heads) -- (score);
+\end{tikzpicture}%
+}
+\caption{Masked-feature model (M1). Each field of a record becomes a
+16-dimensional token. During training a share $\rho = 0.3$ of the tokens (at
+least one per row) is replaced by a learned per-field \texttt{[MASK]} vector,
+and the model reconstructs the masked fields (Eq.~\eqref{eq:mfr}). At
+inference each field is masked in turn; its error $\ell_j$ is the per-field
+surprisal, the sum over fields is the record's anomaly score and the three
+largest $\ell_j$ give the reason codes. The latent $z$ also feeds a
+latent-distance score (dashed).}
+\label{fig:architecture}
+\end{figure}

@@ -1,33 +1,41 @@
 % =====================================================================
 % COMP 5116 project report -- Control Tower / DriftLedger
-% Section skeleton (Week 1). Font size 10 pt as required by the schedule.
-%
-% NOTE: ProjReportTemplate.zip was not available when this skeleton was
-% created (Nov 2026). Once the course template is added to report/template/,
-% move the \section bodies below into it and keep the 10pt option.
+% Uses the course template (ProjReportTemplate: stylefile.sty = NeurIPS
+% 2023 style, 10pt built in, loads natbib and sets the page layout).
+% Compile on Overleaf with report/stylefile.sty and report/references.bib.
 % Page budget (12--14 pages total, references <= 2 pages):
 %   title+abstract 0.5 | intro 1.25 | related 1.25 | approach 3.5
 %   experiments 4.25 | conclusion 0.5 | references 1.5
 % =====================================================================
-\documentclass[10pt,letterpaper]{article}
+\documentclass{article} % For LaTeX2e
+\PassOptionsToPackage{numbers,sort&compress}{natbib}
+\usepackage[preprint]{stylefile}
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{url}
 
-\usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{xcolor}
-\usepackage[numbers,sort&compress]{natbib}
-\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
 
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 
 \title{Control Tower: A Drift-Aware, Explainable Continual-Learning System\\
 for Fraud and Journal-Entry Risk Monitoring in Banks}
-\author{Bonas Djamadjeu Djietcheu \and Chang Seob Lee\\[2pt]
-\small COMP 5116 Machine Learning, Carleton University, Fall 2026}
+\author{%
+  Bonas Djamadjeu Djietcheu\\
+  Carleton University\\
+  COMP 5116 Machine Learning, Fall 2026
+  \And
+  Chang Seob Lee\\
+  Carleton University\\
+  COMP 5116 Machine Learning, Fall 2026
+}
 \date{}
 
 \begin{document}
@@ -55,28 +63,116 @@ gate; per-field reason codes with analyst feedback; canary rollback; open benchm
 % Budget: 1.25 pages (two subsections of about 0.6 page each).
 \subsection{Continual learning}\label{sec:related-cl}
 % Owner: Bonaventure (Week 2).
-\todo{Regularisation (EWC \citep{kirkpatrick2017overcoming}), replay
-\citep{rolnick2019experience}, libraries \citep{lomonaco2021avalanche}, CL for
-anomaly detection \citep{pezze2022continual}, CL for audit data
-\citep{hemati2022continual,schreyer2022federated}.}
+Continual learning (CL) studies models that are trained on a sequence of
+tasks or data distributions, called experiences, without access to all past
+data. The central problem is catastrophic forgetting: when a neural network is
+fine-tuned on new data, performance on earlier data drops sharply. Two families
+of methods are relevant to our setting. Regularisation methods constrain how
+far the parameters may move. Elastic Weight Consolidation (EWC)
+\citep{kirkpatrick2017overcoming} adds a quadratic penalty that anchors each
+parameter to its value after the previous task, weighted by a diagonal
+approximation of the Fisher information, so that parameters that mattered for
+old tasks change less. Replay methods instead keep a small memory of past
+samples and mix them into training on new data; \citet{rolnick2019experience}
+showed that this simple strategy strongly reduces forgetting. Replay works well
+in practice, but storing raw records is a concern when the data are financial
+transactions, which is why our memory component (M2) treats the buffer size and
+the selection rule as design choices. Open-source libraries such as Avalanche
+\citep{lomonaco2021avalanche} provide standard benchmarks, strategies and
+metrics, which makes CL methods easier to compare under a common protocol.
+
+Most CL research targets supervised classification on image benchmarks.
+\citet{pezze2022continual} study how CL strategies carry over to anomaly
+detection, where the model learns what normal data look like and the notion of
+normal itself changes across experiences; their experiments use image data
+rather than tabular records. Closest to our work, \citet{hemati2022continual}
+apply CL to unsupervised anomaly detection in continuous auditing. They train a
+one-hot-encoded autoencoder on city payment data split into ten experiences, in
+which departments gradually disappear under linear, exponential or instant
+decay, and they inject global and local anomalies. They compare training on
+the single last experience (SEL), joint training on all experiences (JEL), and
+the CL strategies sequential fine-tuning (SFT), EWC and experience replay (ER).
+JEL gives fewer false positives than SEL, and the CL strategies come close to
+JEL without retraining on the full history. We use this setup as our baseline
+and reproduce SEL and JEL in Table~\ref{tab:baselines}.
+\citet{schreyer2022federated} extend the same line of work to federated CL, in
+which several audit clients learn a shared anomaly detector over time without
+pooling their accounting data.
+
+These studies show that forgetting is a real problem for audit anomaly
+detectors and that standard CL strategies reduce it. They measure success with
+reconstruction losses, however, and they treat every change in the data as
+something the model should absorb. They do not separate legitimate business
+drift from anomalies, explain alerts at the level of individual fields, use
+analyst feedback, or protect production from a harmful update. Our system keeps
+the CL core (sequential fine-tuning, EWC and replay with random, diversity and
+high-error buffer rules) but places it inside a monitoring loop that adds these
+missing parts, and it evaluates the loop with operational measures such as
+alert volume at equal recall.
 
 \subsection{Anomaly detection and fraud auditing}\label{sec:related-ad}
 % Owner: Chang Lee (Week 2).
-\todo{Autoencoders for journal entries \citep{schreyer2017detection}; tabular
-deep models and masked reconstruction \citep{gorishniy2021revisiting,thimonier2024beyond};
-Isolation Forest \citep{liu2008isolation}; supervised fraud models under drift
-and feedback \citep{dalpozzolo2018credit,chen2016xgboost}; drift detection
-\citep{bifet2007adwin,gama2014survey}; AML benchmarks \citep{weber2019elliptic,altman2023realistic}.}
+Labelled fraud is rare in accounting data, so audit analytics relies mostly on
+unsupervised anomaly detection. \citet{schreyer2017detection} train deep
+autoencoders on large sets of journal entries and flag entries with a high
+reconstruction error. They distinguish global anomalies, which carry unusual
+attribute values, from local anomalies, which combine common values in an
+unusual way, and they one-hot encode categorical attributes. Research on deep
+models for tabular data offers richer representations.
+\citet{gorishniy2021revisiting} show that a feature tokenizer, which maps each
+categorical or numerical feature to its own embedding, combined with a
+transformer gives a strong baseline, and that tuned MLP and ResNet models are
+competitive with more complex architectures. For anomaly detection,
+\citet{thimonier2024beyond} reconstruct masked features of a sample using the
+other samples in the training set, and use the reconstruction error as the
+anomaly score. Our masked-feature model (Figure~\ref{fig:architecture}) follows
+the same masking idea with per-field embeddings, but it is a compact MLP that
+can be updated continually, and its per-field errors double as reason codes.
+Isolation Forest \citep{liu2008isolation} is a widely used non-neural baseline:
+it isolates points with random axis-parallel splits, and points with a short
+average path length are scored as anomalous. We compare it with three scoring
+functions of our own model: reconstruction error, field-level surprisal and
+latent distance.
+
+When labels exist, fraud detection becomes supervised learning, often with
+gradient-boosted trees such as XGBoost \citep{chen2016xgboost}. 
+\citet{dalpozzolo2018credit} model realistic credit-card fraud detection as a
+stream with concept drift. Investigators check only the alerts the system raises, so
+most labels arrive late and feedback on alerts is biased towards what the model
+already flags. They learn separately from the feedback and from the delayed
+labels and then combine the two. Our evaluation protocol, a predict-then-learn
+stream with delayed labels, follows this view. Drift itself is studied in
+data-stream learning: \citet{gama2014survey} survey concept drift adaptation,
+and ADWIN \citep{bifet2007adwin} keeps an adaptive window that shrinks when
+two sub-windows have significantly different means. Detectors like these
+signal that something changed, but not whether the change is a new normal or a
+burst of anomalies.
+
+Public financial-crime benchmarks show why the distinction matters. The
+Elliptic dataset \citep{weber2019elliptic} contains about 203{,}000 Bitcoin
+transactions over 49 time steps. After a dark market shuts down around step 43,
+the models in the original study no longer detect new illicit activity, a clear
+case of regime change. Because real labelled bank transactions are rarely
+available, \citet{altman2023realistic} release synthetic transaction data with
+labelled laundering patterns for anti-money-laundering research. Compared with
+this body of work, our design treats drift and anomaly as different events. A
+gate decides whether a change should update the model, per-field surprisal
+yields reason codes that analysts can confirm or reject, and each update is
+checked on a canary set and rolled back if it degrades. The individual
+components are known; our contribution is their combination in one
+continual-learning system and its evaluation with operational measures.
 
 % ---------------------------------------------------------------------
 \section{Approach}\label{sec:approach}
 % Budget: 3.5 pages. Owner: Bonaventure (Week 3). Dataset descriptions go in Sec. 4, not here.
 \todo{Hypothesis: a drift-gated, explainable CL detector cuts alert volume by
 $\geq$20\% vs.\ quarterly retraining at equal recall.}
-\todo{Figure 1: model architecture. Figure 2: pipeline (feed $\rightarrow$ score
+\todo{Figure 2: pipeline (feed $\rightarrow$ score
 $\rightarrow$ reasons $\rightarrow$ analyst $\rightarrow$ drift gate $\rightarrow$ update/rollback).}
 
 \subsection{M1: Masked-feature continual detector}
+\input{figures/architecture}
+Figure~\ref{fig:architecture} shows the architecture of the masked-feature model.
 Each record has categorical fields $c_1,\dots,c_F$ and numerical fields
 $x_1,\dots,x_K$. Field $j$ is mapped to a token $t_j\in\mathbb{R}^d$ (an
 embedding for categorical fields, $t_j = x_j w_j + b_j$ for numerical ones).
@@ -140,7 +236,7 @@ JEL & full & $-1.44 \pm 0.06$ & $-1.36 \pm 0.05$ & $0.05 \pm 0.01$ & $0.62 \pm 0
 \todo{Findings, limits (no real bank labels), path to a shadow-mode pilot.}
 
 % ---------------------------------------------------------------------
-\bibliographystyle{plainnat}
+\bibliographystyle{abbrvnat}
 \bibliography{references}
 
 \end{document}
