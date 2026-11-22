@@ -8,6 +8,7 @@ baseline_ae:
   epochs: 100
   # continual strategies (training/strategies.py; used by the finetune regime)
   ewc_lambda: 1.0e+4     # sanity run (Philadelphia, linear, 3 epochs): lambda/2*penalty ~ loss under free drift
+  # evidence: results/logs/ewc_lambda_sanity.log (scripts/ewc_lambda_sanity.py)
   ewc_samples: 2048      # records sampled per experience for the diagonal Fisher
   buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
   buffer_rule: random    # random | diversity | high_error
@@ -25,6 +26,7 @@ masked:
   epochs: 30
   # continual strategies (training/strategies.py; used by the finetune regime)
   ewc_lambda: 1.0e+4     # sanity run (Philadelphia, linear, 3 epochs): lambda/2*penalty ~ loss under free drift
+  # evidence: results/logs/ewc_lambda_sanity.log (scripts/ewc_lambda_sanity.py)
   ewc_samples: 2048      # records sampled per experience for the diagonal Fisher
   buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
   buffer_rule: random    # random | diversity | high_error

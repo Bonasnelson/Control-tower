@@ -11,6 +11,8 @@ model was trained on before E10); the other scorers only use the trained model.
 
     python scripts/run_v1.py --cities philadelphia chicago --seeds 0 1 2
     python scripts/run_v1.py --quick     # 2 epochs, seed 0: smoke test
+    ... --forgetting 200   # opt-in: hold out 200 normal records per E1..E9 and report forgetting
+                           # (controltower/forgetting.py); outputs get a _forgetting suffix
 
 Writes results/v1_<city>_scoring.csv (one row per seed x scorer; with --quick:
 v1_<city>_scoring_quick.csv), and results/v1_scoring_summary{.md,.tex} built from
@@ -21,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import json
 import time
 from pathlib import Path
 
@@ -28,6 +31,7 @@ import numpy as np
 import pandas as pd
 import torch
 
+from controltower.forgetting import ForgettingTracker, holdout_split
 from controltower.data.payments import build_experiences, load_or_prepare, load_yaml
 from controltower.metrics import evaluate_last_experience
 from controltower.scoring import SCORERS, score
@@ -41,7 +45,8 @@ SCORER_LABEL = {"recon_error": "Reconstruction error", "field_surprisal": "Field
                 "latent_distance": "Latent $k$-NN distance", "isolation_forest": "Isolation forest"}
 
 
-def run_city(city: str, seeds: list[int], cfg: dict, scenario: str, quick: bool) -> pd.DataFrame:
+def run_city(city: str, seeds: list[int], cfg: dict, scenario: str, quick: bool,
+             forgetting: int = 0, forgetting_log: list | None = None) -> pd.DataFrame:
     data = load_or_prepare(city, ROOT, seed=0)
     scen = load_yaml(ROOT / "configs" / "scenarios" / f"{scenario}.yaml")
     print(f"{city}: {len(data):,} records, cfg={cfg}", flush=True)
@@ -49,10 +54,18 @@ def run_city(city: str, seeds: list[int], cfg: dict, scenario: str, quick: bool)
     for seed in seeds:
         exps = build_experiences(data, scen, np.random.default_rng(seed))
         hooks = make_hooks("replay", cfg, data, seed)
-        model, hist = run_regime("finetune", "masked", data, exps, cfg, seed, hooks=hooks)
+        tracker = None
+        if forgetting:  # optional (off by default): hold out normal records of E1..E9, never trained on
+            exps, held = holdout_split(data, exps, per_experience=forgetting, seed=seed)
+            tracker = ForgettingTracker(data, held)
+        model, hist = run_regime("finetune", "masked", data, exps, cfg, seed, hooks=hooks,
+                                 on_experience=tracker.on_experience if tracker else None)
+        fsum = tracker.summary() if tracker else None
+        if fsum is not None and forgetting_log is not None:
+            forgetting_log.append({"city": city, "seed": seed, "strategy": "replay", "buffer_rule": cfg["buffer_rule"], **fsum})
         print(f"[{city} s{seed}] trained in {hist.seconds:.0f}s, final loss {hist.epoch_loss[-1][-1]:.4f}",
               flush=True)
-        if not quick:
+        if not quick and not forgetting:
             run_dir = ROOT / "results" / "runs"
             run_dir.mkdir(parents=True, exist_ok=True)
             torch.save(model.state_dict(), run_dir / f"v1_{city}_s{seed}.pt")
@@ -66,6 +79,9 @@ def run_city(city: str, seeds: list[int], cfg: dict, scenario: str, quick: bool)
                    "train_seconds": round(hist.seconds, 1), "score_seconds": round(secs, 2),
                    "epochs": cfg["epochs"], "buffer_size": cfg["buffer_size"],
                    "buffer_rule": cfg["buffer_rule"], "scenario": scenario}
+            if fsum is not None:
+                row.update(forgetting_final_mean=fsum["final_mean"], forgetting_mean=fsum["forgetting_mean"],
+                           forgetting_per_experience=forgetting)
             rows.append(row)
             print(f"[{city} s{seed} {name:16s}] AUPRC={row['auprc']:.3f} R@1%={row['recall_at_1pct']:.2f} "
                   f"dFP={row['delta_fp']:+.4f} FP={row['fp_ratio']:.2f} FN={row['fn_ratio']:.2f} "
@@ -123,9 +139,12 @@ def main() -> None:
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--quick", action="store_true", help="2 epochs, seed 0")
     ap.add_argument("--summary-only", action="store_true", help="rebuild the summary from existing CSVs")
+    ap.add_argument("--forgetting", type=int, default=0, metavar="N",
+                    help="hold out N normal records per experience E1..E9 and report forgetting (default 0 = off). "
+                         "Outputs get a _forgetting suffix; the default outputs and saved models are not touched")
     a = ap.parse_args()
     out_dir = ROOT / "results"
-    suffix = "_quick" if a.quick else ""
+    suffix = ("_forgetting" if a.forgetting else "") + ("_quick" if a.quick else "")
     if a.summary_only:
         write_summary(out_dir, suffix)
         return
@@ -136,8 +155,11 @@ def main() -> None:
     if a.epochs is not None:
         cfg["epochs"] = a.epochs
     for city in a.cities:
-        df = run_city(city, a.seeds, cfg, a.scenario, a.quick)
+        flog: list = []
+        df = run_city(city, a.seeds, cfg, a.scenario, a.quick, forgetting=a.forgetting, forgetting_log=flog)
         df.to_csv(out_dir / f"v1_{city}_scoring{suffix}.csv", index=False)
+        if a.forgetting:
+            (out_dir / f"forgetting_v1_{city}{suffix}.json").write_text(json.dumps(flog, indent=1), encoding="utf-8")
     write_summary(out_dir, suffix)
 
 

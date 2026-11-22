@@ -1,0 +1,26 @@
+EWC λ sanity: philadelphia, linear, seed 0, experiences E1-E3 (9500, 9610, 9390 records), 3 epochs each
+
+masked      λ=0       E1: loss=2.28 penalty mean=0 end=0 λ/2·end=0 Fisher sum=1.05 (5.7s train, 0.3s Fisher)
+masked      λ=0       E2: loss=1.944 penalty mean=0.00011 end=0.000212 λ/2·end=0 Fisher sum=2.13 (4.6s train, 0.31s Fisher)
+masked      λ=0       E3: loss=1.8 penalty mean=0.000167 end=0.00033 λ/2·end=0 Fisher sum=3.25 (4.6s train, 0.33s Fisher)
+masked      λ=10000   E1: loss=2.28 penalty mean=0 end=0 λ/2·end=0 Fisher sum=1.05 (3.5s train, 0.34s Fisher)
+masked      λ=10000   E2: loss=2.009 penalty mean=1.01e-05 end=1.48e-05 λ/2·end=0.0741 Fisher sum=2.11 (4.7s train, 0.31s Fisher)
+masked      λ=10000   E3: loss=1.907 penalty mean=8.81e-06 end=1.09e-05 λ/2·end=0.0545 Fisher sum=3.28 (4.6s train, 0.32s Fisher)
+baseline_ae λ=0       E1: loss=0.07479 penalty mean=0 end=0 λ/2·end=0 Fisher sum=0.0311 (4.8s train, 0.28s Fisher)
+baseline_ae λ=0       E2: loss=0.005052 penalty mean=1.08e-06 end=1.92e-06 λ/2·end=0 Fisher sum=0.0311 (7.0s train, 0.27s Fisher)
+baseline_ae λ=0       E3: loss=0.004677 penalty mean=2.42e-07 end=5.77e-07 λ/2·end=0 Fisher sum=0.0311 (7.1s train, 0.28s Fisher)
+
+| model | λ | exp | loss (last epoch) | penalty mean | penalty end | λ/2 · penalty end | Fisher sum |
+|---|---|---|---|---|---|---|---|
+| masked | 0 | E1 | 2.28 | 0 | 0 | 0 | 1.05 |
+| masked | 0 | E2 | 1.944 | 0.00011 | 0.000212 | 0 | 2.13 |
+| masked | 0 | E3 | 1.8 | 0.000167 | 0.00033 | 0 | 3.25 |
+| masked | 10000 | E1 | 2.28 | 0 | 0 | 0 | 1.05 |
+| masked | 10000 | E2 | 2.009 | 1.01e-05 | 1.48e-05 | 0.0741 | 2.11 |
+| masked | 10000 | E3 | 1.907 | 8.81e-06 | 1.09e-05 | 0.0545 | 3.28 |
+| baseline_ae | 0 | E1 | 0.07479 | 0 | 0 | 0 | 0.0311 |
+| baseline_ae | 0 | E2 | 0.005052 | 1.08e-06 | 1.92e-06 | 0 | 0.0311 |
+| baseline_ae | 0 | E3 | 0.004677 | 2.42e-07 | 5.77e-07 | 0 | 0.0311 |
+
+masked, free drift: λ that makes λ/2·penalty equal the loss at the end of E2/E3 ≈ 1.46e+04
+total 50s

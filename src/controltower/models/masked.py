@@ -1,9 +1,10 @@
 """M1: masked-feature reconstruction model for mixed tabular data.
 
-Instead of a 5,588-wide one-hot input, every categorical field gets a learned
-embedding (Gorishniy et al., 2021) and every numerical field a small linear
-encoder. During training a random share of fields (``mask_ratio``) is replaced
-by a learned [MASK] vector and the network must predict the original values:
+Instead of a wide one-hot input (5,825 columns for our Philadelphia encoding;
+5,588 in the paper), every categorical field gets a learned embedding
+(Gorishniy et al., 2021) and every numerical field a small linear encoder.
+During training a random share of fields (``mask_ratio``) is replaced by a
+learned [MASK] vector and the network must predict the original values:
 cross-entropy for categorical fields, squared error for numerical ones.
 
 Scoring masks one field at a time and records how surprised the model is by
@@ -51,6 +52,8 @@ class MaskedFeatureModel(nn.Module):
     def tokens(self, cat: torch.Tensor, num: torch.Tensor) -> torch.Tensor:
         cat_tok = [emb(cat[:, j]) for j, emb in enumerate(self.embeddings)]
         num_tok = num.unsqueeze(-1) * self.num_weight + self.num_bias  # (n, K, d)
+        if not cat_tok:  # numerical-only data (e.g. Elliptic): no categorical tokens
+            return num_tok
         return torch.cat([torch.stack(cat_tok, 1), num_tok], 1)        # (n, F, d)
 
     def forward(self, cat, num, mask: torch.Tensor):
@@ -65,6 +68,8 @@ class MaskedFeatureModel(nn.Module):
         """(n, F): cross-entropy per categorical field, squared error per numeric field."""
         ce = [F.cross_entropy(l, cat[:, j], reduction="none") for j, l in enumerate(logits)]
         se = (num_hat - num) ** 2
+        if not ce:  # numerical-only data
+            return se
         return torch.cat([torch.stack(ce, 1), se], 1)
 
     def random_mask(self, n: int, device) -> torch.Tensor:

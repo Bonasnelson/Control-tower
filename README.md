@@ -45,8 +45,11 @@ Local and global anomaly losses are lower than in the paper (JEL local 11.9 vs 3
 somewhat harder. Run time: SEL ≈ 4 min per seed, JEL ≈ 40–75 min per seed on a 12-core CPU.
 
 Preliminary M1 check (1 seed, 10 epochs, `results/baselines_philadelphia_masked_m1check.csv`): fine-tuning the
-masked-feature model over the 10 experiences gives AUPRC 0.74 and Recall@1% 0.95. In
-`scripts/check_reason_codes.py`, 70% of its top-3 reason codes on global anomalies are the corrupted fields.
+masked-feature model over the 10 experiences gives AUPRC 0.74 and Recall@1% 0.95. A separate check,
+`scripts/check_reason_codes.py`, trains the masked model on the last experience only (SEL, 10 epochs, seed 0); 70% of
+its top-3 reason codes on the 10 global anomalies are corrupted fields
+(`results/logs/check_reason_codes_philadelphia_masked_sel.log`). For model v1 (fine-tuned over E1–E10, 3 seeds) see
+`results/reason_codes_summary.md`.
 
 ### Week 2 result: model v1 scoring comparison (`results/v1_scoring_summary.md`)
 

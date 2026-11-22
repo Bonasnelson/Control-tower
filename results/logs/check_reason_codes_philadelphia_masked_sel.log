@@ -1,0 +1,12 @@
+top-3 ['char_', 'vendor_name', 'fm']  corrupted ['char_', 'transaction_amount', 'vendor_name']
+top-3 ['char_', 'vendor_name', 'contract_number']  corrupted ['char_', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'contract_number', 'fm']  corrupted ['contract_number', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'doc_ref_no_prefix', 'fm']  corrupted ['doc_ref_no_prefix', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'char_', 'dept']  corrupted ['char_', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'contract_number', 'sub_obj']  corrupted ['contract_number', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'contract_number', 'doc_ref_no_prefix']  corrupted ['contract_number', 'transaction_amount', 'vendor_name']
+top-3 ['vendor_name', 'sub_obj', 'fm']  corrupted ['sub_obj', 'transaction_amount', 'vendor_name']
+top-3 ['doc_ref_no_prefix', 'vendor_name', 'contract_number']  corrupted ['doc_ref_no_prefix', 'transaction_amount', 'vendor_name']
+top-3 ['fm', 'vendor_name', 'transaction_amount']  corrupted ['fm', 'transaction_amount', 'vendor_name']
+
+reason-code accuracy (share of top-3 that are corrupted fields): 0.70 over 10 global anomalies

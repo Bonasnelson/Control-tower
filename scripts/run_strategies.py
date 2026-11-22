@@ -9,6 +9,8 @@ Evaluation on the last experience E10 with the field-surprisal score
 
     python scripts/run_strategies.py --cities philadelphia --seeds 0
     python scripts/run_strategies.py --quick          # 2 epochs, both cities, seed 0
+    ... --forgetting 200   # opt-in: hold out 200 normal records per E1..E9 and report forgetting
+                           # (controltower/forgetting.py); outputs get a _forgetting suffix
 
 Outputs (rows are appended after every run, so partial results survive):
 * results/strategies_<city>.csv - one row per (strategy, buffer_rule, seed)
@@ -31,6 +33,7 @@ from controltower.data.payments import GLOBAL_ANOMALY, LOCAL_ANOMALY, build_expe
 from controltower.metrics import evaluate_last_experience
 from controltower.training.loop import run_regime, score_records
 from controltower.training.strategies import EWC, ReplayBuffer, combine_hooks
+from controltower.forgetting import ForgettingTracker, chain, holdout_split
 
 ROOT = Path(__file__).resolve().parents[1]
 METRICS = ["auprc", "recall_at_1pct", "delta_fp", "fp_ratio", "fn_ratio"]
@@ -42,7 +45,7 @@ def group_name(data, g: int) -> str:
     return {GLOBAL_ANOMALY: "GLOBAL_ANOM", LOCAL_ANOMALY: "LOCAL_ANOM"}.get(int(g)) or data.dept_names[int(g)]
 
 
-def run_one(data, exps, cfg, strategy, rule, seed):
+def run_one(data, exps, cfg, strategy, rule, seed, forgetting: int = 0):
     parts, buf = [], None
     if "ewc" in strategy:
         parts.append(EWC(data, cfg["ewc_lambda"], n_samples=cfg.get("ewc_samples", 2048), seed=seed))
@@ -59,8 +62,15 @@ def run_one(data, exps, cfg, strategy, rule, seed):
             composition.append({"experience": f"E{e + 1}", "size": int(len(g)),
                                 "counts": {group_name(data, v): int(c) for v, c in zip(vals, counts)}})
 
-    model, hist = run_regime("finetune", "masked", data, exps, cfg, seed, hooks=hooks, on_experience=on_experience)
+    tracker = None
+    if forgetting:  # optional (off by default): hold out normal records of E1..E9, never trained on
+        exps, held = holdout_split(data, exps, per_experience=forgetting, seed=seed)
+        tracker = ForgettingTracker(data, held)
+    model, hist = run_regime("finetune", "masked", data, exps, cfg, seed, hooks=hooks,
+                             on_experience=chain(on_experience, tracker.on_experience if tracker else None))
     res = evaluate_last_experience(score_records(model, data, exps[-1]), data, exps[-1])
+    if tracker is not None:
+        res["forgetting"] = tracker.summary()
     return res, hist, composition
 
 
@@ -96,6 +106,9 @@ def main() -> None:
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--quick", action="store_true", help="2 epochs; outputs get a _quick suffix")
     ap.add_argument("--summary-only", action="store_true")
+    ap.add_argument("--forgetting", type=int, default=0, metavar="N",
+                    help="hold out N normal records per experience E1..E9 and report forgetting (default 0 = off). "
+                         "Outputs get a _forgetting suffix; the default outputs are not touched")
     a = ap.parse_args()
     out_dir = ROOT / "results"
     if a.summary_only:
@@ -103,7 +116,7 @@ def main() -> None:
         return
     if a.quick:
         a.epochs = 2
-    sfx = "_quick" if a.quick else ""
+    sfx = ("_forgetting" if a.forgetting else "") + ("_quick" if a.quick else "")
     torch.set_num_threads(a.threads)
     cfg = copy.deepcopy(load_yaml(ROOT / "configs" / "train.yaml")["masked"])
     if a.epochs is not None:
@@ -117,18 +130,24 @@ def main() -> None:
         buffers = {"city": city, "scenario": a.scenario, "buffer_size": cfg["buffer_size"],
                    "departments": data.dept_names, "target_department": data.dept_names[data.target_group],
                    "runs": []}
-        rows = []
+        rows, flog = [], []
         print(f"{city}: {len(data):,} records, cfg={cfg}", flush=True)
         for seed in a.seeds:
             exps = build_experiences(data, scen, np.random.default_rng(seed))
             for strategy, rule in CONFIGS:
-                res, hist, comp = run_one(data, exps, cfg, strategy, rule, seed)
+                res, hist, comp = run_one(data, exps, cfg, strategy, rule, seed, forgetting=a.forgetting)
                 row = {"city": city, "seed": seed, "strategy": strategy, "buffer_rule": rule,
                        **{m: res[m] for m in METRICS}, "train_seconds": round(hist.seconds, 1),
                        "final_train_loss": hist.epoch_loss[-1][-1], "epochs": cfg["epochs"],
                        "ewc_lambda": cfg["ewc_lambda"] if "ewc" in strategy else None,
                        "buffer_size": cfg["buffer_size"] if rule else None, "scenario": a.scenario,
                        "scorer": "field_surprisal"}
+                if "forgetting" in res:
+                    f = res["forgetting"]
+                    row.update(forgetting_final_mean=f["final_mean"], forgetting_mean=f["forgetting_mean"],
+                               forgetting_per_experience=a.forgetting)
+                    flog.append({"city": city, "seed": seed, "strategy": strategy, "buffer_rule": rule, **f})
+                    (out_dir / f"forgetting_strategies_{city}{sfx}.json").write_text(json.dumps(flog, indent=1), encoding="utf-8")
                 rows.append(row)
                 pd.DataFrame(rows).to_csv(csv_path, index=False)
                 if comp:
@@ -138,7 +157,7 @@ def main() -> None:
                 print(f"[{city} s{seed} {strategy:10s} {rule or '-':10s}] AUPRC={row['auprc']:.3f} "
                       f"R@1%={row['recall_at_1pct']:.2f} dFP={row['delta_fp']:+.4f} FP={row['fp_ratio']:.2f} "
                       f"FN={row['fn_ratio']:.2f} ({hist.seconds:.0f}s)", flush=True)
-    if not a.quick:
+    if not a.quick and not a.forgetting:
         write_summary(out_dir, ["philadelphia", "chicago"])
 
 

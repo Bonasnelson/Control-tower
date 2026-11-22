@@ -2,8 +2,8 @@
 
 Fully connected encoder/decoder (default 128-64-32-16-8-4-2 and mirror), LeakyReLU
 (slope 0.4), tanh bottleneck, sigmoid output, Xavier-uniform init and BCE loss.
-One-hot vectors are built per batch from integer codes, so the full
-(n x 5,588) matrix never has to exist in memory.
+One-hot vectors are built per batch from integer codes, so the full one-hot
+matrix (n x 5,825 for our Philadelphia encoding) never has to exist in memory.
 """
 from __future__ import annotations
 

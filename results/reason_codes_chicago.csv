@@ -1,0 +1,7 @@
+city,seed,kind,n_records,n_fields,mean_corrupted_fields,hit_any,hit_share,chance_hit_any,chance_hit_share,model_file,scorer,top
+chicago,0,global,10,7,3.0,1.0,0.5333333333333333,0.8857142857142858,0.42857142857142855,v1_chicago_s0.pt,field_surprisal,3
+chicago,0,local,10,7,5.0,1.0,0.9333333333333332,1.0,0.7142857142857143,v1_chicago_s0.pt,field_surprisal,3
+chicago,1,global,10,7,3.0,1.0,0.6333333333333333,0.8857142857142858,0.42857142857142855,v1_chicago_s1.pt,field_surprisal,3
+chicago,1,local,10,7,5.0,1.0,0.7666666666666667,1.0,0.7142857142857143,v1_chicago_s1.pt,field_surprisal,3
+chicago,2,global,10,7,3.0,0.9,0.4666666666666666,0.8857142857142858,0.42857142857142855,v1_chicago_s2.pt,field_surprisal,3
+chicago,2,local,10,7,5.0,1.0,0.8666666666666666,1.0,0.7142857142857143,v1_chicago_s2.pt,field_surprisal,3
