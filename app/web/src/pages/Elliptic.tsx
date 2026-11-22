@@ -84,7 +84,7 @@ function EllipticView({ e }: { e: EllipticResp }) {
             <li key={t}><code className="rounded-control bg-plane px-2 py-1 font-code text-xs text-ink-2" translate="no">{t}</code></li>
           ))}
         </ul>
-        <p className="mt-4 text-xs text-ink-3">Run them with <code className="font-code">py -3.12 -m pytest -q tests/test_elliptic.py</code>.</p>
+        <p className="mt-4 text-xs text-ink-3">Run them with <code className="font-code">python -m pytest -q tests/test_elliptic.py</code>.</p>
         {e.results_files.length > 0 && (
           <p className="mt-4 text-sm text-ink-2">Result files found: {e.results_files.map((f) => <Source key={f} path={`results/${f}`} />)}</p>
         )}

@@ -11,7 +11,7 @@ are missing. Screenshots go to $CT_SMOKE_SHOTS if set, else to a pytest temp dir
     py -3.12 -m pytest -q -p no:cacheprovider tests/web/smoke_dashboard.py
     CT_SMOKE_SHOTS=<dir> py -3.12 -m pytest -q tests/web/smoke_dashboard.py
 
-To add a page (e.g. Strategies after T7), append one entry to PAGES.
+To add a page, append one entry to PAGES.
 """
 from __future__ import annotations
 
@@ -36,9 +36,10 @@ PAGES: dict[str, tuple[str, str]] = {
     "overview": ("Anomaly detection that keeps up with changing city payments", "does not exist yet"),
     "stream": ("The payment stream, E1 to E10", "does not exist yet"),
     "scoring": ("Which score finds the anomalies?", "does not exist yet"),
+    "strategies": ("Which continual-learning strategy helps?", "does not exist yet"),
     "alerts": ("Records flagged in E10", "does not exist yet"),
     "elliptic": ("Elliptic Bitcoin transactions", "Blocked: the dataset is not in the repository"),
-    # "strategies": ("…", "does not exist yet"),   # hook: add after T7
+    # add new pages here (id -> expected h1, text shown when its results are missing)
 }
 WIDTHS = [(1440, 1000), (390, 844)]
 

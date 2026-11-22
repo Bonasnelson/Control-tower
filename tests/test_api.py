@@ -127,3 +127,38 @@ def test_paper_reference(monkeypatch, tmp_path):
     p = c.get("/api/baselines").json()["paper"]
     assert p["verified"] is False and p["unit_note"] == "u" and p["JEL"]["L_rec_target_x1e3_std"] == 0.01
     assert p["SEL"]["delta_fp_x1e3"] == "+1.00 / -0.50 / +2.00" and p["JEL"]["delta_fp_x1e3"] == "-1.00 ± 0.10"
+
+
+def test_strategies(monkeypatch, tmp_path):
+    # real repo: one row per configuration, labels, seed 0
+    s = load_app(monkeypatch, ROOT).get("/api/strategies").json()
+    if s["status"] == "ok":
+        for city, c in s["cities"].items():
+            assert len(c["rows"]) == 6 and c["seeds"] == [0]
+            assert [r["label"] for r in c["rows"]] == ["None (plain fine-tuning)", "EWC", "Replay, random",
+                                                       "Replay, diversity", "Replay, high error", "EWC + replay (random)"]
+            if c["buffer"]:
+                assert {e["experience"] for e in c["buffer"]["runs"][0]["experiences"]} >= {"E9", "E10"}
+
+    # temp root: pending without CSV; shares computed from counts; quick files ignored
+    (tmp_path / "results" / "dashboard").mkdir(parents=True)
+    c = load_app(monkeypatch, tmp_path)
+    assert c.get("/api/strategies").json()["status"] == "pending"
+    (tmp_path / "results" / "strategies_x_quick.csv").write_text("city,seed\nx,0\n")
+    assert c.get("/api/strategies").json()["status"] == "pending"
+    (tmp_path / "results" / "strategies_x.csv").write_text(
+        "city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,epochs,scorer\n"
+        "x,0,none,,0.5,0.6,1.5,0,0.1,10,2,field_surprisal\nx,0,replay,high_error,0.7,0.8,-1,0,0.2,12,2,field_surprisal\n")
+    s = c.get("/api/strategies").json()
+    rows = s["cities"]["x"]["rows"]
+    assert s["status"] == "ok" and [r["label"] for r in rows] == ["None (plain fine-tuning)", "Replay, high error"]
+    assert rows[0]["buffer_rule"] is None and rows[1]["delta_fp"] == -1.0 and s["cities"]["x"]["buffer"] is None
+    (tmp_path / "results" / "dashboard" / "x_buffer.json").write_text(json.dumps({
+        "city": "x", "buffer_size": 10, "departments": ["a", "b"], "target_department": "a",
+        "runs": [{"strategy": "replay", "buffer_rule": "high_error", "seed": 0, "experiences": [
+            {"experience": "E9", "size": 10, "counts": {"a": 4, "b": 6}},
+            {"experience": "E10", "size": 10, "counts": {"a": 1, "b": 6, "GLOBAL_ANOM": 2, "LOCAL_ANOM": 1}}]}]}))
+    b = c.get("/api/strategies").json()["cities"]["x"]["buffer"]
+    e9, e10 = b["runs"][0]["experiences"]
+    assert (e9["target_share"], e9["injected"], e9["other"]) == (0.4, 0, 6)
+    assert (e10["target"], e10["injected"], e10["other"]) == (1, 3, 6) and e10["injected_share"] == 0.3

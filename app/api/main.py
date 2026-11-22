@@ -271,3 +271,63 @@ def elliptic() -> dict:
                   "data": "synthetic CSVs the tests write (6 time steps × 20 transactions)"},
         "results_files": results,
     }
+
+
+# ----------------------------------------------------------------------- strategies (D2/D3)
+STRATEGY_METRICS = ["auprc", "recall_at_1pct", "delta_fp", "fp_ratio", "fn_ratio", "train_seconds"]
+ANOMALY_GROUPS = ("GLOBAL_ANOM", "LOCAL_ANOM")
+
+
+def strategy_label(strategy: str, rule: str | None) -> str:
+    base = {"none": "None (plain fine-tuning)", "ewc": "EWC", "replay": "Replay", "ewc+replay": "EWC + replay"}.get(strategy, strategy)
+    if not rule:
+        return base
+    rule_txt = rule.replace("_", " ")
+    return f"{base}, {rule_txt}" if strategy == "replay" else f"{base} ({rule_txt})"
+
+
+def _buffer_summary(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    d = json.loads(path.read_text(encoding="utf-8"))
+    target = d["target_department"]
+    runs = []
+    for r in d["runs"]:
+        exps = []
+        for e in r["experiences"]:
+            counts = e["counts"]
+            size = sum(counts.values()) or 1
+            injected = sum(counts.get(k, 0) for k in ANOMALY_GROUPS)
+            t = counts.get(target, 0)
+            exps.append({"experience": e["experience"], "size": e["size"], "target": t, "injected": injected,
+                         "other": size - t - injected, "target_share": t / size, "injected_share": injected / size,
+                         "other_share": (size - t - injected) / size})
+        runs.append({"strategy": r["strategy"], "buffer_rule": r["buffer_rule"], "seed": r["seed"],
+                     "label": strategy_label(r["strategy"], r["buffer_rule"]), "experiences": exps})
+    return {"source": f"results/dashboard/{path.name}", "target_department": target,
+            "buffer_size": d.get("buffer_size"), "runs": runs}
+
+
+@app.get("/api/strategies")
+def strategies() -> dict:
+    files = sorted(RESULTS.glob("strategies_*.csv"))
+    files = [p for p in files if not p.stem.endswith("_quick")]
+    if not files:
+        return pending("results/strategies_<city>.csv", "python scripts/run_strategies.py --seeds 0")
+    out = {}
+    for p in files:
+        rows = read_csv(p)
+        if not rows:
+            continue
+        city = rows[0]["city"]
+        out[city] = {
+            "source": f"results/{p.name}",
+            "seeds": sorted({int(r["seed"]) for r in rows}),
+            "epochs": int(float(rows[0]["epochs"])),
+            "scorer": rows[0].get("scorer", ""),
+            "rows": [{"strategy": r["strategy"], "buffer_rule": r["buffer_rule"] or None,
+                      "label": strategy_label(r["strategy"], r["buffer_rule"] or None), "seed": int(r["seed"]),
+                      **{m: num(r.get(m)) for m in STRATEGY_METRICS}} for r in rows],
+            "buffer": _buffer_summary(RESULTS / "dashboard" / f"{city}_buffer.json"),
+        }
+    return {"status": "ok", "metrics": STRATEGY_METRICS, "cities": out}

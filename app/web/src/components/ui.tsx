@@ -75,7 +75,7 @@ export function PendingState({ p, title = "Not computed yet" }: { p?: Pending; t
       </p>
       <p className="mt-4 text-sm text-ink-2">Create it with:</p>
       <pre className="mt-2 overflow-x-auto rounded-control bg-plane px-3 py-2 font-code text-sm text-ink"
-        translate="no">{p?.command ?? "py -3.12 scripts/run_v1.py"}</pre>
+        translate="no">{p?.command ?? "python scripts/run_v1.py"}</pre>
     </div>
   );
 }
@@ -86,7 +86,7 @@ export function ErrorBanner({ message }: { message: string }) {
       <StatusIcon kind="critical" />
       <div>
         <p className="font-medium text-ink">The API did not answer: {message}</p>
-        <p className="mt-1 text-ink-2">Start the backend with <code className="font-code">py -3.12 scripts/run_dashboard.py</code> and reload.</p>
+        <p className="mt-1 text-ink-2">Start the backend with <code className="font-code">python scripts/run_dashboard.py</code> and reload.</p>
       </div>
     </div>
   );

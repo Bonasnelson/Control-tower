@@ -67,24 +67,27 @@ A read-only web dashboard for the demo. It shows only numbers read from files in
 computed yet shows the file it needs and the command that creates it.
 
 ```bash
-py -3.12 -m pip install -r app/requirements.txt   # fastapi + uvicorn (once)
+python -m pip install -r app/requirements.txt   # fastapi + uvicorn (once)
 cd app/web && npm ci && cd ../..                   # front-end packages, pinned in package-lock.json (once)
-py -3.12 scripts/run_dashboard.py                  # http://127.0.0.1:5173 ; Ctrl+C stops both servers
+python scripts/run_dashboard.py                  # http://127.0.0.1:5173 ; Ctrl+C stops both servers
 ```
 
 `run_dashboard.py` starts the API (uvicorn, port 8000) and the Vite dev server (port 5173, which proxies `/api`),
 waits until `/api/health` answers through the proxy, and stops both on Ctrl+C. Options: `--open` (browser),
 `--install` (run `npm ci` if needed), `--check` (start, check, stop), `--api-port`, `--web-port`, `--log-dir`.
 Fonts are bundled, so it works offline.
+On Windows with several Pythons installed, use `py -3.12` instead of `python` in these commands.
 
 | Page | Shows | Reads |
 |---|---|---|
 | Overview | Week-1 baseline reproduction vs the paper; v1 scorer summary | `results/summary_philadelphia_baseline_ae.md`, `results/v1_<city>_scoring.csv` |
 | Data stream | records per department E1–E10 (chart + table) | `results/experiences_<city>_linear.csv` |
 | Scoring | v1 scorers: AUPRC and Recall@1% with ± std, all metrics | `results/v1_<city>_scoring.csv` |
-| Alerts | top-1% records on E10, per-field surprisal, reason codes | `results/dashboard/<city>_alerts.json` (`py -3.12 scripts/export_dashboard_data.py`) |
+| Strategies | none / EWC / replay (3 rules) / EWC+replay on E10 (seed 0), replay-buffer composition | `results/strategies_<city>.csv`, `results/dashboard/<city>_buffer.json` (`python scripts/run_strategies.py`) |
+| Alerts | top-1% records on E10, per-field surprisal, reason codes | `results/dashboard/<city>_alerts.json` (`python scripts/export_dashboard_data.py`) |
+| Elliptic | blocked until the Kaggle files are in `data/elliptic/`; what is ready | `data/elliptic/`, `src/controltower/data/elliptic.py` |
 
-Checks: `py -3.12 -m pytest -q -p no:cacheprovider tests/test_api.py` (API), and in `app/web`:
+Checks: `python -m pytest -q -p no:cacheprovider tests/test_api.py` (API), and in `app/web`:
 `npm run typecheck`, `npm run build`, and `node --experimental-strip-types --no-warnings checks/<page>_values.ts`
 (with the API on port 8765) to compare every displayed value with its source file.
 

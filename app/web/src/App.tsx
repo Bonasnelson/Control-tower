@@ -4,14 +4,16 @@ import Stream from "./pages/Stream";
 import Scoring from "./pages/Scoring";
 import Alerts from "./pages/Alerts";
 import Elliptic from "./pages/Elliptic";
+import Strategies from "./pages/Strategies";
 
 export { PageHeader } from "./components/ui";
 
-export type Page = "overview" | "stream" | "scoring" | "alerts" | "elliptic";
+export type Page = "overview" | "stream" | "scoring" | "strategies" | "alerts" | "elliptic";
 const NAV: { id: Page; label: string }[] = [
   { id: "overview", label: "Overview" },
   { id: "stream", label: "Data stream" },
   { id: "scoring", label: "Scoring" },
+  { id: "strategies", label: "Strategies" },
   { id: "alerts", label: "Alerts" },
   { id: "elliptic", label: "Elliptic" },
 ];
@@ -75,6 +77,7 @@ export default function App() {
           {page === "overview" && <Overview go={go} />}
           {page === "stream" && <Stream />}
           {page === "scoring" && <Scoring />}
+          {page === "strategies" && <Strategies />}
           {page === "alerts" && <Alerts />}
           {page === "elliptic" && <Elliptic />}
         </main>
