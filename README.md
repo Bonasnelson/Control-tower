@@ -61,6 +61,33 @@ of the linear scenario with a 2,000-record random replay buffer; scored on E10, 
 | Latent k-NN distance | 0.23 ± 0.03 | 0.32 ± 0.06 | 0.25 ± 0.06 | 0.53 ± 0.08 |
 | Isolation forest | 0.36 ± 0.07 | 0.53 ± 0.03 | 0.23 ± 0.06 | 0.43 ± 0.03 |
 
+## Demo dashboard
+
+A read-only web dashboard for the demo. It shows only numbers read from files in `results/`; anything not
+computed yet shows the file it needs and the command that creates it.
+
+```bash
+py -3.12 -m pip install -r app/requirements.txt   # fastapi + uvicorn (once)
+cd app/web && npm ci && cd ../..                   # front-end packages, pinned in package-lock.json (once)
+py -3.12 scripts/run_dashboard.py                  # http://127.0.0.1:5173 ; Ctrl+C stops both servers
+```
+
+`run_dashboard.py` starts the API (uvicorn, port 8000) and the Vite dev server (port 5173, which proxies `/api`),
+waits until `/api/health` answers through the proxy, and stops both on Ctrl+C. Options: `--open` (browser),
+`--install` (run `npm ci` if needed), `--check` (start, check, stop), `--api-port`, `--web-port`, `--log-dir`.
+Fonts are bundled, so it works offline.
+
+| Page | Shows | Reads |
+|---|---|---|
+| Overview | Week-1 baseline reproduction vs the paper; v1 scorer summary | `results/summary_philadelphia_baseline_ae.md`, `results/v1_<city>_scoring.csv` |
+| Data stream | records per department E1–E10 (chart + table) | `results/experiences_<city>_linear.csv` |
+| Scoring | v1 scorers: AUPRC and Recall@1% with ± std, all metrics | `results/v1_<city>_scoring.csv` |
+| Alerts | top-1% records on E10, per-field surprisal, reason codes | `results/dashboard/<city>_alerts.json` (`py -3.12 scripts/export_dashboard_data.py`) |
+
+Checks: `py -3.12 -m pytest -q -p no:cacheprovider tests/test_api.py` (API), and in `app/web`:
+`npm run typecheck`, `npm run build`, and `node --experimental-strip-types --no-warnings checks/<page>_values.ts`
+(with the API on port 8765) to compare every displayed value with its source file.
+
 ## Layout
 
 ```
@@ -74,7 +101,9 @@ src/controltower/
   training/loop.py       training loop; regimes single / joint / finetune; hooks for EWC & replay (Week 2)
   training/strategies.py EWC and replay buffer (random / diversity / high_error) as loop hooks
   metrics.py             dFP, FP/FN ratios, AUPRC, recall@1%, reason codes
-scripts/                 download, prepare, run baselines
+scripts/                 download, prepare, run baselines / v1 / strategies, export + launch the dashboard
+app/api/                 read-only FastAPI backend for the dashboard (serves configs/ and results/)
+app/web/                 dashboard front end (React + Vite + TypeScript + Tailwind + Recharts)
 tests/                   synthetic-data tests (fresh-clone check)
 report/                  LaTeX report (10 pt, section skeleton) + references.bib
 docs/meetings/           agendas + .ics invites; docs/literature/ novelty check

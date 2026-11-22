@@ -2,6 +2,7 @@
 // frontend-design, web-design-guidelines and composition-patterns skills (React 18: no
 // React-19-only APIs) and the dataviz skill (charts always paired with a table view).
 import { createContext, useContext, useEffect, useId, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import type { Loadable, Pending } from "../api";
 import { isPending } from "../api";
 import { CHART } from "../palette";
@@ -152,7 +153,7 @@ export function Segmented<T extends string>({ label, value, options, onChange }:
     refs.current[j]?.focus();
   };
   return (
-    <div role="radiogroup" aria-label={label} className="inline-flex rounded-control border border-line bg-plane p-0.5">
+    <div role="radiogroup" aria-label={label} className="inline-flex max-w-full flex-wrap rounded-control border border-line bg-plane p-0.5">
       {options.map((o, i) => {
         const on = o.value === value;
         return (
@@ -205,15 +206,17 @@ export const ChartPanel = Object.assign(ChartPanelRoot, { Chart: ChartSlot, Tabl
 
 /* --------------------------------------------------------------- tables */
 
-export function DataTable({ caption, columns, rows }: {
+export function DataTable({ caption, columns, rows, minWidth = 560 }: {
   caption: string;
+  /** px below which the table scrolls inside its region (0 = always fit the container). */
+  minWidth?: number;
   columns: { key: string; label: string; align?: "left" | "right" }[];
   rows: Record<string, ReactNode>[];
 }) {
   // Wide tables scroll inside a focusable, labelled region instead of clipping (keyboard users can scroll it).
   return (
     <div role="region" tabIndex={0} aria-label={caption} className="overflow-x-auto rounded-control">
-    <table className="w-full min-w-[560px] border-collapse text-sm">
+    <table className="w-full border-collapse text-sm" style={{ minWidth }}>
       <caption className="sr-only">{caption}</caption>
       <thead>
         <tr>
@@ -262,7 +265,8 @@ export function Drawer({ title, open, onClose, children }: { title: string; open
     return () => { document.removeEventListener("keydown", onKey); before?.focus(); };
   }, [open, onClose]);
   if (!open) return null;
-  return (
+  // Portal to <body>: escapes parent layout (e.g. space-y margins) and stacking contexts.
+  return createPortal(
     <div className="fixed inset-0 z-40 flex justify-end">
       <div aria-hidden="true" className="absolute inset-0 bg-plane/70" onClick={onClose} />
       <div ref={panel} role="dialog" aria-modal="true" aria-labelledby={id} tabIndex={-1}
@@ -276,7 +280,8 @@ export function Drawer({ title, open, onClose, children }: { title: string; open
         </div>
         <div className="px-6 py-5">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
