@@ -213,8 +213,9 @@ labels needed, time, memory. Mean $\pm$ std over 5 seeds.}
 \begin{table}[h]
 \centering\small
 \caption{Reproduced baselines on Philadelphia, one-hot autoencoder, last experience, mean $\pm$ std over
-5 seeds, 100 epochs. $\Delta$FP is in mean BCE $\times10^{3}$; paper values are from
-\citet{hemati2022continual}, Table~2. SEL is identical across decay scenarios because it only sees
+5 seeds, 100 epochs. Our $\Delta$FP is in our own unit, mean BCE $\times10^{3}$. Paper values are from
+\citet{hemati2022continual}, Table~2, which reports $\Delta$FP without stating a unit; our
+$\times10^{3}$ values land on the same scale. SEL is identical across decay scenarios because it only sees
 the last experience.}
 \label{tab:baselines}
 \begin{tabular}{llcccccc}
