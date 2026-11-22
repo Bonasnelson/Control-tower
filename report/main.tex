@@ -176,21 +176,107 @@ Figure~\ref{fig:architecture} shows the architecture of the masked-feature model
 Each record has categorical fields $c_1,\dots,c_F$ and numerical fields
 $x_1,\dots,x_K$. Field $j$ is mapped to a token $t_j\in\mathbb{R}^d$ (an
 embedding for categorical fields, $t_j = x_j w_j + b_j$ for numerical ones).
-A random mask $m\in\{0,1\}^{F+K}$ with rate $\rho$ replaces tokens by a learned
-vector, and the model minimises
+A random mask $m\in\{0,1\}^{F+K}$ hides each field with probability $\rho$
+(at least one field per record). The masked token sequence is $\tilde t$, with
+$\tilde t_j = u_j$ if $m_j = 1$ and $\tilde t_j = t_j$ otherwise, where
+$u_j\in\mathbb{R}^d$ is a learned \texttt{[MASK]} vector for field $j$. The
+encoder maps the flattened $\tilde t$ to a latent code $z\in\mathbb{R}^{32}$, and
+the decoder and output heads predict every field from $z$. For a mini-batch $B$
+the model minimises the mean error over all masked fields in the batch,
 \begin{equation}
-\mathcal{L}_{\text{rec}} = \frac{1}{\lVert m\rVert_1}\sum_{j} m_j\,\ell_j,\qquad
+\mathcal{L}_{\text{rec}}(B) = \frac{\sum_{n\in B}\sum_{j} m^{(n)}_j\,\ell^{(n)}_j}{\sum_{n\in B}\lVert m^{(n)}\rVert_1},\qquad
 \ell_j = \begin{cases}-\log p_\theta(c_j \mid \tilde t) & \text{categorical}\\
 (\hat x_j - x_j)^2 & \text{numerical}\end{cases}
 \label{eq:mfr}
 \end{equation}
-\todo{Eq.~2 EWC penalty; Eq.~3 replay objective; Eq.~4 drift statistic; Eq.~5 fused score.}
+where $m^{(n)}$ and $\ell^{(n)}_j$ are the mask and the field errors of record $n$,
+and $\hat x_j$ is the prediction from $\tilde t$.
 
-\subsection{M2: Privacy-aware memory}
-\todo{Buffer selection rules: random, diversity, high error. Memory in MB.}
+\paragraph{Continual training.}
+The detector is trained by sequential fine-tuning (SFT) over the experiences
+$E_1,\dots,E_N$: the parameters $\theta$ carry over from one experience to the
+next, and each experience is trained for a fixed number of epochs with a newly
+created Adam optimiser. With EWC \citep{kirkpatrick2017overcoming}, every
+mini-batch loss on experience $E_e$ gets a quadratic penalty,
+\begin{equation}
+\begin{aligned}
+\mathcal{L}(B) &= \mathcal{L}_{\text{rec}}(B) + \frac{\lambda}{2}\sum_i \Omega_i\,(\theta_i - \theta^{*}_i)^2,\\
+\Omega_i &= \sum_{e' < e} \Omega^{(e')}_i,\qquad
+\Omega^{(e')}_i = \frac{1}{|\mathcal{B}_{e'}|}\sum_{b\in\mathcal{B}_{e'}}
+\Bigl(\frac{\partial \mathcal{L}_{\text{rec}}(b)}{\partial \theta_i}\Bigr)^{2}.
+\end{aligned}
+\label{eq:ewc}
+\end{equation}
+We write $\Omega$ for the diagonal Fisher information because $F$ already
+denotes the number of categorical fields. $\Omega^{(e')}$ is estimated at the
+end of experience $e'$ from 2{,}048 sampled records of $E_{e'}$, split into a
+set $\mathcal{B}_{e'}$ of mini-batches of 64, with dropout switched off and fresh
+random masks. The diagonal Fishers of all past experiences are summed, and
+$\theta^{*}$ is the snapshot of the parameters after the latest experience. The
+penalty is zero during $E_1$, and $\lambda = 10^{4}$. With replay, every epoch of
+experience $E_e$ trains on the current experience together with a memory
+$\mathcal{M}$ of earlier records,
+\begin{equation}
+\mathcal{D}_e = E_e \cup \mathcal{M}_{e-1},\qquad |\mathcal{M}_{e-1}| \le 2{,}000,\qquad \mathcal{M}_0 = \emptyset,
+\label{eq:replay}
+\end{equation}
+which is reshuffled into mini-batches each epoch. The memory is refreshed after
+every experience by one of the rules of Section~\ref{sec:m2}. Neither EWC nor
+replay uses labels, and the two can be combined.
+
+\paragraph{Scoring.}
+A trained model scores a record $r$ with one of four functions, where a higher
+score means more anomalous. Let $\ell_j(r; m)$ be the error of field $j$ under
+mask $m$, $\mathbf{0}$ the empty mask, and $e_j$ the mask that hides field $j$
+alone. Then
+\begin{align}
+s_{\text{rec}}(r) &= \sum_{j} \ell_j(r; \mathbf{0}), &
+s_{\text{surp}}(r) &= \sum_{j} \ell_j(r; e_j), \label{eq:score-model}\\
+s_{\text{lat}}(r) &= \frac{1}{k}\sum_{z'\in N_k(r)} \lVert z(r) - z'\rVert_2, &
+s_{\text{IF}}(r) &= 2^{-\mathbb{E}[h(\phi(r))]/c(\psi)}. \label{eq:score-ref}
+\end{align}
+The reconstruction error $s_{\text{rec}}$ measures how well the visible fields
+are copied through the bottleneck. The field surprisal $s_{\text{surp}}$ asks
+instead whether the other fields predict each field, and its per-field terms
+$\ell_j(r; e_j)$ give the top-3 reason codes (Section~\ref{sec:m4}). For the
+latent distance, $z(r)$ is the latent code with nothing masked and $N_k(r)$ holds
+the $k = 10$ nearest latent codes of a reference set $R$ (records of
+$E_1,\dots,E_9$, subsampled to at most 20{,}000). Isolation Forest
+\citep{liu2008isolation} does not use our model: $\phi(r)$ replaces each
+categorical value by its relative frequency in $R$ and appends the numerical
+fields, $h$ is the path length in one tree of a forest of 200 trees fitted on
+$R$, and $c(\psi)$ is the usual normalisation for trees grown on subsamples of
+size $\psi$.
+
+\subsection{M2: Privacy-aware memory}\label{sec:m2}
+The replay memory $\mathcal{M}$ of Eq.~\eqref{eq:replay} holds at most
+$|\mathcal{M}| = 2{,}000$ records, about 20\% of one experience. It is refreshed
+after every experience without using labels, by one of three rules. The
+\emph{random} rule is reservoir sampling over all records seen so far: after
+$n$ records have been seen, each of them is in memory with the same probability
+$|\mathcal{M}|/n$. The other two rules select from a pool
+$P_e = \mathcal{M}_{e-1}\cup C_e$, where $C_e$ is a random sample of at most
+5{,}000 records of $E_e$; if the pool is no larger than the memory, it is kept
+whole. The \emph{diversity} rule runs greedy $k$-center selection on the latent
+codes $z$ of the current model. Starting from one random record, it repeatedly
+adds the record farthest from those already chosen,
+\begin{equation}
+r^{\star} = \arg\max_{r\in P_e}\ \min_{s\in\mathcal{M}_e} \lVert z(r) - z(s)\rVert_2,
+\label{eq:kcenter}
+\end{equation}
+until $|\mathcal{M}_e| = 2{,}000$. The \emph{high-error} rule keeps the records
+that the current model finds most surprising,
+\begin{equation}
+\mathcal{M}_e = \operatorname{top}_{|\mathcal{M}|}\bigl\{\, s_{\text{surp}}(r) : r\in P_e \,\bigr\},
+\label{eq:higherror}
+\end{equation}
+that is, the $|\mathcal{M}|$ records of $P_e$ with the highest field surprisal
+(Eq.~\eqref{eq:score-model}).
+\todo{Memory footprint of the buffer in MB.}
 \subsection{M3: Drift versus anomaly}
-\todo{ADWIN on latent statistics, distribution distance, regime-change confirmation.}
-\subsection{M4: Reason codes and feedback}
+\todo{ADWIN on latent statistics, distribution distance, regime-change confirmation;
+equation for the drift statistic.}
+\subsection{M4: Reason codes and feedback}\label{sec:m4}
 \todo{Per-field surprisal $\ell_j$ gives the top-3 reasons; feedback re-ranking.}
 \subsection{M5: Governance and safety}
 \todo{Canary set, versioning, rollback rule, model-card report \citep{mitchell2019model} aligned with E-23.}
@@ -199,9 +285,96 @@ vector, and the model minimises
 \section{Experiments}\label{sec:experiments}
 % Budget: 4.25 pages. Setup drafted Week 4 (Chang Lee); results Week 4 (both).
 \subsection{Datasets}
-\todo{Philadelphia (238,894) and Chicago payments, 10 experiences each, department
-decay (linear / exponential / instant) and injected global/local anomalies
-\citep{hemati2022continual}; Elliptic (203,769 tx, 49 steps, drift at 43).}
+\paragraph{City payments.}
+We follow the benchmark construction of \citet{hemati2022continual} and use
+two public payment ledgers. The Philadelphia City Payments data for fiscal year
+2017 (OpenDataPhilly) have 238{,}894 records, of which 180{,}684 belong to the
+ten departments with the most payments. The Chicago Payments data
+(data.cityofchicago.org) have 192{,}175 records with a department, of which
+134{,}563 belong to the top ten departments. For Philadelphia we use $F = 7$
+categorical fields (\texttt{fm}, \texttt{dept}, \texttt{char\_},
+\texttt{sub\_obj}, \texttt{vendor\_name}, \texttt{doc\_ref\_no\_prefix},
+\texttt{contract\_number}) and $K = 1$ numerical field
+(\texttt{transaction\_amount}). For Chicago we use $F = 6$ categorical fields
+(department name, vendor name, contract number, the first four characters of
+the voucher number, and the year and month of the check date) and $K = 1$
+numerical field (the amount). Categorical values are stored as integer codes,
+and amounts are min-max scaled to $[0, 1]$. The top ten Philadelphia
+departments are, by number of payments, 25, 10, 22, 28, 14, 52, 23, 11, 42
+and 12; in Chicago they are Family and Support Services, General Services,
+Aviation, Public Health, Transportation, Water Management, Human Resources,
+Planning and Development, Fleet and Facility Management, and Buildings.
+
+\paragraph{Experiences and decay.}
+Each city is split into $N = 10$ experiences. Every department contributes a
+disjoint slice of 1{,}000 records to each experience, of which a share drawn
+from $U[0.9, 1]$ is kept. The exception is the target department $A'$, the
+second largest in each city (department 10 in Philadelphia, General Services
+in Chicago), which is being discontinued: it keeps a scheduled share of its
+slice. The share falls from 1 to 0.01 in steps of 0.11 under \emph{linear}
+decay; it is roughly multiplied by 0.6 per experience under \emph{exponential}
+decay (1, 0.6, 0.36, \dots, 0.01); and it drops to 0 after $E_1$ under
+\emph{instant} decay, with 0.01 in $E_{10}$. A \emph{full} scenario without
+decay is used for joint training. Departments with fewer than 10{,}000 records
+run out of data in $E_7$--$E_{10}$, as in the reference code.
+Table~\ref{tab:experiences} gives the resulting stream for the linear scenario.
+
+\paragraph{Injected anomalies.}
+As in \citet{hemati2022continual}, we inject two kinds of anomalies. A
+\emph{global} anomaly is a copy of a real record whose vendor and one other
+categorical field get values that never occur in the data, and whose amount is
+set to 2 to 5 times the 99.9th percentile. A \emph{local} anomaly uses only
+common values, but each field other than the department is copied from a
+record of a different department, which gives combinations that do not occur
+in the data. We generate pools of 100 anomalies of each kind, and 10\% of each
+pool (10 global and 10 local anomalies) enter the last experience $E_{10}$ only.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Records per experience in the linear-decay scenario
+(\texttt{results/experiences\_*\_linear.csv}). $A'$ is the decaying target
+department, ``other'' the remaining nine departments, and ``anom.'' the
+injected global and local anomalies.}
+\label{tab:experiences}
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+City & Records & $E_1$ & $E_2$ & $E_3$ & $E_4$ & $E_5$ & $E_6$ & $E_7$ & $E_8$ & $E_9$ & $E_{10}$ \\
+\midrule
+Philadelphia & $A'$  & 1000 & 890 & 780 & 670 & 560 & 450 & 340 & 230 & 120 & 10 \\
+             & other & 8500 & 8720 & 8610 & 8450 & 8500 & 8530 & 7269 & 5830 & 5590 & 4429 \\
+             & anom. & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 20 \\
+             & total & 9500 & 9610 & 9390 & 9120 & 9060 & 8980 & 7609 & 6060 & 5710 & 4459 \\
+\midrule
+Chicago      & $A'$  & 1000 & 890 & 780 & 670 & 560 & 450 & 340 & 230 & 120 & 10 \\
+             & other & 8640 & 8460 & 8470 & 8610 & 8560 & 8142 & 5673 & 5012 & 4730 & 4348 \\
+             & anom. & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 20 \\
+             & total & 9640 & 9350 & 9250 & 9280 & 9120 & 8592 & 6013 & 5242 & 4850 & 4378 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Deviations from the original setup.}
+The authors' encoded files were never published, so we rebuilt the encoding
+from the raw data. With the Philadelphia fields above, the one-hot width used
+by the baseline autoencoder is 5{,}825, compared with 5{,}588 in the paper. The
+Chicago portal now offers only six columns, and the department is filled for
+192{,}175 records, whereas the paper used 399{,}158 records with 66 categorical
+attributes. Chicago contract numbers take about 31{,}000 values, so we cap them
+at 2{,}000 values and merge the rarer ones into a single ``other'' value. We generate the anomalies with the paper's definitions but
+without the Faker library used by the authors. For these reasons, Chicago
+numbers are not directly comparable with the paper.
+
+\paragraph{Elliptic.}
+To test drift on a public financial-crime benchmark, the project will also use
+the Elliptic Bitcoin dataset \citep{weber2019elliptic} from Kaggle. It
+consists of three tables: transaction features, transaction classes, and the
+transaction graph's edge list. It holds 203{,}769 transactions over 49 time
+steps, each with anonymised features including its time step, labelled
+illicit, licit or unknown. A dark-market shutdown around step 43 provides a
+known regime change. A loader that builds a delayed-label stream from these
+files has been written and tested on synthetic files; no Elliptic results are
+reported yet.
 \subsection{Baselines}
 \todo{Quarterly retraining, sliding window, SEL, JEL, SFT, EWC, ER, Isolation Forest, XGBoost.}
 \subsection{Setup and metrics}
