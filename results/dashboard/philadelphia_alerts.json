@@ -1,0 +1,9220 @@
+{
+ "city": "philadelphia",
+ "seed": 0,
+ "scenario": "linear",
+ "model_file": "v1_philadelphia_s0.pt",
+ "experience": "E10",
+ "n_eval": 4459,
+ "budget": 0.01,
+ "n_alerts": 45,
+ "n_injected": {
+  "global": 10,
+  "local": 10
+ },
+ "target_department": "10",
+ "numeric_note": "numerical fields are min-max scaled to [0, 1]",
+ "alerts": {
+  "recon_error": [
+   {
+    "rank": 1,
+    "row": 120255,
+    "score": 26.307165145874023,
+    "kind": "normal"
+   },
+   {
+    "rank": 2,
+    "row": 120258,
+    "score": 26.257503509521484,
+    "kind": "normal"
+   },
+   {
+    "rank": 3,
+    "row": 60834,
+    "score": 25.962007522583008,
+    "kind": "normal"
+   },
+   {
+    "rank": 4,
+    "row": 106626,
+    "score": 25.954940795898438,
+    "kind": "normal"
+   },
+   {
+    "rank": 5,
+    "row": 105831,
+    "score": 25.943222045898438,
+    "kind": "normal"
+   },
+   {
+    "rank": 6,
+    "row": 36219,
+    "score": 25.4390926361084,
+    "kind": "normal"
+   },
+   {
+    "rank": 7,
+    "row": 30611,
+    "score": 25.2385311126709,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 110343,
+    "score": 25.219249725341797,
+    "kind": "normal"
+   },
+   {
+    "rank": 9,
+    "row": 177607,
+    "score": 25.034391403198242,
+    "kind": "normal"
+   },
+   {
+    "rank": 10,
+    "row": 82606,
+    "score": 24.864164352416992,
+    "kind": "normal"
+   },
+   {
+    "rank": 11,
+    "row": 25944,
+    "score": 24.793581008911133,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 180794,
+    "score": 24.47530746459961,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 13,
+    "row": 180813,
+    "score": 24.098793029785156,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 14,
+    "row": 175037,
+    "score": 23.736610412597656,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 143070,
+    "score": 23.561870574951172,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 115376,
+    "score": 23.536306381225586,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 159298,
+    "score": 22.77328109741211,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 152680,
+    "score": 22.766599655151367,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 141857,
+    "score": 22.734785079956055,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 22562,
+    "score": 22.730276107788086,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 6916,
+    "score": 22.68291664123535,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 180760,
+    "score": 22.67339515686035,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 23,
+    "row": 72287,
+    "score": 22.634111404418945,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 145550,
+    "score": 22.389389038085938,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 177270,
+    "score": 22.332557678222656,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 180811,
+    "score": 22.224637985229492,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 27,
+    "row": 143869,
+    "score": 22.162933349609375,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 180864,
+    "score": 22.00463104248047,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 29,
+    "row": 36099,
+    "score": 21.54361343383789,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 127351,
+    "score": 21.525014877319336,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 32994,
+    "score": 21.335479736328125,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 26276,
+    "score": 21.24995231628418,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 134194,
+    "score": 21.02924346923828,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 68718,
+    "score": 20.994918823242188,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 22576,
+    "score": 20.841962814331055,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 22573,
+    "score": 20.84145164489746,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 152826,
+    "score": 20.81689453125,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 165798,
+    "score": 20.785219192504883,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 36607,
+    "score": 20.742321014404297,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 45353,
+    "score": 20.72523307800293,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 63856,
+    "score": 20.68199348449707,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 94992,
+    "score": 20.681419372558594,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 169011,
+    "score": 20.680519104003906,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 171799,
+    "score": 20.68041229248047,
+    "kind": "normal"
+   },
+   {
+    "rank": 45,
+    "row": 107166,
+    "score": 20.67510986328125,
+    "kind": "normal"
+   }
+  ],
+  "field_surprisal": [
+   {
+    "rank": 1,
+    "row": 180864,
+    "score": 30.143285751342773,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 2,
+    "row": 180793,
+    "score": 29.081886291503906,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 3,
+    "row": 180794,
+    "score": 28.887157440185547,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 4,
+    "row": 180842,
+    "score": 27.479656219482422,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 5,
+    "row": 180811,
+    "score": 25.37200927734375,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 6,
+    "row": 110353,
+    "score": 22.343706130981445,
+    "kind": "normal"
+   },
+   {
+    "rank": 7,
+    "row": 180817,
+    "score": 21.8728084564209,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 8,
+    "row": 180750,
+    "score": 21.57454490661621,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 9,
+    "row": 180830,
+    "score": 21.17193603515625,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 10,
+    "row": 13798,
+    "score": 20.657333374023438,
+    "kind": "normal"
+   },
+   {
+    "rank": 11,
+    "row": 180702,
+    "score": 20.39609146118164,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 12,
+    "row": 180868,
+    "score": 20.09731674194336,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 13,
+    "row": 180760,
+    "score": 17.331829071044922,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 14,
+    "row": 180719,
+    "score": 16.744529724121094,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 15,
+    "row": 180697,
+    "score": 16.408472061157227,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 16,
+    "row": 5609,
+    "score": 16.233253479003906,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 28106,
+    "score": 15.963907241821289,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 180759,
+    "score": 15.938837051391602,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 19,
+    "row": 58926,
+    "score": 15.422714233398438,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 86200,
+    "score": 14.849519729614258,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 131273,
+    "score": 14.615751266479492,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 56231,
+    "score": 14.59280014038086,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 120243,
+    "score": 14.426904678344727,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 33615,
+    "score": 14.245598793029785,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 35165,
+    "score": 14.095719337463379,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 180705,
+    "score": 13.979662895202637,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 27,
+    "row": 66210,
+    "score": 13.832025527954102,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 169997,
+    "score": 13.334041595458984,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 150576,
+    "score": 13.308521270751953,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 157532,
+    "score": 13.297993659973145,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 9320,
+    "score": 13.184806823730469,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 180813,
+    "score": 13.083030700683594,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 33,
+    "row": 77012,
+    "score": 13.0718994140625,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 73233,
+    "score": 12.924993515014648,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 146367,
+    "score": 12.776104927062988,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 90481,
+    "score": 12.705841064453125,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 87405,
+    "score": 12.556732177734375,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 157723,
+    "score": 12.453447341918945,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 5269,
+    "score": 12.396718978881836,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 3545,
+    "score": 12.339493751525879,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 99114,
+    "score": 12.171284675598145,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 157664,
+    "score": 12.134422302246094,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 180775,
+    "score": 12.108598709106445,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 44,
+    "row": 165517,
+    "score": 12.070682525634766,
+    "kind": "normal"
+   },
+   {
+    "rank": 45,
+    "row": 22587,
+    "score": 12.061407089233398,
+    "kind": "normal"
+   }
+  ],
+  "latent_distance": [
+   {
+    "rank": 1,
+    "row": 180813,
+    "score": 9.704257354556324,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 2,
+    "row": 82454,
+    "score": 8.824958942197865,
+    "kind": "normal"
+   },
+   {
+    "rank": 3,
+    "row": 180868,
+    "score": 8.43747906313221,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 4,
+    "row": 10516,
+    "score": 8.381546530138476,
+    "kind": "normal"
+   },
+   {
+    "rank": 5,
+    "row": 10515,
+    "score": 8.381542226960375,
+    "kind": "normal"
+   },
+   {
+    "rank": 6,
+    "row": 180811,
+    "score": 8.267643929318613,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 7,
+    "row": 180702,
+    "score": 8.111041900322673,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 8,
+    "row": 180830,
+    "score": 7.875404216632522,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 9,
+    "row": 180568,
+    "score": 7.808262564428905,
+    "kind": "normal"
+   },
+   {
+    "rank": 10,
+    "row": 13798,
+    "score": 7.655733145076823,
+    "kind": "normal"
+   },
+   {
+    "rank": 11,
+    "row": 180585,
+    "score": 7.49383044354222,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 180592,
+    "score": 7.4936819710719815,
+    "kind": "normal"
+   },
+   {
+    "rank": 13,
+    "row": 36009,
+    "score": 7.297261569776959,
+    "kind": "normal"
+   },
+   {
+    "rank": 14,
+    "row": 51953,
+    "score": 7.283072703229884,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 24508,
+    "score": 6.991045053469785,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 12197,
+    "score": 6.970479415337931,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 169233,
+    "score": 6.93238495523823,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 117476,
+    "score": 6.923346517812237,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 33045,
+    "score": 6.858747558383821,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 99135,
+    "score": 6.640839398656395,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 99136,
+    "score": 6.64083318684806,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 117306,
+    "score": 6.606899909099968,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 43564,
+    "score": 6.547202778345889,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 79573,
+    "score": 6.456782833743574,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 164286,
+    "score": 6.324394385018183,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 180570,
+    "score": 6.278257485627627,
+    "kind": "normal"
+   },
+   {
+    "rank": 27,
+    "row": 148716,
+    "score": 6.269651798316537,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 146367,
+    "score": 6.2600124122793215,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 119054,
+    "score": 6.198143856672169,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 23116,
+    "score": 6.084544976981834,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 46549,
+    "score": 6.029429568259132,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 46543,
+    "score": 6.029354964657667,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 46566,
+    "score": 6.029245268030399,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 514,
+    "score": 6.019719470930706,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 174243,
+    "score": 5.903735195093295,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 19,
+    "score": 5.9014207490288495,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 31598,
+    "score": 5.890074011548222,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 156669,
+    "score": 5.887915663511173,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 64230,
+    "score": 5.865865707786348,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 168289,
+    "score": 5.848111570083239,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 41773,
+    "score": 5.802393133047279,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 712,
+    "score": 5.797661045592443,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 161721,
+    "score": 5.718864624415295,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 180576,
+    "score": 5.7134279905538845,
+    "kind": "normal"
+   },
+   {
+    "rank": 45,
+    "row": 62574,
+    "score": 5.705635912785014,
+    "kind": "normal"
+   }
+  ],
+  "isolation_forest": [
+   {
+    "rank": 1,
+    "row": 180719,
+    "score": 0.7137880710140765,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 2,
+    "row": 180697,
+    "score": 0.6894682023682791,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 3,
+    "row": 180702,
+    "score": 0.683080377079112,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 4,
+    "row": 180750,
+    "score": 0.6789954841957501,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 5,
+    "row": 180760,
+    "score": 0.6700247453632285,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 6,
+    "row": 180705,
+    "score": 0.6699783246495353,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 7,
+    "row": 49790,
+    "score": 0.6692725442003458,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 170678,
+    "score": 0.6670861898730884,
+    "kind": "normal"
+   },
+   {
+    "rank": 9,
+    "row": 170647,
+    "score": 0.6668605573466894,
+    "kind": "normal"
+   },
+   {
+    "rank": 10,
+    "row": 180759,
+    "score": 0.665242438052233,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 11,
+    "row": 125386,
+    "score": 0.661079087137704,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 171324,
+    "score": 0.659104416330018,
+    "kind": "normal"
+   },
+   {
+    "rank": 13,
+    "row": 56231,
+    "score": 0.6584618456790486,
+    "kind": "normal"
+   },
+   {
+    "rank": 14,
+    "row": 156240,
+    "score": 0.6580817724953574,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 131273,
+    "score": 0.6558714169443807,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 61410,
+    "score": 0.6552565411635815,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 180775,
+    "score": 0.65313711832914,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 18,
+    "row": 124560,
+    "score": 0.6523676038773774,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 142544,
+    "score": 0.6508288523786939,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 101100,
+    "score": 0.6507808569449796,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 85181,
+    "score": 0.6506857893364888,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 180704,
+    "score": 0.6486474213360078,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 23,
+    "row": 155401,
+    "score": 0.6469375756415192,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 3070,
+    "score": 0.6458332386478622,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 179275,
+    "score": 0.6438955800429038,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 29028,
+    "score": 0.6430966487300277,
+    "kind": "normal"
+   },
+   {
+    "rank": 27,
+    "row": 180723,
+    "score": 0.6415897461712323,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 28,
+    "row": 30124,
+    "score": 0.6414312017938666,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 130049,
+    "score": 0.6401547789958726,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 32435,
+    "score": 0.6321102977193483,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 41773,
+    "score": 0.6308880052215237,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 175,
+    "score": 0.6269188100803085,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 158707,
+    "score": 0.6250015480393366,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 124607,
+    "score": 0.6245954666494379,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 170391,
+    "score": 0.6241401528195245,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 66380,
+    "score": 0.622296715006174,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 164194,
+    "score": 0.6202770507708765,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 109370,
+    "score": 0.6191870699708041,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 18688,
+    "score": 0.6172697760024096,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 61506,
+    "score": 0.6168061039738921,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 177607,
+    "score": 0.616122794415098,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 166103,
+    "score": 0.6152479185417832,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 15989,
+    "score": 0.614847366688588,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 60149,
+    "score": 0.6135167609486769,
+    "kind": "normal"
+   },
+   {
+    "rank": 45,
+    "row": 60147,
+    "score": 0.6135167609486769,
+    "kind": "normal"
+   }
+  ]
+ },
+ "records": {
+  "19": {
+   "row": 19,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 3.584869623184204
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.16816017031669617
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.00019774865359067917
+    },
+    {
+     "name": "sub_obj",
+     "value": "335",
+     "surprisal": 0.2506389319896698
+    },
+    {
+     "name": "vendor_name",
+     "value": "CRAFT OIL CORPORATION",
+     "surprisal": 0.01943918876349926
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0011325619416311383
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.553222894668579
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000866,
+     "surprisal": 3.5495068004820496e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "175": {
+   "row": 175,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.5425095558166504
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0006912940880283713
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.01086179818958044
+    },
+    {
+     "name": "sub_obj",
+     "value": "604",
+     "surprisal": 0.9108660221099854
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARUSONE CONSTRUCTION INC",
+     "surprisal": 0.12370821833610535
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0017711918335407972
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 4.486743927001953
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.002271,
+     "surprisal": 0.0026191321667283773
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "sub_obj"
+   ]
+  },
+  "514": {
+   "row": 514,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 2.304328441619873
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.028934292495250702
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.9205850296420977e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": 1.5508185625076294
+    },
+    {
+     "name": "vendor_name",
+     "value": "KEMIRA WATER SOLUTIONS INC",
+     "surprisal": 1.3991376161575317
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 5.675415515899658
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.5141145586967468
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000907,
+     "surprisal": 5.612382665276527e-07
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "fm",
+    "sub_obj"
+   ]
+  },
+  "712": {
+   "row": 712,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.6724257469177246
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 0.5460166931152344
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00167444150429219
+    },
+    {
+     "name": "sub_obj",
+     "value": "285",
+     "surprisal": 0.11143796890974045
+    },
+    {
+     "name": "vendor_name",
+     "value": "D.J. CAMPANILE",
+     "surprisal": 0.18342626094818115
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 0.008902146480977535
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.00047636605449952185
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000809,
+     "surprisal": 0.0012723600957542658
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "dept",
+    "vendor_name"
+   ]
+  },
+  "3070": {
+   "row": 3070,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 2.4618325233459473
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.46792224049568176
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00028391621890477836
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.2289930284023285
+    },
+    {
+     "name": "vendor_name",
+     "value": "COMMONWEALTH OF PA DEPT PUBLIC WELFARE",
+     "surprisal": 2.7916274070739746
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 0.16106994450092316
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.0008337597246281803
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.04244,
+     "surprisal": 0.0009401703719049692
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "dept"
+   ]
+  },
+  "3545": {
+   "row": 3545,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 2.468496322631836
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 5.080520153045654
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.0005040090763941407
+    },
+    {
+     "name": "sub_obj",
+     "value": "322",
+     "surprisal": 0.3870534896850586
+    },
+    {
+     "name": "vendor_name",
+     "value": "D L ELECTRONICS INCORPORATED",
+     "surprisal": 2.2627980709075928
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0006654431927017868
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.139456033706665
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000831,
+     "surprisal": 3.025029400305357e-07
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "5269": {
+   "row": 5269,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 1.8414742946624756
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 7.471371650695801
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.7404405298293568e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 1.0920026302337646
+    },
+    {
+     "name": "vendor_name",
+     "value": "CASCOR INCORPORATED",
+     "surprisal": 1.8848354816436768
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.06607373803853989
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.04093661904335022
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000846,
+     "surprisal": 7.033060228422983e-06
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "5609": {
+   "row": 5609,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 4.404670715332031
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 0.4946810305118561
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.0020944580901414156
+    },
+    {
+     "name": "sub_obj",
+     "value": "430",
+     "surprisal": 1.3616585731506348
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORIX GROUP INCORPORATED",
+     "surprisal": 3.894062042236328
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.03126940876245499
+    },
+    {
+     "name": "contract_number",
+     "value": "160215",
+     "surprisal": 6.044478416442871
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00143,
+     "surprisal": 0.0003386767639312893
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "6916": {
+   "row": 6916,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 3.87359619140625
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 2.145764938177308e-06
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 9.536738616588991e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.004549628589302301
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0004764852055814117
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.768370445162873e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1620030",
+     "surprisal": 0.2649678587913513
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.023926,
+     "surprisal": 0.00011858462676173076
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "9320": {
+   "row": 9320,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 3.956118106842041
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.004146906081587076
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 9.691245941212401e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.16069208085536957
+    },
+    {
+     "name": "vendor_name",
+     "value": "HARBORCREEK YOUTH SERVICES",
+     "surprisal": 2.997617244720459
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.825220326485578e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1420148",
+     "surprisal": 6.066013336181641
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 9.433869126951322e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "10515": {
+   "row": 10515,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 1.6223691701889038
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.45917677879333496
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.001177571015432477
+    },
+    {
+     "name": "sub_obj",
+     "value": "317",
+     "surprisal": 0.025474760681390762
+    },
+    {
+     "name": "vendor_name",
+     "value": "FISHER SCIENTIFIC CO L L C",
+     "surprisal": 0.5130944848060608
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.001555662602186203
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 5.550717830657959
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000766,
+     "surprisal": 7.675828783249017e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "10516": {
+   "row": 10516,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 1.622368574142456
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.4591766893863678
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.001177571015432477
+    },
+    {
+     "name": "sub_obj",
+     "value": "317",
+     "surprisal": 0.025474760681390762
+    },
+    {
+     "name": "vendor_name",
+     "value": "FISHER SCIENTIFIC CO L L C",
+     "surprisal": 0.5130942463874817
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.001555662602186203
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 5.550717353820801
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000765,
+     "surprisal": 7.678660949750338e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "12197": {
+   "row": 12197,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 2.985194444656372
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 2.634490556374658e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 2.7418097943154862e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.0013572300085797906
+    },
+    {
+     "name": "vendor_name",
+     "value": "NATIONAL CENTER FOR CHILDREN & FAMILIES",
+     "surprisal": 0.0030171608086675406
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 5.483612312673358e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1620413",
+     "surprisal": 0.2691887319087982
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000786,
+     "surprisal": 4.051338692079298e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "13798": {
+   "row": 13798,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.8308823108673096
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.8498221635818481
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.009894728660583496
+    },
+    {
+     "name": "sub_obj",
+     "value": "320",
+     "surprisal": 0.8757357597351074
+    },
+    {
+     "name": "vendor_name",
+     "value": "NESTLE WATERS NORTH AMERICA INC",
+     "surprisal": 9.038480758666992
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 4.576045989990234
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.4764692783355713
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000765,
+     "surprisal": 1.3342480542632984e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "doc_ref_no_prefix",
+    "fm"
+   ]
+  },
+  "15989": {
+   "row": 15989,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 1.5450550317764282
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.00048565989709459245
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.0009145130170509219
+    },
+    {
+     "name": "sub_obj",
+     "value": "0604P",
+     "surprisal": 1.5224837064743042
+    },
+    {
+     "name": "vendor_name",
+     "value": "REMINGTON & VERNICK ENGINEERS",
+     "surprisal": 1.9644356966018677
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.000408327643526718
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.292107343673706
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.002674,
+     "surprisal": 0.00017792193102650344
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "18688": {
+   "row": 18688,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 1.2370697259902954
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0007800396997481585
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00010358751023886725
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 5.0424259825376794e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "TURNING POINTS FOR CHILDREN",
+     "surprisal": 0.00473058084025979
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.00012313561455812305
+    },
+    {
+     "name": "contract_number",
+     "value": "1720385",
+     "surprisal": 0.14758701622486115
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.038025,
+     "surprisal": 0.00503580691292882
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "transaction_amount"
+   ]
+  },
+  "22562": {
+   "row": 22562,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.0192270278930664
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00023016665363684297
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 9.154854342341423e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.05450567603111267
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.018328703939914703
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.622600959512056e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720079",
+     "surprisal": 1.3822684288024902
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000847,
+     "surprisal": 1.3278160622576252e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "22573": {
+   "row": 22573,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.1269023418426514
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 8.344646857949556e-07
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.002742460463196039
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.00033063191222026944
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620030",
+     "surprisal": 0.04807892441749573
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000833,
+     "surprisal": 0.00016268817125819623
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "22576": {
+   "row": 22576,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.1268482208251953
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 8.344646857949556e-07
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.0027456702664494514
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0003307510633021593
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620030",
+     "surprisal": 0.04809630662202835
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000899,
+     "surprisal": 0.0001609931787243113
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "22587": {
+   "row": 22587,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.521575450897217
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0004306104383431375
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": -0.0
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 3.6103010177612305
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH SERVICES INCORPORATED",
+     "surprisal": 4.012857437133789
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.9162075519561768
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00077,
+     "surprisal": 3.530610410962254e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "23116": {
+   "row": 23116,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 2.339447498321533
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.003963235765695572
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00038532938924618065
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 2.884823152271565e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE CHILDRENS HOME OF EASTON",
+     "surprisal": 0.002471251878887415
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1720141",
+     "surprisal": 0.10765358060598373
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 0.00040438296855427325
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "24508": {
+   "row": 24508,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 3.316126823425293
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.051941242069005966
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.7881377516459906e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "285",
+     "surprisal": 0.0028956886380910873
+    },
+    {
+     "name": "vendor_name",
+     "value": "REPUBLIC SERVICES OF PENNSYLVANIA LLC",
+     "surprisal": 0.0008550802012905478
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0003813969960901886
+    },
+    {
+     "name": "contract_number",
+     "value": "160177",
+     "surprisal": 0.06477770954370499
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000775,
+     "surprisal": 0.00041573744965717196
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "25944": {
+   "row": 25944,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 1.61940336227417
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0037759689148515463
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 2.3841855067985307e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0005528590409085155
+    },
+    {
+     "name": "vendor_name",
+     "value": "URBAN AFFAIRS COALITION",
+     "surprisal": 0.023154478520154953
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 9.536738616588991e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720247",
+     "surprisal": 2.5949020385742188
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001522,
+     "surprisal": 2.6358893592259847e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "26276": {
+   "row": 26276,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 3.108175754547119
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.1324817933200393e-05
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 4.6491513785440475e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": -0.0
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARMEUSE LIME INC",
+     "surprisal": 0.00018451895448379219
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 7.390948667307384e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160130",
+     "surprisal": 0.0014138950500637293
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00089,
+     "surprisal": 2.78389488812536e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "28106": {
+   "row": 28106,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.492306709289551
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 7.2564921379089355
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.634490556374658e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "308",
+     "surprisal": 0.006204154342412949
+    },
+    {
+     "name": "vendor_name",
+     "value": "UNIFORM GEAR INC",
+     "surprisal": 2.898634433746338
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0037469910457730293
+    },
+    {
+     "name": "contract_number",
+     "value": "130075",
+     "surprisal": 3.306452512741089
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000796,
+     "surprisal": 4.4779531890526414e-05
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "29028": {
+   "row": 29028,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 3.114797592163086
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.597391747054644e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.0066576809622347355
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.0031701093539595604
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 8.702239938429557e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 6.711257447022945e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000937,
+     "surprisal": 0.0006507875514216721
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "30124": {
+   "row": 30124,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 3.635565996170044
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 0.006970848422497511
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.847726889536716e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.00018535325943958014
+    },
+    {
+     "name": "vendor_name",
+     "value": "CORIZON HEALTH INCORPORATED",
+     "surprisal": 0.03734871372580528
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.00020132421923335642
+    },
+    {
+     "name": "contract_number",
+     "value": "1320549",
+     "surprisal": 0.018847426399588585
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.171196,
+     "surprisal": 0.029899023473262787
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "transaction_amount"
+   ]
+  },
+  "30611": {
+   "row": 30611,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.3041534423828125
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0001597276859683916
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 6.007967749610543e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.005895250476896763
+    },
+    {
+     "name": "vendor_name",
+     "value": "TABOR NORTHERN COMMUNITY PARTNERS",
+     "surprisal": 0.001660517300479114
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.7418097943154862e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720383",
+     "surprisal": 0.053796615451574326
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.020469,
+     "surprisal": 0.0005598472780548036
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "31598": {
+   "row": 31598,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.3457581996917725
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.08548585325479507
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 6.639736966462806e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "305",
+     "surprisal": 0.047591064125299454
+    },
+    {
+     "name": "vendor_name",
+     "value": "METAL STOCK INC.",
+     "surprisal": 0.01507273968309164
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 1.811964830267243e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "160076",
+     "surprisal": 0.005498760379850864
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001038,
+     "surprisal": 0.0023886628914624453
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "dept",
+    "sub_obj"
+   ]
+  },
+  "32435": {
+   "row": 32435,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 1.5373296737670898
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 8.666139910928905e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0010412277188152075
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 6.48477507638745e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "FAIRMOUNT LONG TERM CARE INCORPORATED",
+     "surprisal": 0.0038885469548404217
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.9828242481453344e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1520025",
+     "surprisal": 0.0026102541014552116
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.118105,
+     "surprisal": 0.015720229595899582
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "transaction_amount",
+    "vendor_name"
+   ]
+  },
+  "32994": {
+   "row": 32994,
+   "kind": "normal",
+   "department": "52",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 4.104793548583984
+    },
+    {
+     "name": "dept",
+     "value": "52",
+     "surprisal": 3.661435127258301
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.010083921253681183
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.12933602929115295
+    },
+    {
+     "name": "vendor_name",
+     "value": "RICOH USA INC",
+     "surprisal": 3.7065043449401855
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.1509966105222702
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.024052027612924576
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000838,
+     "surprisal": 2.6731035177363083e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "dept"
+   ]
+  },
+  "33045": {
+   "row": 33045,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 0.40856388211250305
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.5961460471153259
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.0009010545909404755
+    },
+    {
+     "name": "sub_obj",
+     "value": "0612P",
+     "surprisal": 0.023879310116171837
+    },
+    {
+     "name": "vendor_name",
+     "value": "PENNONI ASSOCIATES INCORPORATED",
+     "surprisal": 0.061061982065439224
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.0014496066141873598
+    },
+    {
+     "name": "contract_number",
+     "value": "1320429",
+     "surprisal": 0.1488770842552185
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001276,
+     "surprisal": 0.0020741173066198826
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "fm",
+    "contract_number"
+   ]
+  },
+  "33615": {
+   "row": 33615,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.398221969604492
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.5430223941802979
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.016120100393891335
+    },
+    {
+     "name": "sub_obj",
+     "value": "285",
+     "surprisal": 0.7179867625236511
+    },
+    {
+     "name": "vendor_name",
+     "value": "ENTERPRISE HOLDINGS INC.",
+     "surprisal": 2.541222095489502
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 5.216935634613037
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.8120498657226562
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000763,
+     "surprisal": 3.991619450971484e-05
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "35165": {
+   "row": 35165,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 3.513498306274414
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 2.382725238800049
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0002299282787134871
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 5.249882698059082
+    },
+    {
+     "name": "vendor_name",
+     "value": "SKILLPATH INCORPORATED",
+     "surprisal": 2.877196788787842
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 0.07020830363035202
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.0010021670022979379
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000772,
+     "surprisal": 0.0009767774026840925
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "36009": {
+   "row": 36009,
+   "kind": "normal",
+   "department": "52",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 1.7731523513793945
+    },
+    {
+     "name": "dept",
+     "value": "52",
+     "surprisal": 2.3436343669891357
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.01542612910270691
+    },
+    {
+     "name": "sub_obj",
+     "value": "418",
+     "surprisal": 1.929107904434204
+    },
+    {
+     "name": "vendor_name",
+     "value": "SOUTH JERSEY PAPER PRODUCTS",
+     "surprisal": 2.650559425354004
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.00013934595335740596
+    },
+    {
+     "name": "contract_number",
+     "value": "140239",
+     "surprisal": 0.04478314146399498
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000816,
+     "surprisal": 0.00024526531342417
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "dept",
+    "sub_obj"
+   ]
+  },
+  "36099": {
+   "row": 36099,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 3.0191335678100586
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 1.4305104514278355e-06
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 2.3841855067985307e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.0016317160334438086
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.00035375059815123677
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1620030",
+     "surprisal": 0.036855705082416534
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.006482,
+     "surprisal": 3.240691148675978e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "36219": {
+   "row": 36219,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.587707996368408
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0013821106404066086
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0025139416102319956
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH ADVOCATE PROGRAM INCORPORATED",
+     "surprisal": 0.024069715291261673
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1420216",
+     "surprisal": 2.1132607460021973
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000945,
+     "surprisal": 0.0013632200425490737
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "36607": {
+   "row": 36607,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 2.5461597442626953
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 8.940656698541716e-06
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.9802276912960224e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": -0.0
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARMEUSE LIME INC",
+     "surprisal": 0.0001397035230183974
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160130",
+     "surprisal": 0.0009238027851097286
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000937,
+     "surprisal": 4.401755359140225e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "41773": {
+   "row": 41773,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "11",
+     "surprisal": 4.559971332550049
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.4395986795425415
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0006002769805490971
+    },
+    {
+     "name": "sub_obj",
+     "value": "220",
+     "surprisal": 0.0001512651506345719
+    },
+    {
+     "name": "vendor_name",
+     "value": "DIRECT ENERGY BUSINESS LLC",
+     "surprisal": 0.014209873043000698
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.2525739371776581
+    },
+    {
+     "name": "contract_number",
+     "value": "1620213",
+     "surprisal": 0.12534287571907043
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.055959,
+     "surprisal": 0.0031169583089649677
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "dept",
+    "doc_ref_no_prefix"
+   ]
+  },
+  "43564": {
+   "row": 43564,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.9982757568359375
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 3.134094715118408
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.000734178873244673
+    },
+    {
+     "name": "sub_obj",
+     "value": "314",
+     "surprisal": 5.042455673217773
+    },
+    {
+     "name": "vendor_name",
+     "value": "MANSFIELD OIL COMPANY OF GAINESVILLE INC",
+     "surprisal": 0.07553562521934509
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 4.768360213347478e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "140005",
+     "surprisal": 0.043661776930093765
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000936,
+     "surprisal": 0.00040674503543414176
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "dept",
+    "fm"
+   ]
+  },
+  "45353": {
+   "row": 45353,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 2.990363836288452
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.002597056096419692
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0017471539322286844
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0018264055252075195
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHILDRENS HOSPITAL OF PHILADELPHIA",
+     "surprisal": 0.26760995388031006
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.3483953555114567e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1420382",
+     "surprisal": 2.593135356903076
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000934,
+     "surprisal": 0.000272615987341851
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "46543": {
+   "row": 46543,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 0.4942629039287567
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.003668128978461027
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.04303976520895958
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.42674529552459717
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROCCO'S COLLISION CENTERS",
+     "surprisal": 0.029532501474022865
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "150217",
+     "surprisal": 0.019169898703694344
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000783,
+     "surprisal": 0.0005139370332472026
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "char_"
+   ]
+  },
+  "46549": {
+   "row": 46549,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 0.49426254630088806
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.003668128978461027
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.043039992451667786
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.42674708366394043
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROCCO'S COLLISION CENTERS",
+     "surprisal": 0.02953215502202511
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "150217",
+     "surprisal": 0.019167909398674965
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000774,
+     "surprisal": 0.0005143304006196558
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "char_"
+   ]
+  },
+  "46566": {
+   "row": 46566,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 0.49426400661468506
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.0036678914912045
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.043039191514253616
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.42673853039741516
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROCCO'S COLLISION CENTERS",
+     "surprisal": 0.02953389100730419
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "150217",
+     "surprisal": 0.019176797941327095
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000818,
+     "surprisal": 0.0005123557057231665
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "char_"
+   ]
+  },
+  "49790": {
+   "row": 49790,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 0.8964499831199646
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.3708974620385561e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.007884806953370571
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.003578332718461752
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 9.894321920000948e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 6.270212179515511e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000969,
+     "surprisal": 0.0005787374102510512
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "51953": {
+   "row": 51953,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 2.4911210536956787
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 2.622600959512056e-06
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.561075448989868
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 4.519466400146484
+    },
+    {
+     "name": "vendor_name",
+     "value": "HENISE TIRE SERVICE CO",
+     "surprisal": 0.016076110303401947
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 3.015949550899677e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "140004",
+     "surprisal": 0.007107332348823547
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001278,
+     "surprisal": 0.0005786964320577681
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "char_",
+    "fm"
+   ]
+  },
+  "56231": {
+   "row": 56231,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.7156838178634644
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0004042761866003275
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.03184370696544647
+    },
+    {
+     "name": "sub_obj",
+     "value": "605",
+     "surprisal": 5.952213287353516
+    },
+    {
+     "name": "vendor_name",
+     "value": "MINISCALCO CORPORATION",
+     "surprisal": 4.61490535736084
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.026697132736444473
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.250856876373291
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.008294,
+     "surprisal": 0.0001954051258508116
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "58926": {
+   "row": 58926,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.089033603668213
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 4.595726013183594
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.06478173285722733
+    },
+    {
+     "name": "sub_obj",
+     "value": "304",
+     "surprisal": 0.4111582040786743
+    },
+    {
+     "name": "vendor_name",
+     "value": "HUMPHRY'S FLAG COMPANY INCORPORATED",
+     "surprisal": 0.3890991806983948
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.502824068069458
+    },
+    {
+     "name": "contract_number",
+     "value": "150148",
+     "surprisal": 8.369975090026855
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000771,
+     "surprisal": 0.00011724870273610577
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "dept",
+    "fm"
+   ]
+  },
+  "60147": {
+   "row": 60147,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 3.7775940895080566
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.42121419310569763
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.003186626825481653
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.018071642145514488
+    },
+    {
+     "name": "vendor_name",
+     "value": "XEROX CORPORATION",
+     "surprisal": 0.1927318125963211
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.015536346472799778
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 3.163715362548828
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000771,
+     "surprisal": 0.0002677418233361095
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "60149": {
+   "row": 60149,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 3.7775940895080566
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.42121419310569763
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.003186626825481653
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.018071642145514488
+    },
+    {
+     "name": "vendor_name",
+     "value": "XEROX CORPORATION",
+     "surprisal": 0.1927318125963211
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.015536346472799778
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 3.163715362548828
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000771,
+     "surprisal": 0.0002677418233361095
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "60834": {
+   "row": 60834,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 2.7476158142089844
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0003328961320221424
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.597391747054644e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.011360127478837967
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0017130000051110983
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 3.576278118089249e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720359",
+     "surprisal": 0.7575712203979492
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000805,
+     "surprisal": 5.0718834245344624e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "61410": {
+   "row": 61410,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.1814404726028442
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 8.83301836438477e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00022492263815365732
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0017891604220494628
+    },
+    {
+     "name": "vendor_name",
+     "value": "ARAMARK CORRECTIONAL SERVICES",
+     "surprisal": 0.009286069311201572
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.009605263359844685
+    },
+    {
+     "name": "contract_number",
+     "value": "1420101",
+     "surprisal": 0.04210378974676132
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.04759,
+     "surprisal": 0.0036644679494202137
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "doc_ref_no_prefix"
+   ]
+  },
+  "61506": {
+   "row": 61506,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 0.8344201445579529
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 4.6132929128361866e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 5.960462772236497e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 1.6689286894688848e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLEN MILLS SCHOOLS",
+     "surprisal": 0.03554963693022728
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.768370445162873e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720269",
+     "surprisal": 0.4821451008319855
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.020765,
+     "surprisal": 1.2778467635143897e-06
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "62574": {
+   "row": 62574,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 2.6759791374206543
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.921344518661499
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.3841855067985307e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "316",
+     "surprisal": 3.755537509918213
+    },
+    {
+     "name": "vendor_name",
+     "value": "ACCOMMODATION MOLLEN INC",
+     "surprisal": 0.8158954381942749
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0005845506675541401
+    },
+    {
+     "name": "contract_number",
+     "value": "140227",
+     "surprisal": 0.4390003979206085
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000831,
+     "surprisal": 0.0009272040333598852
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "fm",
+    "dept"
+   ]
+  },
+  "63856": {
+   "row": 63856,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 2.6852197647094727
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 2.958366870880127
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.000582525331992656
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.012074002996087074
+    },
+    {
+     "name": "vendor_name",
+     "value": "H A DEHART & SON",
+     "surprisal": 0.35751593112945557
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.07001559436321259
+    },
+    {
+     "name": "contract_number",
+     "value": "150089",
+     "surprisal": 0.15122905373573303
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00082,
+     "surprisal": 6.872787344036624e-05
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "64230": {
+   "row": 64230,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 1.9827035665512085
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.14482253789901733
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.00013553177996072918
+    },
+    {
+     "name": "sub_obj",
+     "value": "335",
+     "surprisal": 0.17987412214279175
+    },
+    {
+     "name": "vendor_name",
+     "value": "CRAFT OIL CORPORATION",
+     "surprisal": 0.019027329981327057
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0011705459328368306
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.5594820976257324
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000824,
+     "surprisal": 3.8596688682446256e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "66210": {
+   "row": 66210,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 1.7784122228622437
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.009712700732052326
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.07829445600509644
+    },
+    {
+     "name": "sub_obj",
+     "value": "314",
+     "surprisal": 4.960339069366455
+    },
+    {
+     "name": "vendor_name",
+     "value": "CENTRALIA COAL SALES COMPANY",
+     "surprisal": 5.238875865936279
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0005165196489542723
+    },
+    {
+     "name": "contract_number",
+     "value": "130309",
+     "surprisal": 1.7658323049545288
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001128,
+     "surprisal": 4.295318285585381e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "66380": {
+   "row": 66380,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 2.0969977378845215
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 2.3007127310847864e-05
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.0003638797497842461
+    },
+    {
+     "name": "sub_obj",
+     "value": "605",
+     "surprisal": 0.5070291757583618
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILIP PIO CONSTRUCTION, INC.",
+     "surprisal": 3.3744924068450928
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.001700980355963111
+    },
+    {
+     "name": "contract_number",
+     "value": "164048",
+     "surprisal": 1.6971724033355713
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.027744,
+     "surprisal": 0.00024588091764599085
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "contract_number"
+   ]
+  },
+  "68718": {
+   "row": 68718,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 3.564610242843628
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.2733641266822815
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0013583013787865639
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0004262015863787383
+    },
+    {
+     "name": "vendor_name",
+     "value": "HEALTH FEDERATION OF PHILADELPHIA INC",
+     "surprisal": 0.06825289875268936
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.001053969725035131
+    },
+    {
+     "name": "contract_number",
+     "value": "1620168",
+     "surprisal": 6.287609577178955
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000799,
+     "surprisal": 7.026566890999675e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "dept"
+   ]
+  },
+  "72287": {
+   "row": 72287,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 1.9009606838226318
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 5.164074897766113
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0006038511055521667
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0006444760947488248
+    },
+    {
+     "name": "vendor_name",
+     "value": "URBAN AFFAIRS COALITION",
+     "surprisal": 2.35452938079834
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 3.93382906622719e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1620062",
+     "surprisal": 2.2499213218688965
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001044,
+     "surprisal": 7.5378360634204e-05
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "73233": {
+   "row": 73233,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 3.1508264541625977
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.017865100875496864
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 3.9934315282152966e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 5.507317473529838e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "GILES AND RANSOME INCORPORATED",
+     "surprisal": 6.566268444061279
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.005414227023720741
+    },
+    {
+     "name": "contract_number",
+     "value": "130231",
+     "surprisal": 3.183964490890503
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000877,
+     "surprisal": 0.0005607620696537197
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "fm"
+   ]
+  },
+  "77012": {
+   "row": 77012,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 2.7562386989593506
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 1.174960970878601
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00018404220463708043
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.017538342624902725
+    },
+    {
+     "name": "vendor_name",
+     "value": "WELCOMING CTR FOR NEW PENNSYLVANIANS",
+     "surprisal": 7.148684501647949
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.0011659860610962
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.9731107950210571
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.003032,
+     "surprisal": 1.5802863345015794e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "dept"
+   ]
+  },
+  "79573": {
+   "row": 79573,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 2.0774261951446533
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 2.2649508537142538e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.0032825181260704994
+    },
+    {
+     "name": "vendor_name",
+     "value": "NATIONAL CENTER FOR CHILDREN & FAMILIES",
+     "surprisal": 0.01434361096471548
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 8.344646857949556e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1620413",
+     "surprisal": 0.12405282258987427
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000859,
+     "surprisal": 0.0001236798707395792
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "82454": {
+   "row": 82454,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 1.918762445449829
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.42724907398223877
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.7477105855941772
+    },
+    {
+     "name": "sub_obj",
+     "value": "317",
+     "surprisal": 4.250199317932129
+    },
+    {
+     "name": "vendor_name",
+     "value": "GARDEN STATE IMAGING INC",
+     "surprisal": 0.0802445337176323
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 3.886147169396281e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "150193",
+     "surprisal": 0.20045550167560577
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000801,
+     "surprisal": 0.0006235395558178425
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "fm",
+    "char_"
+   ]
+  },
+  "82606": {
+   "row": 82606,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 2.615007162094116
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0005489272880367935
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 3.3378546504536644e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0009504806366749108
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH ADVOCATE PROGRAM INCORPORATED",
+     "surprisal": 0.02989678643643856
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1420216",
+     "surprisal": 2.30782151222229
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001491,
+     "surprisal": 0.0009068159270100296
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "85181": {
+   "row": 85181,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 4.224977970123291
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.9907753085135482e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.0058023352175951
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.003535807365551591
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 1.3589766240329482e-05
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 7.486063259420916e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000999,
+     "surprisal": 0.0006916132988408208
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "86200": {
+   "row": 86200,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 3.546327590942383
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 3.086102247238159
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.016650402918457985
+    },
+    {
+     "name": "sub_obj",
+     "value": "308",
+     "surprisal": 5.152423858642578
+    },
+    {
+     "name": "vendor_name",
+     "value": "STAUFFER MANUFACTURING COMPANY",
+     "surprisal": 1.4113390445709229
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 1.139591932296753
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.4970296323299408
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000786,
+     "surprisal": 5.441613757284358e-05
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "fm",
+    "dept"
+   ]
+  },
+  "87405": {
+   "row": 87405,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 2.3397090435028076
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 2.168710231781006
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00010644822759786621
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.09810619056224823
+    },
+    {
+     "name": "vendor_name",
+     "value": "QUALITY MEDICAL GROUP",
+     "surprisal": 5.596406936645508
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 1.749389886856079
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.6040114760398865
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000774,
+     "surprisal": 0.0002924278087448329
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "dept"
+   ]
+  },
+  "90481": {
+   "row": 90481,
+   "kind": "normal",
+   "department": "52",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 1.0627461671829224
+    },
+    {
+     "name": "dept",
+     "value": "52",
+     "surprisal": 3.908853054046631
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.19395868480205536
+    },
+    {
+     "name": "sub_obj",
+     "value": "401",
+     "surprisal": 2.491738796234131
+    },
+    {
+     "name": "vendor_name",
+     "value": "RODIO TRACTOR SALES INCORPORATED",
+     "surprisal": 1.7526636123657227
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0012218636693432927
+    },
+    {
+     "name": "contract_number",
+     "value": "140241",
+     "surprisal": 3.294433116912842
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000802,
+     "surprisal": 0.00022533930314239115
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "94992": {
+   "row": 94992,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 1.7679542303085327
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.1426834613084793
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 6.067568756407127e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "305",
+     "surprisal": 0.00032014489988796413
+    },
+    {
+     "name": "vendor_name",
+     "value": "TAGUE LUMBER INCORPORATED",
+     "surprisal": 0.061690036207437515
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 9.65590606938349e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160158",
+     "surprisal": 0.005365850869566202
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000903,
+     "surprisal": 0.0005174726247787476
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "dept",
+    "vendor_name"
+   ]
+  },
+  "99114": {
+   "row": 99114,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.3892433643341064
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0002252801787108183
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 5.006777428206988e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "680",
+     "surprisal": 0.07187670469284058
+    },
+    {
+     "name": "vendor_name",
+     "value": "DEERE & COMPANY",
+     "surprisal": 4.4275994300842285
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.00023362292267847806
+    },
+    {
+     "name": "contract_number",
+     "value": "150066",
+     "surprisal": 5.281967639923096
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.003312,
+     "surprisal": 0.00013399517047218978
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "99135": {
+   "row": 99135,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.6320531368255615
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0020682865288108587
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.00027891082572750747
+    },
+    {
+     "name": "sub_obj",
+     "value": "311",
+     "surprisal": 0.002953930525109172
+    },
+    {
+     "name": "vendor_name",
+     "value": "XYLEM WATER SOLUTIONS USA INC",
+     "surprisal": 0.013145096600055695
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.000644237850792706
+    },
+    {
+     "name": "contract_number",
+     "value": "140218",
+     "surprisal": 0.05592015013098717
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000767,
+     "surprisal": 0.00010039289918495342
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "99136": {
+   "row": 99136,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.6320528984069824
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0020682865288108587
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.00027891082572750747
+    },
+    {
+     "name": "sub_obj",
+     "value": "311",
+     "surprisal": 0.002953930525109172
+    },
+    {
+     "name": "vendor_name",
+     "value": "XYLEM WATER SOLUTIONS USA INC",
+     "surprisal": 0.013145096600055695
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.000644237850792706
+    },
+    {
+     "name": "contract_number",
+     "value": "140218",
+     "surprisal": 0.05591981112957001
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000768,
+     "surprisal": 0.00010037022002507001
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "101100": {
+   "row": 101100,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.840625047683716
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 2.4914430468925275e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.014195770025253296
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.007981430739164352
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 9.179073458653875e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 9.321732068201527e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001015,
+     "surprisal": 0.0005835723713971674
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "105831": {
+   "row": 105831,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.333956241607666
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00019262365822214633
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.1920858014491387e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.019789401441812515
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0008282806375063956
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720359",
+     "surprisal": 1.0312608480453491
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.006483,
+     "surprisal": 9.959981980500743e-06
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "106626": {
+   "row": 106626,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 3.071582317352295
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00013505500101018697
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0001397035230183974
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.009445619769394398
+    },
+    {
+     "name": "vendor_name",
+     "value": "TABOR NORTHERN COMMUNITY PARTNERS",
+     "surprisal": 0.0011941214324906468
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720383",
+     "surprisal": 0.051231835037469864
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000891,
+     "surprisal": 0.0015805327566340566
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "107166": {
+   "row": 107166,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.4678852558135986
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.001280679483897984
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 5.364403477869928e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 2.7418097943154862e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "PEDIA MANOR, INC.",
+     "surprisal": 0.04365846887230873
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.3841855067985307e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1520117",
+     "surprisal": 0.24405619502067566
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000795,
+     "surprisal": 3.431399818509817e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "109370": {
+   "row": 109370,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.6229095458984375
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.03396212309598923
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 3.909988299710676e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.01409516017884016
+    },
+    {
+     "name": "vendor_name",
+     "value": "ASSOC DE PUERTORRIQUENOS EN MARCHA INC",
+     "surprisal": 0.0016004146309569478
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 6.6756979322235566e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720291",
+     "surprisal": 0.0698750913143158
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.041601,
+     "surprisal": 0.0019984678365290165
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "110343": {
+   "row": 110343,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 1.9413471221923828
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00015448330668732524
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00017152745567727834
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.005841683130711317
+    },
+    {
+     "name": "vendor_name",
+     "value": "TABOR NORTHERN COMMUNITY PARTNERS",
+     "surprisal": 0.0013610394671559334
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 6.198863957251888e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720383",
+     "surprisal": 0.09248681366443634
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.022034,
+     "surprisal": 0.0003626940306276083
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "110353": {
+   "row": 110353,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.698620319366455
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.011066016741096973
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 13.382986068725586
+    },
+    {
+     "name": "sub_obj",
+     "value": "699",
+     "surprisal": 6.233017444610596
+    },
+    {
+     "name": "vendor_name",
+     "value": "WAYNE LEE DENTAL",
+     "surprisal": 0.015162565745413303
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 3.6954811548639555e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "130289",
+     "surprisal": 0.002196520334109664
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000793,
+     "surprisal": 0.0006543556810356677
+    }
+   ],
+   "reason_codes": [
+    "char_",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "115376": {
+   "row": 115376,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.5764384269714355
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00026603974401950836
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 3.290122185717337e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0034585916437208652
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE DETECTIVES, PRIVATE INVESTIGATORS",
+     "surprisal": 0.01679694466292858
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 9.894321920000948e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720010",
+     "surprisal": 0.17426465451717377
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001818,
+     "surprisal": 0.0010843173367902637
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "117306": {
+   "row": 117306,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 1.8897895812988281
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 5.960462772236497e-07
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 2.825220326485578e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.15351653099060059
+    },
+    {
+     "name": "vendor_name",
+     "value": "JEWISH FAMILY & CHILDREN'S SERVICE",
+     "surprisal": 5.107454299926758
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.029192859889008e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.8978850841522217
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 1.3128157661412843e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "fm"
+   ]
+  },
+  "117476": {
+   "row": 117476,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 1.9051079750061035
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.006823689676821232
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.7881377516459906e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 1.7165990357170813e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "HEALTH FEDERATION OF PHILADELPHIA INC",
+     "surprisal": 3.8415634632110596
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.006265758071094751
+    },
+    {
+     "name": "contract_number",
+     "value": "1320730",
+     "surprisal": 3.222076892852783
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000866,
+     "surprisal": 1.7048513427653234e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "fm"
+   ]
+  },
+  "119054": {
+   "row": 119054,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.7890634536743164
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00020382710499688983
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.311301275563892e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.00023314618738368154
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHILDSPACE DAYCARE CENTER",
+     "surprisal": 0.043097883462905884
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.00013660451804753393
+    },
+    {
+     "name": "contract_number",
+     "value": "1620431",
+     "surprisal": 0.09581390023231506
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00077,
+     "surprisal": 1.5896614058874547e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "120243": {
+   "row": 120243,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 4.157141208648682
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 0.3558235466480255
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.001365087111480534
+    },
+    {
+     "name": "sub_obj",
+     "value": "430",
+     "surprisal": 1.8160187005996704
+    },
+    {
+     "name": "vendor_name",
+     "value": "DACO LIMITED PARTNERSHIP",
+     "surprisal": 4.54319429397583
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.03134392946958542
+    },
+    {
+     "name": "contract_number",
+     "value": "130091",
+     "surprisal": 3.5217037200927734
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001214,
+     "surprisal": 0.00031444872729480267
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "contract_number"
+   ]
+  },
+  "120255": {
+   "row": 120255,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 1.8695011138916016
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00020895205670967698
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.7404405298293568e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.008407318964600563
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0011264891363680363
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720359",
+     "surprisal": 1.0473881959915161
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.017222,
+     "surprisal": 5.367877020034939e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "120258": {
+   "row": 120258,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 1.857980728149414
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00019453064305707812
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.5616295058862306e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.010233905166387558
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.0011042217956855893
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1720359",
+     "surprisal": 1.0599100589752197
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.007286,
+     "surprisal": 6.811936145822983e-06
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "124560": {
+   "row": 124560,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 3.333181619644165
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.6569954823353328e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.0068972124718129635
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.003201718209311366
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 8.821448318485636e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 7.211902266135439e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000958,
+     "surprisal": 0.0006437404081225395
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "124607": {
+   "row": 124607,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 2.5160036087036133
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.8060247898101807
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.007882914505898952
+    },
+    {
+     "name": "sub_obj",
+     "value": "424",
+     "surprisal": 0.44498246908187866
+    },
+    {
+     "name": "vendor_name",
+     "value": "INNER TITE CORPORATION",
+     "surprisal": 1.9779835939407349
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.12152016907930374
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.14512066543102264
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.002267,
+     "surprisal": 0.00011106370948255062
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "dept"
+   ]
+  },
+  "125386": {
+   "row": 125386,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 3.7547154426574707
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0022325608879327774
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.0002829628065228462
+    },
+    {
+     "name": "sub_obj",
+     "value": "665",
+     "surprisal": 0.11401720345020294
+    },
+    {
+     "name": "vendor_name",
+     "value": "DANIEL J KEATING COMPANY",
+     "surprisal": 0.05784737318754196
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 2.0265373677830212e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "164038",
+     "surprisal": 0.011473977006971836
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.232138,
+     "surprisal": 0.013665146194398403
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "vendor_name"
+   ]
+  },
+  "127351": {
+   "row": 127351,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 1.4978961944580078
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.01668686419725418
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00024399164249189198
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 1.8358061424805783e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE FOOD TRUST",
+     "surprisal": 1.4981383085250854
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1520306",
+     "surprisal": 6.252833366394043
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001612,
+     "surprisal": 0.0006050263764336705
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "130049": {
+   "row": 130049,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 1.729713797569275
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.00010918975021922961
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0017456068890169263
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 4.9828242481453344e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "FAIRMOUNT LONG TERM CARE INCORPORATED",
+     "surprisal": 0.005003549624234438
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.7444173105759546e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1520025",
+     "surprisal": 0.001882449141703546
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.119416,
+     "surprisal": 0.015758126974105835
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "transaction_amount",
+    "vendor_name"
+   ]
+  },
+  "131273": {
+   "row": 131273,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 2.350266933441162
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 2.2679758071899414
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.7881377516459906e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 3.6954811548639555e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "PUBLIC HEALTH MANAGEMENT CORP",
+     "surprisal": 4.9317450523376465
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 4.529942543740617e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720211",
+     "surprisal": 5.061910629272461
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.064545,
+     "surprisal": 0.0038429254200309515
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "134194": {
+   "row": 134194,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 2.8753318786621094
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 1.0728830375228426e-06
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 0.001255677198059857
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 0.00028772983932867646
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620030",
+     "surprisal": 0.04669347032904625
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.006132,
+     "surprisal": 3.692693280754611e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "141857": {
+   "row": 141857,
+   "kind": "normal",
+   "department": "52",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 1.853581190109253
+    },
+    {
+     "name": "dept",
+     "value": "52",
+     "surprisal": 2.1803925037384033
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 5.411955135059543e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "305",
+     "surprisal": 0.00030596344731748104
+    },
+    {
+     "name": "vendor_name",
+     "value": "TAGUE LUMBER INCORPORATED",
+     "surprisal": 0.15102417767047882
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 2.50339189733495e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160158",
+     "surprisal": 0.0020436609629541636
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000766,
+     "surprisal": 0.0005672157276421785
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "142544": {
+   "row": 142544,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 2.8861756324768066
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.6927575416048057e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.008868354372680187
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.004485189449042082
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 9.298280929215252e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 8.809178689261898e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000972,
+     "surprisal": 0.0006445971084758639
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "143070": {
+   "row": 143070,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 1.7306206226348877
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00014733182615600526
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.4305104514278355e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.001105293515138328
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH ADVOCATE PROGRAM INCORPORATED",
+     "surprisal": 0.048953138291835785
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1420216",
+     "surprisal": 2.1435866355895996
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001266,
+     "surprisal": 0.0008851740276440978
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "143869": {
+   "row": 143869,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 1.809375524520874
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 5.411955135059543e-05
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00013696208770852536
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 4.3748852476710454e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "NATIONAL MENTOR HEALTHCARE, LLC",
+     "surprisal": 2.8752214908599854
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 0.00010156115604331717
+    },
+    {
+     "name": "contract_number",
+     "value": "1520566",
+     "surprisal": 0.03188793361186981
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001303,
+     "surprisal": 0.00013397929433267564
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "contract_number"
+   ]
+  },
+  "145550": {
+   "row": 145550,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 1.7484984397888184
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 1.6579108238220215
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 1.0728830375228426e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "316",
+     "surprisal": 2.801980972290039
+    },
+    {
+     "name": "vendor_name",
+     "value": "SOUTH JERSEY PAPER PRODUCTS",
+     "surprisal": 0.3179231882095337
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 6.890059739816934e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "140224",
+     "surprisal": 2.8313002586364746
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 0.0001291594235226512
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "146367": {
+   "row": 146367,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 1.453763723373413
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 4.669630527496338
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0002208704245276749
+    },
+    {
+     "name": "sub_obj",
+     "value": "251",
+     "surprisal": 0.002224353840574622
+    },
+    {
+     "name": "vendor_name",
+     "value": "MODIS",
+     "surprisal": 0.4557042121887207
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.7418097943154862e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720220",
+     "surprisal": 6.194482326507568
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001763,
+     "surprisal": 7.618808740517125e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "dept",
+    "fm"
+   ]
+  },
+  "148716": {
+   "row": 148716,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 3.595332145690918
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.003155255224555731
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.041624438017606735
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.5361387729644775
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROCCO'S COLLISION CENTERS",
+     "surprisal": 0.05506486818194389
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "150217",
+     "surprisal": 0.018046705052256584
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000883,
+     "surprisal": 0.0004595798091031611
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "vendor_name"
+   ]
+  },
+  "150576": {
+   "row": 150576,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 3.0260679721832275
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.6656612157821655
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 4.529942543740617e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "316",
+     "surprisal": 5.341960430145264
+    },
+    {
+     "name": "vendor_name",
+     "value": "SAM TELL & SON INC",
+     "surprisal": 0.3802098035812378
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0008306628442369401
+    },
+    {
+     "name": "contract_number",
+     "value": "140225",
+     "surprisal": 3.893660545349121
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000794,
+     "surprisal": 0.00012704877008218318
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "contract_number",
+    "fm"
+   ]
+  },
+  "152680": {
+   "row": 152680,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 1.8940385580062866
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0003219324571546167
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 9.059865078597795e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.008755153976380825
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE DETECTIVES, PRIVATE INVESTIGATORS",
+     "surprisal": 0.01376269944012165
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 3.099436753473128e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720010",
+     "surprisal": 0.0918770506978035
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000768,
+     "surprisal": 0.0012130007380619645
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "152826": {
+   "row": 152826,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.778080940246582
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 9.298280929215252e-06
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 3.099436753473128e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": -0.0
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARMEUSE LIME INC",
+     "surprisal": 0.00013207517622504383
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 5.722029527532868e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160130",
+     "surprisal": 0.0010455148294568062
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000884,
+     "surprisal": 3.9613245462533087e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "155401": {
+   "row": 155401,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.93332839012146
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.00012170527770649642
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0012284121476113796
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0001070442158379592
+    },
+    {
+     "name": "vendor_name",
+     "value": "FAIRMOUNT LONG TERM CARE INCORPORATED",
+     "surprisal": 0.019411712884902954
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 6.329813186312094e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1520025",
+     "surprisal": 0.0031729612965136766
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.145325,
+     "surprisal": 0.023478180170059204
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "transaction_amount",
+    "vendor_name"
+   ]
+  },
+  "156240": {
+   "row": 156240,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.004340887069702
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.0010459910845384002
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 6.341733387671411e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "665",
+     "surprisal": 0.0364941768348217
+    },
+    {
+     "name": "vendor_name",
+     "value": "DANIEL J KEATING COMPANY",
+     "surprisal": 0.17418934404850006
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 2.4914430468925275e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "164038",
+     "surprisal": 0.025678690522909164
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.052474,
+     "surprisal": 0.003877231851220131
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "sub_obj"
+   ]
+  },
+  "156669": {
+   "row": 156669,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 1.9749269485473633
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 2.459867238998413
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.005034744739532471
+    },
+    {
+     "name": "sub_obj",
+     "value": "313",
+     "surprisal": 0.8753984570503235
+    },
+    {
+     "name": "vendor_name",
+     "value": "BARBARA FOREST",
+     "surprisal": 2.171450138092041
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "RPXX",
+     "surprisal": 2.926617383956909
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.07969506829977036
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 7.717164407949895e-05
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "dept",
+    "vendor_name"
+   ]
+  },
+  "157532": {
+   "row": 157532,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 3.8923237323760986
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 4.140044689178467
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 5.483612312673358e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "266",
+     "surprisal": 4.140261650085449
+    },
+    {
+     "name": "vendor_name",
+     "value": "APPLIED VIDEO TECHNOLOGY INC",
+     "surprisal": 1.0795440673828125
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 0.035983726382255554
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.0096090417355299
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000898,
+     "surprisal": 0.00022114858438726515
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "dept",
+    "fm"
+   ]
+  },
+  "157664": {
+   "row": 157664,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.4673755168914795
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 0.6940176486968994
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.02287675067782402
+    },
+    {
+     "name": "sub_obj",
+     "value": "303",
+     "surprisal": 3.6120412349700928
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE JONES ZYLON COMPANY LLC",
+     "surprisal": 4.11046838760376
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.7674511671066284
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.4600581228733063
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000862,
+     "surprisal": 0.00013277055404614657
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "157723": {
+   "row": 157723,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 3.153822422027588
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.7029853463172913
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00024053541710600257
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.26773419976234436
+    },
+    {
+     "name": "vendor_name",
+     "value": "SURVEY SAMPLING INTERNATIONAL LLC",
+     "surprisal": 8.139766693115234
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 0.1883753538131714
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.00042822727118618786
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000981,
+     "surprisal": 9.471596422372386e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "dept"
+   ]
+  },
+  "158707": {
+   "row": 158707,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.5533130168914795
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.016913574188947678
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 4.768370445162873e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.00014673586701974273
+    },
+    {
+     "name": "vendor_name",
+     "value": "NET TREATMENT SERVICES",
+     "surprisal": 0.09907175600528717
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1720353",
+     "surprisal": 0.11822565644979477
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.037161,
+     "surprisal": 0.00021215991000644863
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "159298": {
+   "row": 159298,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.4919896125793457
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 4.67378568649292
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00029595286468975246
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.0015343570848926902
+    },
+    {
+     "name": "vendor_name",
+     "value": "DUFFIELD ASSOCIATES, INC.",
+     "surprisal": 1.0097545385360718
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 3.71926071238704e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1420571",
+     "surprisal": 0.0400441437959671
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000796,
+     "surprisal": 8.576111576985568e-05
+    }
+   ],
+   "reason_codes": [
+    "dept",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "161721": {
+   "row": 161721,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 3.028445243835449
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.050302136689424515
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.00013326710904948413
+    },
+    {
+     "name": "sub_obj",
+     "value": "324",
+     "surprisal": 0.0006050424999557436
+    },
+    {
+     "name": "vendor_name",
+     "value": "MULTI-MEASUREMENTS",
+     "surprisal": 0.024382364004850388
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.00027843413408845663
+    },
+    {
+     "name": "contract_number",
+     "value": "160088",
+     "surprisal": 1.5076708793640137
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001299,
+     "surprisal": 0.0003283466212451458
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "164194": {
+   "row": 164194,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 3.755955696105957
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 3.158996332786046e-05
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.000595034915022552
+    },
+    {
+     "name": "sub_obj",
+     "value": "605",
+     "surprisal": 0.3679035007953644
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARUSONE CONSTRUCTION INC",
+     "surprisal": 0.09906689822673798
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0005684667266905308
+    },
+    {
+     "name": "contract_number",
+     "value": "164049",
+     "surprisal": 1.8934266567230225
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.013198,
+     "surprisal": 0.002904677065089345
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "164286": {
+   "row": 164286,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 0.8318756818771362
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0049746073782444
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0011376821203157306
+    },
+    {
+     "name": "sub_obj",
+     "value": "290",
+     "surprisal": 6.770858453819528e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "THE CHILDRENS HOME OF EASTON",
+     "surprisal": 0.0016871754778549075
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1720141",
+     "surprisal": 0.16140587627887726
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000903,
+     "surprisal": 0.0005027343286201358
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "dept"
+   ]
+  },
+  "165517": {
+   "row": 165517,
+   "kind": "normal",
+   "department": "10",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.912301540374756
+    },
+    {
+     "name": "dept",
+     "value": "10",
+     "surprisal": 0.0010845737997442484
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00027616979787126184
+    },
+    {
+     "name": "sub_obj",
+     "value": "253",
+     "surprisal": 0.0003810394846368581
+    },
+    {
+     "name": "vendor_name",
+     "value": "WILLIAM S. BRAVEMAN",
+     "surprisal": 9.153558731079102
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVAT",
+     "surprisal": 0.002610967494547367
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.0004627825692296028
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000777,
+     "surprisal": 6.669314643659163e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "doc_ref_no_prefix"
+   ]
+  },
+  "165798": {
+   "row": 165798,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 3.046828269958496
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.00447225384414196
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0031248333398252726
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.002174633787944913
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHILDRENS HOSPITAL OF PHILADELPHIA",
+     "surprisal": 0.07594563066959381
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.1801649634435307e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "1420382",
+     "surprisal": 2.900219678878784
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001006,
+     "surprisal": 0.0004143881087657064
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "166103": {
+   "row": 166103,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.3650150299072266
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.287437081336975
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.003407863900065422
+    },
+    {
+     "name": "sub_obj",
+     "value": "424",
+     "surprisal": 0.41545477509498596
+    },
+    {
+     "name": "vendor_name",
+     "value": "PRECISION TIME SYSTEMS INC",
+     "surprisal": 3.001798629760742
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.15154895186424255
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.06384531408548355
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000812,
+     "surprisal": 0.00010842248593689874
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "dept"
+   ]
+  },
+  "168289": {
+   "row": 168289,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.8384524583816528
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.44952085614204407
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 2.169585604860913e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "202",
+     "surprisal": 0.009741151705384254
+    },
+    {
+     "name": "vendor_name",
+     "value": "INDUSTRIAL COMMERCIAL CLEANING",
+     "surprisal": 0.031021663919091225
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0005264088395051658
+    },
+    {
+     "name": "contract_number",
+     "value": "150037",
+     "surprisal": 0.005404029972851276
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000845,
+     "surprisal": 0.00025369453942403197
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "dept",
+    "vendor_name"
+   ]
+  },
+  "169011": {
+   "row": 169011,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.792003631591797
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.168244216387393e-05
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.264974000354414e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": -0.0
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARMEUSE LIME INC",
+     "surprisal": 0.00016378014697693288
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 4.6491513785440475e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160130",
+     "surprisal": 0.0007228621980175376
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000897,
+     "surprisal": 5.090417107567191e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "169233": {
+   "row": 169233,
+   "kind": "normal",
+   "department": "14",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.6235979795455933
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.03218856453895569
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 7.509902934543788e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": 0.012033251114189625
+    },
+    {
+     "name": "vendor_name",
+     "value": "BIO RAD LABORATORIES",
+     "surprisal": 0.08471979945898056
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 1.156323378381785e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "140082",
+     "surprisal": 0.8611965775489807
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000765,
+     "surprisal": 3.8754304114263505e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "169997": {
+   "row": 169997,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.6641380786895752
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 3.4858837127685547
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0005453529884107411
+    },
+    {
+     "name": "sub_obj",
+     "value": "260",
+     "surprisal": 0.0010495636379346251
+    },
+    {
+     "name": "vendor_name",
+     "value": "GENERAL ASPHALT PAVING CO OF PHILADELPHI",
+     "surprisal": 3.452296257019043
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.0010162194957956672
+    },
+    {
+     "name": "contract_number",
+     "value": "140138",
+     "surprisal": 4.728947639465332
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000822,
+     "surprisal": 0.00016564686666242778
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "dept",
+    "vendor_name"
+   ]
+  },
+  "170391": {
+   "row": 170391,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.595647096633911
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.4615830183029175
+    },
+    {
+     "name": "char_",
+     "value": "4",
+     "surprisal": 0.006342875771224499
+    },
+    {
+     "name": "sub_obj",
+     "value": "424",
+     "surprisal": 0.4766808748245239
+    },
+    {
+     "name": "vendor_name",
+     "value": "SEAFLOOR SYSTEMS INC",
+     "surprisal": 2.1037163734436035
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.1317732334136963
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.116648368537426
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001026,
+     "surprisal": 0.00017715070862323046
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "dept"
+   ]
+  },
+  "170647": {
+   "row": 170647,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.3418668508529663
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.645074735279195e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.0063591040670871735
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.0027212989516556263
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 9.059865078597795e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 6.16293036728166e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000959,
+     "surprisal": 0.0006027858471497893
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "170678": {
+   "row": 170678,
+   "kind": "normal",
+   "department": "23",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.3418622016906738
+    },
+    {
+     "name": "dept",
+     "value": "23",
+     "surprisal": 1.645074735279195e-05
+    },
+    {
+     "name": "char_",
+     "value": "5",
+     "surprisal": 0.006357682403177023
+    },
+    {
+     "name": "sub_obj",
+     "value": "506",
+     "surprisal": 0.0027209424879401922
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA PRISONS",
+     "surprisal": 9.059865078597795e-06
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 6.16293036728166e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000976,
+     "surprisal": 0.0006036621634848416
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "171324": {
+   "row": 171324,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.394496440887451
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.015467916615307331
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 3.516612196108326e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "604",
+     "surprisal": 0.997563898563385
+    },
+    {
+     "name": "vendor_name",
+     "value": "SERAVALLI INCORPORATED",
+     "surprisal": 1.0270400047302246
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 6.6756979322235566e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "174037",
+     "surprisal": 0.44369831681251526
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.038452,
+     "surprisal": 0.0001810620306059718
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "sub_obj"
+   ]
+  },
+  "171799": {
+   "row": 171799,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.7920174598693848
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.168244216387393e-05
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.264974000354414e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "307",
+     "surprisal": -0.0
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARMEUSE LIME INC",
+     "surprisal": 0.00016378014697693288
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 4.6491513785440475e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "160130",
+     "surprisal": 0.0007228621980175376
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000922,
+     "surprisal": 5.1270442781969905e-05
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "174243": {
+   "row": 174243,
+   "kind": "normal",
+   "department": "25",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.4958724975585938
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 1.5912563800811768
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.029041295871138573
+    },
+    {
+     "name": "sub_obj",
+     "value": "308",
+     "surprisal": 0.3903904855251312
+    },
+    {
+     "name": "vendor_name",
+     "value": "UNIFIRST",
+     "surprisal": 1.363910436630249
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.008940900675952435
+    },
+    {
+     "name": "contract_number",
+     "value": "170098",
+     "surprisal": 3.39311146736145
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000765,
+     "surprisal": 0.00020864988618995994
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "dept"
+   ]
+  },
+  "175037": {
+   "row": 175037,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 1.3562812805175781
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0011680454481393099
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 9.65590606938349e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.001990719698369503
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH ADVOCATE PROGRAM INCORPORATED",
+     "surprisal": 0.024246007204055786
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1420216",
+     "surprisal": 2.169494390487671
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000934,
+     "surprisal": 0.0012491862289607525
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "177270": {
+   "row": 177270,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.4681553840637207
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.48817235231399536
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 4.529942543740617e-06
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.000648883986286819
+    },
+    {
+     "name": "vendor_name",
+     "value": "URBAN AFFAIRS COALITION",
+     "surprisal": 4.293564796447754
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "contract_number",
+     "value": "1420190",
+     "surprisal": 2.9872243404388428
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.002202,
+     "surprisal": 0.00019410214736126363
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "fm"
+   ]
+  },
+  "177607": {
+   "row": 177607,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 2.3076348304748535
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00012838016846217215
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 7.533743337262422e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.006738320458680391
+    },
+    {
+     "name": "vendor_name",
+     "value": "TABOR NORTHERN COMMUNITY PARTNERS",
+     "surprisal": 0.0014542490243911743
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 2.50339189733495e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "1720383",
+     "surprisal": 0.048263076692819595
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.019882,
+     "surprisal": 0.0004890153650194407
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "sub_obj"
+   ]
+  },
+  "179275": {
+   "row": 179275,
+   "kind": "normal",
+   "department": "28",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "9",
+     "surprisal": 3.878274917602539
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 1.8358061424805783e-05
+    },
+    {
+     "name": "char_",
+     "value": "6",
+     "surprisal": 0.00033146608620882034
+    },
+    {
+     "name": "sub_obj",
+     "value": "664",
+     "surprisal": 0.05702177807688713
+    },
+    {
+     "name": "vendor_name",
+     "value": "THOMAS P CARNEY INC",
+     "surprisal": 0.09814315289258957
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 4.434487345861271e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "154061",
+     "surprisal": 0.004855864215642214
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.026377,
+     "surprisal": 0.00040079461177811027
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "vendor_name",
+    "sub_obj"
+   ]
+  },
+  "180568": {
+   "row": 180568,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 2.088900566101074
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.004470236133784056
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": -0.0
+    },
+    {
+     "name": "sub_obj",
+     "value": "254",
+     "surprisal": 1.7492210865020752
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA MENTAL HEALTH CARE CORP",
+     "surprisal": 1.2676539421081543
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620201",
+     "surprisal": 0.015540454536676407
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000857,
+     "surprisal": 0.0012726248241961002
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "sub_obj",
+    "vendor_name"
+   ]
+  },
+  "180570": {
+   "row": 180570,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 1.8795926570892334
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.0001532914029667154
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 7.152555099310121e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "254",
+     "surprisal": 2.268052339553833
+    },
+    {
+     "name": "vendor_name",
+     "value": "ASSESSMENT TREATMENT ALTERNATIVES INC",
+     "surprisal": 3.877561569213867
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 9.059865078597795e-06
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.7748757600784302
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000786,
+     "surprisal": 1.199383223138284e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "180576": {
+   "row": 180576,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "2",
+     "surprisal": 2.3019213676452637
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.027790715917944908
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "sub_obj",
+     "value": "254",
+     "surprisal": 2.523824453353882
+    },
+    {
+     "name": "vendor_name",
+     "value": "INTERCULTURAL FAMILY SERVICES INC",
+     "surprisal": 0.15989306569099426
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 1.4185804502631072e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.3745052218437195
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001104,
+     "surprisal": 5.131744546815753e-05
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "fm",
+    "contract_number"
+   ]
+  },
+  "180585": {
+   "row": 180585,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 1.275238275527954
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.00482395151630044
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": -0.0
+    },
+    {
+     "name": "sub_obj",
+     "value": "254",
+     "surprisal": 1.336084246635437
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA MENTAL HEALTH CARE CORP",
+     "surprisal": 1.5485680103302002
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620201",
+     "surprisal": 0.002802256727591157
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001001,
+     "surprisal": 0.0015606076922267675
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "180592": {
+   "row": 180592,
+   "kind": "normal",
+   "department": "22",
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 1.2753150463104248
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.004824426025152206
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": -0.0
+    },
+    {
+     "name": "sub_obj",
+     "value": "254",
+     "surprisal": 1.3361190557479858
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHILADELPHIA MENTAL HEALTH CARE CORP",
+     "surprisal": 1.5486432313919067
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": -0.0
+    },
+    {
+     "name": "contract_number",
+     "value": "1620201",
+     "surprisal": 0.0028024944476783276
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.001042,
+     "surprisal": 0.0015637922333553433
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "180697": {
+   "row": 180697,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.3535187244415283
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.00586668960750103
+    },
+    {
+     "name": "char_",
+     "value": "GLOBAL_RARE_char__0013",
+     "surprisal": 3.981008768081665
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.27900993824005127
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0013",
+     "surprisal": 9.696393966674805
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVFM",
+     "surprisal": 0.037819214165210724
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.009710103273391724
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.215448,
+     "surprisal": 0.04514426365494728
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "char_",
+    "fm"
+   ]
+  },
+  "180702": {
+   "row": 180702,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.454941749572754
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.0010336062405258417
+    },
+    {
+     "name": "char_",
+     "value": "GLOBAL_RARE_char__0018",
+     "surprisal": 4.698171138763428
+    },
+    {
+     "name": "sub_obj",
+     "value": "340",
+     "surprisal": 0.5050224661827087
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0018",
+     "surprisal": 9.631166458129883
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 1.2874520507466514e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "140005",
+     "surprisal": 3.042701005935669
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.268438,
+     "surprisal": 0.06304175406694412
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "char_",
+    "contract_number"
+   ]
+  },
+  "180704": {
+   "row": 180704,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.5357173681259155
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 1.5782198905944824
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.002829597797244787
+    },
+    {
+     "name": "sub_obj",
+     "value": "285",
+     "surprisal": 0.316579133272171
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0020",
+     "surprisal": 1.8569027185440063
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.03392605856060982
+    },
+    {
+     "name": "contract_number",
+     "value": "GLOBAL_RARE_contract_number_0020",
+     "surprisal": 4.183474540710449
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.19363,
+     "surprisal": 0.019671419635415077
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "dept"
+   ]
+  },
+  "180705": {
+   "row": 180705,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "7",
+     "surprisal": 2.8288700580596924
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 0.6787895560264587
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0030083658639341593
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 1.119619369506836
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0021",
+     "surprisal": 4.2359161376953125
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "GLOBAL_RARE_doc_ref_no_prefix_0021",
+     "surprisal": 3.415863513946533
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 1.6609392166137695
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.198913,
+     "surprisal": 0.03665653243660927
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "doc_ref_no_prefix",
+    "fm"
+   ]
+  },
+  "180719": {
+   "row": 180719,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.552318572998047
+    },
+    {
+     "name": "dept",
+     "value": "10",
+     "surprisal": 0.02622055634856224
+    },
+    {
+     "name": "char_",
+     "value": "GLOBAL_RARE_char__0035",
+     "surprisal": 5.438657283782959
+    },
+    {
+     "name": "sub_obj",
+     "value": "253",
+     "surprisal": 0.0064146569930016994
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0035",
+     "surprisal": 8.601789474487305
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVAT",
+     "surprisal": 0.03608008846640587
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.015913037583231926
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.264228,
+     "surprisal": 0.0671362355351448
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "char_",
+    "fm"
+   ]
+  },
+  "180723": {
+   "row": 180723,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "3",
+     "surprisal": 2.6561989784240723
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.04790928587317467
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.5486719608306885
+    },
+    {
+     "name": "sub_obj",
+     "value": "345",
+     "surprisal": 0.45144832134246826
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0039",
+     "surprisal": 0.5488595366477966
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.00037674958002753556
+    },
+    {
+     "name": "contract_number",
+     "value": "GLOBAL_RARE_contract_number_0039",
+     "surprisal": 1.1550580263137817
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.232496,
+     "surprisal": 0.057763949036598206
+    }
+   ],
+   "reason_codes": [
+    "fm",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "180750": {
+   "row": 180750,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "4",
+     "surprisal": 2.3864083290100098
+    },
+    {
+     "name": "dept",
+     "value": "10",
+     "surprisal": 0.00394352525472641
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.004494565073400736
+    },
+    {
+     "name": "sub_obj",
+     "value": "253",
+     "surprisal": 0.006492947693914175
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0066",
+     "surprisal": 7.570188999176025
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVAT",
+     "surprisal": 0.0064467559568583965
+    },
+    {
+     "name": "contract_number",
+     "value": "GLOBAL_RARE_contract_number_0066",
+     "surprisal": 11.585356712341309
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.112866,
+     "surprisal": 0.011213102377951145
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "180759": {
+   "row": 180759,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.62294864654541
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 1.091477394104004
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 2.097435474395752
+    },
+    {
+     "name": "sub_obj",
+     "value": "GLOBAL_RARE_sub_obj_0075",
+     "surprisal": 3.811281442642212
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0075",
+     "surprisal": 5.998197555541992
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVFM",
+     "surprisal": 0.23950570821762085
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.009145275689661503
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.272998,
+     "surprisal": 0.06884580105543137
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "sub_obj",
+    "fm"
+   ]
+  },
+  "180760": {
+   "row": 180760,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 2.735424757003784
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 0.0071388171054422855
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00041261743172071874
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 5.543078441405669e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0076",
+     "surprisal": 3.8768458366394043
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "GLOBAL_RARE_doc_ref_no_prefix_0076",
+     "surprisal": 9.498547554016113
+    },
+    {
+     "name": "contract_number",
+     "value": "1320730",
+     "surprisal": 1.185025930404663
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.162388,
+     "surprisal": 0.02838006056845188
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "180775": {
+   "row": 180775,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "GLOBAL_RARE_fm_0091",
+     "surprisal": 4.467648506164551
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 0.04226618632674217
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.111392542719841
+    },
+    {
+     "name": "sub_obj",
+     "value": "328",
+     "surprisal": 0.1681676208972931
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0091",
+     "surprisal": 7.142188549041748
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVFM",
+     "surprisal": 0.09854604303836823
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.0115497512742877
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.262028,
+     "surprisal": 0.06683886796236038
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "fm",
+    "sub_obj"
+   ]
+  },
+  "180793": {
+   "row": 180793,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 1.9216735363006592
+    },
+    {
+     "name": "dept",
+     "value": "28",
+     "surprisal": 0.846971333026886
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.15840919315814972
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 7.951878547668457
+    },
+    {
+     "name": "vendor_name",
+     "value": "EDWARD J. DYMEK",
+     "surprisal": 6.026002883911133
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PCXX",
+     "surprisal": 7.147827625274658
+    },
+    {
+     "name": "contract_number",
+     "value": "130284",
+     "surprisal": 5.029068470001221
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000766,
+     "surprisal": 5.558202610700391e-05
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "doc_ref_no_prefix",
+    "vendor_name"
+   ]
+  },
+  "180794": {
+   "row": 180794,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 1.9153037071228027
+    },
+    {
+     "name": "dept",
+     "value": "22",
+     "surprisal": 4.498687744140625
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.1441756635904312
+    },
+    {
+     "name": "sub_obj",
+     "value": "320",
+     "surprisal": 1.0443413257598877
+    },
+    {
+     "name": "vendor_name",
+     "value": "MODJESKI AND MASTERS, INC.",
+     "surprisal": 7.501983642578125
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVAT",
+     "surprisal": 13.351741790771484
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.43060076236724854
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.003073,
+     "surprisal": 0.00032296846620738506
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "vendor_name",
+    "dept"
+   ]
+  },
+  "180811": {
+   "row": 180811,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "8",
+     "surprisal": 2.840538263320923
+    },
+    {
+     "name": "dept",
+     "value": "11",
+     "surprisal": 2.212678909301758
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 0.2946579158306122
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 3.848762273788452
+    },
+    {
+     "name": "vendor_name",
+     "value": "STREHLOW & ASSOCIATES, INC.",
+     "surprisal": 0.1446351259946823
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVXX",
+     "surprisal": 7.138596057891846
+    },
+    {
+     "name": "contract_number",
+     "value": "170007",
+     "surprisal": 8.891680717468262
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000784,
+     "surprisal": 0.0004591724427882582
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "doc_ref_no_prefix",
+    "sub_obj"
+   ]
+  },
+  "180813": {
+   "row": 180813,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 3.1965203285217285
+    },
+    {
+     "name": "dept",
+     "value": "11",
+     "surprisal": 0.18434134125709534
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.021264774724841118
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 0.009637141600251198
+    },
+    {
+     "name": "vendor_name",
+     "value": "CATHOLIC SOCIAL SERVICES",
+     "surprisal": 2.452794075012207
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 1.1988224983215332
+    },
+    {
+     "name": "contract_number",
+     "value": "160047",
+     "surprisal": 6.019524097442627
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000789,
+     "surprisal": 0.0001258637203136459
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "fm",
+    "vendor_name"
+   ]
+  },
+  "180817": {
+   "row": 180817,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "6",
+     "surprisal": 2.7677669525146484
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 2.5592565536499023
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.0004325169720686972
+    },
+    {
+     "name": "sub_obj",
+     "value": "250",
+     "surprisal": 2.075608968734741
+    },
+    {
+     "name": "vendor_name",
+     "value": "WASTE MANAGEMENT OF PENNSYLVANIA INC",
+     "surprisal": 5.334261894226074
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVFM",
+     "surprisal": 9.094961166381836
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.03999122977256775
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.00077,
+     "surprisal": 0.0005290755070745945
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "vendor_name",
+    "fm"
+   ]
+  },
+  "180830": {
+   "row": 180830,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "1",
+     "surprisal": 1.9119423627853394
+    },
+    {
+     "name": "dept",
+     "value": "11",
+     "surprisal": 1.6113612651824951
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 6.0025177001953125
+    },
+    {
+     "name": "sub_obj",
+     "value": "285",
+     "surprisal": 4.004741191864014
+    },
+    {
+     "name": "vendor_name",
+     "value": "STERLING INFOSYSTEMS INC",
+     "surprisal": 6.033599853515625
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "VCXX",
+     "surprisal": 0.052938953042030334
+    },
+    {
+     "name": "contract_number",
+     "value": "130275",
+     "surprisal": 1.5548126697540283
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000871,
+     "surprisal": 2.021923501160927e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "char_",
+    "sub_obj"
+   ]
+  },
+  "180842": {
+   "row": 180842,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "5",
+     "surprisal": 2.3520288467407227
+    },
+    {
+     "name": "dept",
+     "value": "14",
+     "surprisal": 2.2779555320739746
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.00039426659350283444
+    },
+    {
+     "name": "sub_obj",
+     "value": "211",
+     "surprisal": 8.813943862915039
+    },
+    {
+     "name": "vendor_name",
+     "value": "COMMONWEALTH OF PA DEPT LABOR & INDUSTRY",
+     "surprisal": 4.470980167388916
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVFM",
+     "surprisal": 9.56342601776123
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 0.00014685506175737828
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000764,
+     "surprisal": 0.0007801377214491367
+    }
+   ],
+   "reason_codes": [
+    "doc_ref_no_prefix",
+    "sub_obj",
+    "vendor_name"
+   ]
+  },
+  "180864": {
+   "row": 180864,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "10",
+     "surprisal": 3.688448429107666
+    },
+    {
+     "name": "dept",
+     "value": "52",
+     "surprisal": 3.4383955001831055
+    },
+    {
+     "name": "char_",
+     "value": "2",
+     "surprisal": 0.11780327558517456
+    },
+    {
+     "name": "sub_obj",
+     "value": "305",
+     "surprisal": 11.31002426147461
+    },
+    {
+     "name": "vendor_name",
+     "value": "XEROX CORPORATION",
+     "surprisal": 2.5248074531555176
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PVMD",
+     "surprisal": 6.2605671882629395
+    },
+    {
+     "name": "contract_number",
+     "value": "NA",
+     "surprisal": 2.8032336235046387
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000763,
+     "surprisal": 5.05947309648036e-06
+    }
+   ],
+   "reason_codes": [
+    "sub_obj",
+    "doc_ref_no_prefix",
+    "fm"
+   ]
+  },
+  "180868": {
+   "row": 180868,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "fm",
+     "value": "12",
+     "surprisal": 2.5107858180999756
+    },
+    {
+     "name": "dept",
+     "value": "25",
+     "surprisal": 1.9077975749969482
+    },
+    {
+     "name": "char_",
+     "value": "3",
+     "surprisal": 9.667406266089529e-05
+    },
+    {
+     "name": "sub_obj",
+     "value": "313",
+     "surprisal": 5.681198596954346
+    },
+    {
+     "name": "vendor_name",
+     "value": "AMERICAN UNIFORM SALES INC",
+     "surprisal": 2.3648014068603516
+    },
+    {
+     "name": "doc_ref_no_prefix",
+     "value": "PCXX",
+     "surprisal": 1.073901653289795
+    },
+    {
+     "name": "contract_number",
+     "value": "150166",
+     "surprisal": 6.558732986450195
+    },
+    {
+     "name": "transaction_amount",
+     "value": 0.000766,
+     "surprisal": 3.007133273058571e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "sub_obj",
+    "fm"
+   ]
+  }
+ }
+}

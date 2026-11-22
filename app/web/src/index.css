@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (T1): same values as tailwind.config.js, exposed as CSS variables
+   for Recharts and inline SVG. Dark is the only theme (user brief). */
+:root {
+  color-scheme: dark;
+  --plane: #0f1a2c;
+  --surface-1: #15233a;
+  --surface-2: #1d2e4a;
+  --line: #2b3d5e;
+  --line-strong: #3a4e72;
+  --ink: #eef2f8;
+  --ink-2: #b4c0d4;
+  --ink-3: #8f9db5;
+  --beacon: #f0b44c;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --context-a: #7d8ca8;
+  --context-b: #637390;
+  --critical: #d03b3b;
+  --critical-text: #f07a7a;
+  --good: #0ca30c;
+  --good-text: #3fc46a;
+}
+
+@layer base {
+  html { background: var(--plane); -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-plane font-sans text-sm text-ink antialiased; }
+  h1, h2, h3 { @apply font-display text-ink; text-wrap: balance; }
+  /* tabular figures where numbers must line up; proportional elsewhere */
+  table, .tabular { font-variant-numeric: tabular-nums; }
+  :focus-visible { outline: 2px solid var(--beacon); outline-offset: 2px; border-radius: 4px; }
+  ::selection { background: rgba(240, 180, 76, 0.35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

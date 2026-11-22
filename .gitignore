@@ -29,3 +29,11 @@ report/main.pdf
 .idea/
 .DS_Store
 Thumbs.db
+# demo dashboard (app/web)
+app/web/node_modules/
+app/web/dist/
+app/web/*.tsbuildinfo
+# Playwright output
+test-results/
+playwright-report/
+playwright/.cache/

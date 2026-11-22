@@ -1,0 +1,66 @@
+"""Dashboard API smoke tests (skipped when fastapi is not installed: see app/requirements.txt)."""
+import importlib.util
+import json
+from pathlib import Path
+
+import pytest
+
+pytest.importorskip("fastapi")
+pytest.importorskip("httpx")
+from fastapi.testclient import TestClient  # noqa: E402
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_app(monkeypatch, root: Path):
+    monkeypatch.setenv("CONTROLTOWER_ROOT", str(root))
+    spec = importlib.util.spec_from_file_location("ct_api_main", ROOT / "app" / "api" / "main.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return TestClient(mod.app)
+
+
+def test_real_repo_endpoints(monkeypatch):
+    c = load_app(monkeypatch, ROOT)
+    assert c.get("/api/health").json()["status"] == "ok"
+    cities = c.get("/api/cities").json()
+    assert {x["city"] for x in cities["cities"]} >= {"philadelphia", "chicago"}
+    assert "linear" in {s["name"] for s in cities["scenarios"]}
+    for path in ("/api/experiences/philadelphia", "/api/baselines", "/api/v1/scoring",
+                 "/api/v1/alerts/philadelphia", "/api/v1/record/philadelphia/0"):
+        r = c.get(path)
+        assert r.status_code in (200, 404), path
+        assert r.json().get("status") in ("ok", "pending", None), path
+    assert c.get("/api/experiences/BAD..").status_code in (400, 404)
+
+
+def test_pending_and_files(monkeypatch, tmp_path):
+    (tmp_path / "configs" / "scenarios").mkdir(parents=True)
+    (tmp_path / "configs" / "x.yaml").write_text("city: x\ntarget_dept: '1'\n")
+    (tmp_path / "results" / "dashboard").mkdir(parents=True)
+    c = load_app(monkeypatch, tmp_path)
+    assert c.get("/api/v1/scoring").json()["status"] == "pending"
+    assert c.get("/api/v1/alerts/x").json()["status"] == "pending"
+    assert c.get("/api/experiences/x").json()["status"] == "pending"
+    (tmp_path / "results" / "experiences_x_linear.csv").write_text(",1,2,total\nE1,5,6,11\nE2,3,6,9\n")
+    e = c.get("/api/experiences/x").json()
+    assert e["departments"] == ["1", "2"] and e["experiences"][1] == {"experience": "E2", "1": 3, "2": 6, "total": 9}
+    (tmp_path / "results" / "v1_x_scoring.csv").write_text(
+        "city,seed,scorer,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,score_seconds,epochs\n"
+        "x,0,field_surprisal,0.5,0.6,1,0,1,10,1,30\nx,1,field_surprisal,0.7,0.8,1,0,1,10,1,30\n")
+    s = c.get("/api/v1/scoring").json()
+    a = s["cities"]["x"]["scorers"]["field_surprisal"]["auprc"]
+    assert a["mean"] == pytest.approx(0.6) and a["n"] == 2
+    rec = {"row": 7, "kind": "global_anomaly", "department": None, "reason_codes": ["f"],
+           "fields": [{"name": "f", "value": "v", "surprisal": 3.0}]}
+    (tmp_path / "results" / "dashboard" / "x_alerts.json").write_text(json.dumps({
+        "city": "x", "seed": 0, "scenario": "linear", "model_file": "m.pt", "experience": "E10", "n_eval": 100,
+        "budget": 0.01, "n_alerts": 1, "n_injected": {"global": 1, "local": 0}, "target_department": "1",
+        "numeric_note": "", "alerts": {"field_surprisal": [{"rank": 1, "row": 7, "score": 3.0,
+                                                            "kind": "global_anomaly"}]},
+        "records": {"7": rec}}))
+    al = c.get("/api/v1/alerts/x?scorer=field_surprisal").json()
+    assert al["alerts"][0]["reason_codes"] == ["f"]
+    assert c.get("/api/v1/record/x/7").json()["fields"][0]["surprisal"] == 3.0
+    assert c.get("/api/v1/record/x/8").status_code == 404
+    assert c.get("/api/v1/alerts/x?scorer=nope").status_code == 404

@@ -1,0 +1,8463 @@
+{
+ "city": "chicago",
+ "seed": 0,
+ "scenario": "linear",
+ "model_file": "v1_chicago_s0.pt",
+ "experience": "E10",
+ "n_eval": 4378,
+ "budget": 0.01,
+ "n_alerts": 44,
+ "n_injected": {
+  "global": 10,
+  "local": 10
+ },
+ "target_department": "DEPT OF GENERAL SERVICES",
+ "numeric_note": "numerical fields are min-max scaled to [0, 1]",
+ "alerts": {
+  "recon_error": [
+   {
+    "rank": 1,
+    "row": 55881,
+    "score": 47.23907470703125,
+    "kind": "normal"
+   },
+   {
+    "rank": 2,
+    "row": 82795,
+    "score": 45.05768585205078,
+    "kind": "normal"
+   },
+   {
+    "rank": 3,
+    "row": 48591,
+    "score": 44.45466613769531,
+    "kind": "normal"
+   },
+   {
+    "rank": 4,
+    "row": 79662,
+    "score": 44.445404052734375,
+    "kind": "normal"
+   },
+   {
+    "rank": 5,
+    "row": 77411,
+    "score": 44.248008728027344,
+    "kind": "normal"
+   },
+   {
+    "rank": 6,
+    "row": 66292,
+    "score": 43.73246383666992,
+    "kind": "normal"
+   },
+   {
+    "rank": 7,
+    "row": 74406,
+    "score": 43.627803802490234,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 55963,
+    "score": 42.645572662353516,
+    "kind": "normal"
+   },
+   {
+    "rank": 9,
+    "row": 134713,
+    "score": 41.683372497558594,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 10,
+    "row": 77566,
+    "score": 41.45311737060547,
+    "kind": "normal"
+   },
+   {
+    "rank": 11,
+    "row": 50476,
+    "score": 40.60531997680664,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 75008,
+    "score": 40.50044250488281,
+    "kind": "normal"
+   },
+   {
+    "rank": 13,
+    "row": 70971,
+    "score": 40.49040603637695,
+    "kind": "normal"
+   },
+   {
+    "rank": 14,
+    "row": 61867,
+    "score": 40.32870864868164,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 83449,
+    "score": 40.3258171081543,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 73088,
+    "score": 40.249549865722656,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 53167,
+    "score": 39.64057922363281,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 74984,
+    "score": 39.35848617553711,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 81736,
+    "score": 39.009639739990234,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 20810,
+    "score": 38.8327751159668,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 56933,
+    "score": 38.83191680908203,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 49874,
+    "score": 38.74707794189453,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 79862,
+    "score": 38.74592971801758,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 50769,
+    "score": 38.5643424987793,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 85756,
+    "score": 38.11913299560547,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 73133,
+    "score": 37.7239990234375,
+    "kind": "normal"
+   },
+   {
+    "rank": 27,
+    "row": 72200,
+    "score": 36.95388412475586,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 70886,
+    "score": 36.747718811035156,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 54408,
+    "score": 35.744022369384766,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 17896,
+    "score": 35.3123893737793,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 84543,
+    "score": 34.5760383605957,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 53208,
+    "score": 34.383201599121094,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 23994,
+    "score": 33.90080642700195,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 70934,
+    "score": 33.488399505615234,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 19311,
+    "score": 33.18917465209961,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 60873,
+    "score": 32.9285774230957,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 57056,
+    "score": 32.88315963745117,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 64393,
+    "score": 32.721675872802734,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 60462,
+    "score": 32.435516357421875,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 85577,
+    "score": 32.25287628173828,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 63539,
+    "score": 32.13986587524414,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 74801,
+    "score": 32.12337112426758,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 73663,
+    "score": 32.0159912109375,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 77996,
+    "score": 31.882980346679688,
+    "kind": "normal"
+   }
+  ],
+  "field_surprisal": [
+   {
+    "rank": 1,
+    "row": 134711,
+    "score": 31.73921012878418,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 2,
+    "row": 134713,
+    "score": 28.917583465576172,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 3,
+    "row": 134758,
+    "score": 26.048171997070312,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 4,
+    "row": 134702,
+    "score": 25.266937255859375,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 5,
+    "row": 134701,
+    "score": 20.687519073486328,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 6,
+    "row": 134706,
+    "score": 19.647811889648438,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 7,
+    "row": 21702,
+    "score": 17.054039001464844,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 134680,
+    "score": 15.651979446411133,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 9,
+    "row": 31107,
+    "score": 15.545613288879395,
+    "kind": "normal"
+   },
+   {
+    "rank": 10,
+    "row": 134687,
+    "score": 15.17180347442627,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 11,
+    "row": 41244,
+    "score": 15.14571762084961,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 41739,
+    "score": 15.065278053283691,
+    "kind": "normal"
+   },
+   {
+    "rank": 13,
+    "row": 1469,
+    "score": 14.811686515808105,
+    "kind": "normal"
+   },
+   {
+    "rank": 14,
+    "row": 61686,
+    "score": 14.793604850769043,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 18322,
+    "score": 14.735396385192871,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 113783,
+    "score": 14.718497276306152,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 54846,
+    "score": 14.651053428649902,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 111687,
+    "score": 14.593353271484375,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 170,
+    "score": 14.400351524353027,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 82337,
+    "score": 14.140761375427246,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 3142,
+    "score": 14.131863594055176,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 1435,
+    "score": 14.006285667419434,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 15214,
+    "score": 13.95678424835205,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 35569,
+    "score": 13.578042984008789,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 83376,
+    "score": 13.327470779418945,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 134565,
+    "score": 13.295552253723145,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 27,
+    "row": 49339,
+    "score": 13.28081226348877,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 4534,
+    "score": 13.134342193603516,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 32373,
+    "score": 13.024703979492188,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 25284,
+    "score": 12.883078575134277,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 13563,
+    "score": 12.882100105285645,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 64671,
+    "score": 12.861482620239258,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 112551,
+    "score": 12.856281280517578,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 19894,
+    "score": 12.851163864135742,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 27542,
+    "score": 12.820277214050293,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 84329,
+    "score": 12.771843910217285,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 21896,
+    "score": 12.751158714294434,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 58388,
+    "score": 12.702219009399414,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 79866,
+    "score": 12.264041900634766,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 28543,
+    "score": 12.236482620239258,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 14810,
+    "score": 12.10390853881836,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 27729,
+    "score": 12.090800285339355,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 79259,
+    "score": 12.038305282592773,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 53676,
+    "score": 11.988546371459961,
+    "kind": "normal"
+   }
+  ],
+  "latent_distance": [
+   {
+    "rank": 1,
+    "row": 1402,
+    "score": 20.639946939308807,
+    "kind": "normal"
+   },
+   {
+    "rank": 2,
+    "row": 30468,
+    "score": 14.04938672656777,
+    "kind": "normal"
+   },
+   {
+    "rank": 3,
+    "row": 12098,
+    "score": 12.900742211432448,
+    "kind": "normal"
+   },
+   {
+    "rank": 4,
+    "row": 134591,
+    "score": 12.643797976408344,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 5,
+    "row": 134647,
+    "score": 12.107767914809903,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 6,
+    "row": 134721,
+    "score": 11.63663733742097,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 7,
+    "row": 13526,
+    "score": 11.37897101947747,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 42907,
+    "score": 11.17286142566768,
+    "kind": "normal"
+   },
+   {
+    "rank": 9,
+    "row": 134567,
+    "score": 10.925532619390838,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 10,
+    "row": 134605,
+    "score": 10.796843894167392,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 11,
+    "row": 3447,
+    "score": 10.290771995546981,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 134687,
+    "score": 10.128758851167351,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 13,
+    "row": 134637,
+    "score": 10.09602606255684,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 14,
+    "row": 35592,
+    "score": 10.067013531013465,
+    "kind": "normal"
+   },
+   {
+    "rank": 15,
+    "row": 12673,
+    "score": 9.991589831784127,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 9974,
+    "score": 9.965192216882944,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 134607,
+    "score": 9.537425097686889,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 18,
+    "row": 134577,
+    "score": 9.439087556044148,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 19,
+    "row": 14619,
+    "score": 9.42243301581794,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 134711,
+    "score": 9.300812047854475,
+    "kind": "local_anomaly"
+   },
+   {
+    "rank": 21,
+    "row": 10979,
+    "score": 9.090723290419772,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 22227,
+    "score": 8.867415708345124,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 30563,
+    "score": 8.792967757923988,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 37541,
+    "score": 8.458922234744099,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 3365,
+    "score": 8.392443732868026,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 40632,
+    "score": 8.308314303412384,
+    "kind": "normal"
+   },
+   {
+    "rank": 27,
+    "row": 134599,
+    "score": 8.284252071818665,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 28,
+    "row": 36802,
+    "score": 8.226356012352625,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 17722,
+    "score": 8.225181612434614,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 35256,
+    "score": 8.16470651108489,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 76086,
+    "score": 8.131935328298843,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 113119,
+    "score": 8.063349657805857,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 26493,
+    "score": 8.005755186083864,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 6608,
+    "score": 7.942263933649774,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 22089,
+    "score": 7.9172885309556005,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 20492,
+    "score": 7.911612482506119,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 29700,
+    "score": 7.763179520039465,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 8584,
+    "score": 7.71583046312293,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 73115,
+    "score": 7.6671756689052515,
+    "kind": "normal"
+   },
+   {
+    "rank": 40,
+    "row": 16547,
+    "score": 7.6639547341372865,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 18485,
+    "score": 7.548415770614708,
+    "kind": "normal"
+   },
+   {
+    "rank": 42,
+    "row": 676,
+    "score": 7.516218721384531,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 20033,
+    "score": 7.449985459960885,
+    "kind": "normal"
+   },
+   {
+    "rank": 44,
+    "row": 16900,
+    "score": 7.44985478681042,
+    "kind": "normal"
+   }
+  ],
+  "isolation_forest": [
+   {
+    "rank": 1,
+    "row": 31866,
+    "score": 0.7251581506667206,
+    "kind": "normal"
+   },
+   {
+    "rank": 2,
+    "row": 134637,
+    "score": 0.7205110780278627,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 3,
+    "row": 134647,
+    "score": 0.7120130536608942,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 4,
+    "row": 134591,
+    "score": 0.708323005450735,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 5,
+    "row": 12098,
+    "score": 0.7058184980846888,
+    "kind": "normal"
+   },
+   {
+    "rank": 6,
+    "row": 134577,
+    "score": 0.7019617061269544,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 7,
+    "row": 37078,
+    "score": 0.6981098401440857,
+    "kind": "normal"
+   },
+   {
+    "rank": 8,
+    "row": 134605,
+    "score": 0.69535672338699,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 9,
+    "row": 1902,
+    "score": 0.6953148544682479,
+    "kind": "normal"
+   },
+   {
+    "rank": 10,
+    "row": 2954,
+    "score": 0.694374609738038,
+    "kind": "normal"
+   },
+   {
+    "rank": 11,
+    "row": 1402,
+    "score": 0.689136569096739,
+    "kind": "normal"
+   },
+   {
+    "rank": 12,
+    "row": 3447,
+    "score": 0.6873579213177834,
+    "kind": "normal"
+   },
+   {
+    "rank": 13,
+    "row": 115683,
+    "score": 0.6873403716923865,
+    "kind": "normal"
+   },
+   {
+    "rank": 14,
+    "row": 134601,
+    "score": 0.686537810021951,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 15,
+    "row": 108145,
+    "score": 0.6832019574490793,
+    "kind": "normal"
+   },
+   {
+    "rank": 16,
+    "row": 9974,
+    "score": 0.682796323484015,
+    "kind": "normal"
+   },
+   {
+    "rank": 17,
+    "row": 31842,
+    "score": 0.6816954733361447,
+    "kind": "normal"
+   },
+   {
+    "rank": 18,
+    "row": 34708,
+    "score": 0.6799503605844466,
+    "kind": "normal"
+   },
+   {
+    "rank": 19,
+    "row": 31641,
+    "score": 0.6792301969247172,
+    "kind": "normal"
+   },
+   {
+    "rank": 20,
+    "row": 3365,
+    "score": 0.6787510113332574,
+    "kind": "normal"
+   },
+   {
+    "rank": 21,
+    "row": 35273,
+    "score": 0.678082712285667,
+    "kind": "normal"
+   },
+   {
+    "rank": 22,
+    "row": 31359,
+    "score": 0.6776920007900454,
+    "kind": "normal"
+   },
+   {
+    "rank": 23,
+    "row": 33281,
+    "score": 0.6776920007900454,
+    "kind": "normal"
+   },
+   {
+    "rank": 24,
+    "row": 113072,
+    "score": 0.6775682725448596,
+    "kind": "normal"
+   },
+   {
+    "rank": 25,
+    "row": 114509,
+    "score": 0.6772518245816594,
+    "kind": "normal"
+   },
+   {
+    "rank": 26,
+    "row": 14034,
+    "score": 0.6765035400584656,
+    "kind": "normal"
+   },
+   {
+    "rank": 27,
+    "row": 113114,
+    "score": 0.6762933553696743,
+    "kind": "normal"
+   },
+   {
+    "rank": 28,
+    "row": 2298,
+    "score": 0.6759652607012663,
+    "kind": "normal"
+   },
+   {
+    "rank": 29,
+    "row": 109309,
+    "score": 0.6759524115653469,
+    "kind": "normal"
+   },
+   {
+    "rank": 30,
+    "row": 13526,
+    "score": 0.6755430068217989,
+    "kind": "normal"
+   },
+   {
+    "rank": 31,
+    "row": 5623,
+    "score": 0.6754414904600805,
+    "kind": "normal"
+   },
+   {
+    "rank": 32,
+    "row": 112289,
+    "score": 0.6741014067949778,
+    "kind": "normal"
+   },
+   {
+    "rank": 33,
+    "row": 108664,
+    "score": 0.6740287065669426,
+    "kind": "normal"
+   },
+   {
+    "rank": 34,
+    "row": 112570,
+    "score": 0.6728103478262145,
+    "kind": "normal"
+   },
+   {
+    "rank": 35,
+    "row": 12627,
+    "score": 0.6719570891678914,
+    "kind": "normal"
+   },
+   {
+    "rank": 36,
+    "row": 111142,
+    "score": 0.6719556870957456,
+    "kind": "normal"
+   },
+   {
+    "rank": 37,
+    "row": 116214,
+    "score": 0.6718633350197594,
+    "kind": "normal"
+   },
+   {
+    "rank": 38,
+    "row": 42907,
+    "score": 0.6714758886354234,
+    "kind": "normal"
+   },
+   {
+    "rank": 39,
+    "row": 134567,
+    "score": 0.6708534005405263,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 40,
+    "row": 4563,
+    "score": 0.6706137082786535,
+    "kind": "normal"
+   },
+   {
+    "rank": 41,
+    "row": 134607,
+    "score": 0.6679958567196687,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 42,
+    "row": 7075,
+    "score": 0.6679045705610301,
+    "kind": "normal"
+   },
+   {
+    "rank": 43,
+    "row": 134599,
+    "score": 0.6674150170993217,
+    "kind": "global_anomaly"
+   },
+   {
+    "rank": 44,
+    "row": 40632,
+    "score": 0.6668034932181877,
+    "kind": "normal"
+   }
+  ]
+ },
+ "records": {
+  "170": {
+   "row": 170,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.8586488366127014
+    },
+    {
+     "name": "vendor_name",
+     "value": "MIDCO ELECTRIC SUPPLY, INC",
+     "surprisal": 1.706647276878357
+    },
+    {
+     "name": "contract_number",
+     "value": "10940",
+     "surprisal": 10.446556091308594
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 7.390948667307384e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2006",
+     "surprisal": 1.387498140335083
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.3841830625315197e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.000438,
+     "surprisal": 0.0009913560934364796
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "676": {
+   "row": 676,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.29332196712493896
+    },
+    {
+     "name": "vendor_name",
+     "value": "BUILDERS CHICAGO CORPORATION",
+     "surprisal": 4.622581481933594
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.029631802812218666
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.7881233361549675e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2013",
+     "surprisal": 2.8735976219177246
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.658331868587993e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.000495,
+     "surprisal": 3.51983580912929e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "1402": {
+   "row": 1402,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.03052390366792679
+    },
+    {
+     "name": "vendor_name",
+     "value": "AUSTIN POWER PARTNERS",
+     "surprisal": 1.0573413372039795
+    },
+    {
+     "name": "contract_number",
+     "value": "96319",
+     "surprisal": 7.135158538818359
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 7.712543447269127e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2021",
+     "surprisal": 1.1162220239639282
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 7.760223525110632e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.890462,
+     "surprisal": 0.5693365931510925
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "vendor_name"
+   ]
+  },
+  "1435": {
+   "row": 1435,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 3.899949073791504
+    },
+    {
+     "name": "vendor_name",
+     "value": "SUMIT CONSTRUCTION CO., INC.",
+     "surprisal": 4.7426886558532715
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.7989360094070435
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00021908267808612436
+    },
+    {
+     "name": "check_year",
+     "value": "2018",
+     "surprisal": 4.5640764236450195
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00020656836568377912
+    },
+    {
+     "name": "amount",
+     "value": 0.000886,
+     "surprisal": 0.000210091719054617
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "1469": {
+   "row": 1469,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.1167466640472412
+    },
+    {
+     "name": "vendor_name",
+     "value": "PLOTE CONSTRUCTION, INC.",
+     "surprisal": 6.54341983795166
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 3.109355926513672
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 4.95898348162882e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2019",
+     "surprisal": 4.041966438293457
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 3.194758028257638e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.008186,
+     "surprisal": 0.00011679869930958375
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "1902": {
+   "row": 1902,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.1559569835662842
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.2887475490570068
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.001689317636191845
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0002824861148837954
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.7903425693511963
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00022551853908225894
+    },
+    {
+     "name": "amount",
+     "value": 0.028908,
+     "surprisal": 0.001507481443695724
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "2298": {
+   "row": 2298,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.0008554374799132347
+    },
+    {
+     "name": "vendor_name",
+     "value": "AOR TRANSIT",
+     "surprisal": 0.42727285623550415
+    },
+    {
+     "name": "contract_number",
+     "value": "T26358",
+     "surprisal": 0.8424063324928284
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 5.328513361746445e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2009",
+     "surprisal": 3.472073554992676
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.312633478140924e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.070583,
+     "surprisal": 0.0005841593956574798
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "2954": {
+   "row": 2954,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.1667840480804443
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.2823470830917358
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.001639213995076716
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00027497802511788905
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.7917383909225464
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0002215855201939121
+    },
+    {
+     "name": "amount",
+     "value": 0.027899,
+     "surprisal": 0.0014301560586318374
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "3142": {
+   "row": 3142,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 3.888998031616211
+    },
+    {
+     "name": "vendor_name",
+     "value": "MCDERMOTT CENTER",
+     "surprisal": 7.606622219085693
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0063470215536653996
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 3.4570634852570947e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2004",
+     "surprisal": 2.6293413639068604
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 8.344646857949556e-07
+    },
+    {
+     "name": "amount",
+     "value": 0.001009,
+     "surprisal": 0.0005504360306076705
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "3365": {
+   "row": 3365,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.4305104514278355e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "CARE PLUS LLC",
+     "surprisal": 0.0018831630004569888
+    },
+    {
+     "name": "contract_number",
+     "value": "22875",
+     "surprisal": 0.01635010540485382
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0013462775386869907
+    },
+    {
+     "name": "check_year",
+     "value": "2020",
+     "surprisal": 1.2503153085708618
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.001946698990650475
+    },
+    {
+     "name": "amount",
+     "value": 0.055508,
+     "surprisal": 0.0018137560691684484
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "3447": {
+   "row": 3447,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "vendor_name",
+     "value": "STUDIO ORD INC",
+     "surprisal": 0.00026663561584427953
+    },
+    {
+     "name": "contract_number",
+     "value": "101451",
+     "surprisal": 0.018581252545118332
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 4.887569048150908e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2021",
+     "surprisal": 1.31083083152771
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.145764938177308e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.072274,
+     "surprisal": 0.0022535936441272497
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "amount"
+   ]
+  },
+  "4534": {
+   "row": 4534,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.7518825531005859
+    },
+    {
+     "name": "vendor_name",
+     "value": "MULLER & MULLER, LIMITED",
+     "surprisal": 5.034332752227783
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.1914406269788742
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010507544502615929
+    },
+    {
+     "name": "check_year",
+     "value": "2005",
+     "surprisal": 7.1555633544921875
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 4.9828242481453344e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.004248,
+     "surprisal": 2.326922731299419e-05
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "vendor_name",
+    "department_name"
+   ]
+  },
+  "4563": {
+   "row": 4563,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.311301275563892e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "AOR TRANSIT",
+     "surprisal": 0.0020070187747478485
+    },
+    {
+     "name": "contract_number",
+     "value": "25743",
+     "surprisal": 1.7496838569641113
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.8967437174287625e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2012",
+     "surprisal": 1.0946003198623657
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.8729025871143676e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.070046,
+     "surprisal": 0.00042160743032582104
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "vendor_name"
+   ]
+  },
+  "5623": {
+   "row": 5623,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.002815451705828309
+    },
+    {
+     "name": "vendor_name",
+     "value": "UNITED MAINTENANCE COMPANY., INC.",
+     "surprisal": 0.9800528287887573
+    },
+    {
+     "name": "contract_number",
+     "value": "26971",
+     "surprisal": 1.9804953336715698
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.2397689715726301e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 0.6528461575508118
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00010132275929208845
+    },
+    {
+     "name": "amount",
+     "value": 0.080621,
+     "surprisal": 0.0010305169271305203
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "6608": {
+   "row": 6608,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.0003748429589904845
+    },
+    {
+     "name": "vendor_name",
+     "value": "CONTINENTAL AIR TRANSPORT CHICAGO SCHOOL TRANSIT JV LLC",
+     "surprisal": 2.12677001953125
+    },
+    {
+     "name": "contract_number",
+     "value": "24782",
+     "surprisal": 0.02375592105090618
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.6689286894688848e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2012",
+     "surprisal": 1.1106609106063843
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.005315,
+     "surprisal": 0.0005699485773220658
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "7075": {
+   "row": 7075,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 4.291525328881107e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO AIRLINES TERMINAL CONSORTIUM",
+     "surprisal": 0.9567874073982239
+    },
+    {
+     "name": "contract_number",
+     "value": "110179",
+     "surprisal": 1.9933416843414307
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0006002769805490971
+    },
+    {
+     "name": "check_year",
+     "value": "2021",
+     "surprisal": 2.2390265464782715
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0007736074039712548
+    },
+    {
+     "name": "amount",
+     "value": 0.061916,
+     "surprisal": 0.0012426350731402636
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "8584": {
+   "row": 8584,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.0015392372151836753
+    },
+    {
+     "name": "vendor_name",
+     "value": "CLEAR CHANNEL OUTDOOR",
+     "surprisal": 0.2769814133644104
+    },
+    {
+     "name": "contract_number",
+     "value": "31581",
+     "surprisal": 0.0166294164955616
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.7762025890988298e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2017",
+     "surprisal": 3.423142194747925
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 4.291525328881107e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.006033,
+     "surprisal": 0.0006718050572089851
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "9974": {
+   "row": 9974,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "vendor_name",
+     "value": "STUDIO ORD INC",
+     "surprisal": 0.00019941726350225508
+    },
+    {
+     "name": "contract_number",
+     "value": "101451",
+     "surprisal": 0.03661945089697838
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.1801649634435307e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 1.5370904207229614
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 6.437280717364047e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.089122,
+     "surprisal": 0.000788890291005373
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "amount"
+   ]
+  },
+  "10979": {
+   "row": 10979,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 6.723177648382261e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "O'HARE NOISE COMPATIBILITY COM",
+     "surprisal": 0.01431693509221077
+    },
+    {
+     "name": "contract_number",
+     "value": "10638",
+     "surprisal": 0.04930667206645012
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.004739598371088505
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5747509598731995
+    },
+    {
+     "name": "check_month",
+     "value": "08",
+     "surprisal": 1.733291745185852
+    },
+    {
+     "name": "amount",
+     "value": 0.000436,
+     "surprisal": 0.0013140535447746515
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "12098": {
+   "row": 12098,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 3.3854863431770355e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "CONNECT CHICAGO ALLIANCE JV",
+     "surprisal": 0.06905002892017365
+    },
+    {
+     "name": "contract_number",
+     "value": "69568",
+     "surprisal": 1.0339832305908203
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.9682672902708873e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2020",
+     "surprisal": 2.9487228393554688
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 6.305972783593461e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.10004,
+     "surprisal": 0.003604617901146412
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "12627": {
+   "row": 12627,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.007455146871507168
+    },
+    {
+     "name": "vendor_name",
+     "value": "RAUSCH INFRASTRUCTURE LLC",
+     "surprisal": 1.4964460134506226
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.41400501132011414
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PV85",
+     "surprisal": 0.004772106651216745
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.3817591667175293
+    },
+    {
+     "name": "check_month",
+     "value": "12",
+     "surprisal": 2.989287853240967
+    },
+    {
+     "name": "amount",
+     "value": 0.004227,
+     "surprisal": 0.00013331316586118191
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "12673": {
+   "row": 12673,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.0013086573453620076
+    },
+    {
+     "name": "vendor_name",
+     "value": "O'HARE NOISE COMPATIBILITY COM",
+     "surprisal": 0.019160425290465355
+    },
+    {
+     "name": "contract_number",
+     "value": "10638",
+     "surprisal": 0.09499121457338333
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 7.152531907195225e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2021",
+     "surprisal": 1.5267802476882935
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 3.433168603805825e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.000897,
+     "surprisal": 0.0027130863163620234
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "13526": {
+   "row": 13526,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 4.768370445162873e-07
+    },
+    {
+     "name": "vendor_name",
+     "value": "AUSTIN POWER PARTNERS",
+     "surprisal": 0.024331407621502876
+    },
+    {
+     "name": "contract_number",
+     "value": "96319",
+     "surprisal": 3.323943853378296
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.004523758310824633
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 1.2504372596740723
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0018067717319354415
+    },
+    {
+     "name": "amount",
+     "value": 0.402513,
+     "surprisal": 0.07306286692619324
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "amount"
+   ]
+  },
+  "13563": {
+   "row": 13563,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.9812700748443604
+    },
+    {
+     "name": "vendor_name",
+     "value": "BUILDERS CHICAGO CORPORATION",
+     "surprisal": 3.1793551445007324
+    },
+    {
+     "name": "contract_number",
+     "value": "288106",
+     "surprisal": 5.341606140136719
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.0009891861118376255
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.7567073106765747
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 2.6218044757843018
+    },
+    {
+     "name": "amount",
+     "value": 0.000593,
+     "surprisal": 0.00036853074561804533
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_month"
+   ]
+  },
+  "14034": {
+   "row": 14034,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 1.0073933601379395
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.3201812505722046
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0022782341111451387
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00032145579461939633
+    },
+    {
+     "name": "check_year",
+     "value": "2003",
+     "surprisal": 2.9811956882476807
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0001472126314183697
+    },
+    {
+     "name": "amount",
+     "value": 0.017689,
+     "surprisal": 0.0006393303046934307
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "vendor_name",
+    "department_name"
+   ]
+  },
+  "14619": {
+   "row": 14619,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 2.95634672511369e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "O'HARE NOISE COMPATIBILITY COM",
+     "surprisal": 0.016568800434470177
+    },
+    {
+     "name": "contract_number",
+     "value": "10638",
+     "surprisal": 0.049008872359991074
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.005653819069266319
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.8622314929962158
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 3.2051777839660645
+    },
+    {
+     "name": "amount",
+     "value": 0.000444,
+     "surprisal": 0.0013258818071335554
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "14810": {
+   "row": 14810,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.49149447679519653
+    },
+    {
+     "name": "vendor_name",
+     "value": "PRIMERA ENGINEERS, LIMITED",
+     "surprisal": 5.996921539306641
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 2.731537103652954
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.18131525814533234
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.3164142668247223
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 2.385786771774292
+    },
+    {
+     "name": "amount",
+     "value": 0.000391,
+     "surprisal": 0.0004388677189126611
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "15214": {
+   "row": 15214,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF AVIATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 4.6648054122924805
+    },
+    {
+     "name": "vendor_name",
+     "value": "HEARTLAND HUMAN CARE SERVICES, INC.",
+     "surprisal": 6.037797927856445
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.04320167005062103
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.4318398573086597e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 3.210902214050293
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 5.1616290875244886e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.003047,
+     "surprisal": 2.200648623329471e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "16547": {
+   "row": 16547,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0011083895806223154
+    },
+    {
+     "name": "vendor_name",
+     "value": "COLD CHAIN TECHNOLOGY SERVICES LLC",
+     "surprisal": 0.005226994398981333
+    },
+    {
+     "name": "contract_number",
+     "value": "74495",
+     "surprisal": 0.04054279625415802
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.0003711488388944417
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.28030428290367126
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 2.1736230850219727
+    },
+    {
+     "name": "amount",
+     "value": 0.000598,
+     "surprisal": 1.5975564338077675e-06
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "16900": {
+   "row": 16900,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0017113338690251112
+    },
+    {
+     "name": "vendor_name",
+     "value": "COLD CHAIN TECHNOLOGY SERVICES LLC",
+     "surprisal": 0.002002021996304393
+    },
+    {
+     "name": "contract_number",
+     "value": "74495",
+     "surprisal": 0.08759771287441254
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.0006482883472926915
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.30781790614128113
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 1.595353126525879
+    },
+    {
+     "name": "amount",
+     "value": 0.000583,
+     "surprisal": 1.0417509521687407e-08
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "17722": {
+   "row": 17722,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 6.818538531661034e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "LAKE COUNTY HEALTH DEPARTMENT",
+     "surprisal": 0.0003582789213396609
+    },
+    {
+     "name": "contract_number",
+     "value": "110215",
+     "surprisal": 0.2499483972787857
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 5.519237674889155e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2024",
+     "surprisal": 1.1953301429748535
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.074220174108632e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.001181,
+     "surprisal": 9.850247442955151e-05
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "17896": {
+   "row": 17896,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.023029720410704613
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 0.0005321278586052358
+    },
+    {
+     "name": "contract_number",
+     "value": "185460",
+     "surprisal": 1.105208158493042
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00030179237364791334
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.293703556060791
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 1.95405113697052
+    },
+    {
+     "name": "amount",
+     "value": 0.000491,
+     "surprisal": 0.0001030250423355028
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "18322": {
+   "row": 18322,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.6821941137313843
+    },
+    {
+     "name": "vendor_name",
+     "value": "BREAKTHROUGH URBAN MINISTRIES, INC.",
+     "surprisal": 6.378244400024414
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 5.018168926239014
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.003417011583223939
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.5885223746299744
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 2.064779043197632
+    },
+    {
+     "name": "amount",
+     "value": 0.000452,
+     "surprisal": 7.040782656986266e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "18485": {
+   "row": 18485,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.3551845848560333
+    },
+    {
+     "name": "vendor_name",
+     "value": "REVIVE CENTER FOR HOUSING & HEALING",
+     "surprisal": 4.203627586364746
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.013176627457141876
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.50339189733495e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2014",
+     "surprisal": 3.1910436153411865
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "amount",
+     "value": 0.000655,
+     "surprisal": 0.000212425526115112
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "19311": {
+   "row": 19311,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.005252490285784006
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 0.0013236580416560173
+    },
+    {
+     "name": "contract_number",
+     "value": "236380",
+     "surprisal": 1.292548418045044
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00017653337272349745
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.355767160654068
+    },
+    {
+     "name": "check_month",
+     "value": "10",
+     "surprisal": 1.8547518253326416
+    },
+    {
+     "name": "amount",
+     "value": 0.000406,
+     "surprisal": 5.5128683015936986e-05
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "19894": {
+   "row": 19894,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.21466588973999023
+    },
+    {
+     "name": "vendor_name",
+     "value": "JOHN MARSHALL LAW SCHOOL",
+     "surprisal": 8.576452255249023
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.021500950679183006
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 8.177422569133341e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2018",
+     "surprisal": 4.038357257843018
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 9.989239333663136e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.000658,
+     "surprisal": 4.7280041144404095e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "20033": {
+   "row": 20033,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0017113338690251112
+    },
+    {
+     "name": "vendor_name",
+     "value": "COLD CHAIN TECHNOLOGY SERVICES LLC",
+     "surprisal": 0.0020021409727633
+    },
+    {
+     "name": "contract_number",
+     "value": "74495",
+     "surprisal": 0.08757674694061279
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.0006484074983745813
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.30782195925712585
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 1.5953389406204224
+    },
+    {
+     "name": "amount",
+     "value": 0.000574,
+     "surprisal": 1.2357991963085624e-08
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "20492": {
+   "row": 20492,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.06585846841335297
+    },
+    {
+     "name": "vendor_name",
+     "value": "OPEN DOOR CLINIC OF GREATER ELGIN",
+     "surprisal": 3.4703004360198975
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.003420100547373295
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010668307077139616
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.6228468418121338
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0002826052950695157
+    },
+    {
+     "name": "amount",
+     "value": 0.000606,
+     "surprisal": 0.0001778840960469097
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "20810": {
+   "row": 20810,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.28539085388183594
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 0.08017390221357346
+    },
+    {
+     "name": "contract_number",
+     "value": "247424",
+     "surprisal": 4.061338424682617
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0006221981020644307
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.40658122301101685
+    },
+    {
+     "name": "check_month",
+     "value": "07",
+     "surprisal": 2.191891670227051
+    },
+    {
+     "name": "amount",
+     "value": 0.000417,
+     "surprisal": 0.00038108331500552595
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "21702": {
+   "row": 21702,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 4.810992240905762
+    },
+    {
+     "name": "vendor_name",
+     "value": "BETWEEN FRIENDS",
+     "surprisal": 8.081963539123535
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0023883646354079247
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 9.953480184776708e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2013",
+     "surprisal": 4.158547878265381
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 1.3947389561508317e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.000782,
+     "surprisal": 3.3577824069652706e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "21896": {
+   "row": 21896,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.007917922921478748
+    },
+    {
+     "name": "vendor_name",
+     "value": "CVS PHARMACY INC",
+     "surprisal": 4.460893630981445
+    },
+    {
+     "name": "contract_number",
+     "value": "17006",
+     "surprisal": 5.308742046356201
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.539125671319198e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2008",
+     "surprisal": 2.973555088043213
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 6.079655122448457e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.004657,
+     "surprisal": 1.8587579688755795e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "22089": {
+   "row": 22089,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.06591472029685974
+    },
+    {
+     "name": "vendor_name",
+     "value": "OPEN DOOR CLINIC OF GREATER ELGIN",
+     "surprisal": 3.4688239097595215
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0034026363864541054
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010629009921103716
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.622467041015625
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0002824861148837954
+    },
+    {
+     "name": "amount",
+     "value": 0.000505,
+     "surprisal": 0.00017520476831123233
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "22227": {
+   "row": 22227,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.004022127948701382
+    },
+    {
+     "name": "vendor_name",
+     "value": "HOUSING OPPORTUNITIES FOR WOMEN, INC.",
+     "surprisal": 0.0010211020708084106
+    },
+    {
+     "name": "contract_number",
+     "value": "92324",
+     "surprisal": 0.06740754842758179
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0013503251830115914
+    },
+    {
+     "name": "check_year",
+     "value": "2019",
+     "surprisal": 1.9057587385177612
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.002696055569686e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.000861,
+     "surprisal": 0.0003431383811403066
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "23994": {
+   "row": 23994,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0027598170563578606
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 0.0009983561467379332
+    },
+    {
+     "name": "contract_number",
+     "value": "236380",
+     "surprisal": 1.505284309387207
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0004533693427219987
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.33896729350090027
+    },
+    {
+     "name": "check_month",
+     "value": "07",
+     "surprisal": 2.0446624755859375
+    },
+    {
+     "name": "amount",
+     "value": 0.000397,
+     "surprisal": 6.472285167546943e-05
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "25284": {
+   "row": 25284,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.25167763233184814
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWESTERN UNIVERSITY",
+     "surprisal": 3.9713361263275146
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 6.462018013000488
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.004849813878536224
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 2.1901016235351562
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.003056499408558011
+    },
+    {
+     "name": "amount",
+     "value": 0.003742,
+     "surprisal": 3.954816565965302e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "26493": {
+   "row": 26493,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0013630633475258946
+    },
+    {
+     "name": "vendor_name",
+     "value": "HOWARD BROWN HEALTH CENTER",
+     "surprisal": 0.007398704532533884
+    },
+    {
+     "name": "contract_number",
+     "value": "116669",
+     "surprisal": 0.6787015199661255
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00159708212595433
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.13248352706432343
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 1.3602157831192017
+    },
+    {
+     "name": "amount",
+     "value": 0.000468,
+     "surprisal": 0.00020162196597084403
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "27542": {
+   "row": 27542,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 1.8431909084320068
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO CHILDREN'S ADVOCACY CENTER",
+     "surprisal": 4.290082931518555
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 2.858912706375122
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.06842146068811417
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.6232138872146606
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 2.1364026069641113
+    },
+    {
+     "name": "amount",
+     "value": 0.000461,
+     "surprisal": 5.272886482998729e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "27729": {
+   "row": 27729,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.013851821422576904
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO WESTSIDE BRANCH NAACP",
+     "surprisal": 5.164165496826172
+    },
+    {
+     "name": "contract_number",
+     "value": "290348",
+     "surprisal": 2.896336793899536
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.030288925394415855
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.6855165958404541
+    },
+    {
+     "name": "check_month",
+     "value": "07",
+     "surprisal": 3.3005971908569336
+    },
+    {
+     "name": "amount",
+     "value": 0.000484,
+     "surprisal": 4.3723706767195836e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_month",
+    "contract_number"
+   ]
+  },
+  "28543": {
+   "row": 28543,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 5.286822319030762
+    },
+    {
+     "name": "vendor_name",
+     "value": "THRESHOLDS",
+     "surprisal": 5.849298477172852
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0036245384253561497
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 5.507317473529838e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 1.096588134765625
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 9.059865078597795e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.000529,
+     "surprisal": 8.526744204573333e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "29700": {
+   "row": 29700,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.0011934071080759168
+    },
+    {
+     "name": "vendor_name",
+     "value": "COLD CHAIN TECHNOLOGY SERVICES LLC",
+     "surprisal": 0.004177653230726719
+    },
+    {
+     "name": "contract_number",
+     "value": "74495",
+     "surprisal": 0.025371097028255463
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.0003579214389901608
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.28227734565734863
+    },
+    {
+     "name": "check_month",
+     "value": "08",
+     "surprisal": 3.0838656425476074
+    },
+    {
+     "name": "amount",
+     "value": 0.000397,
+     "surprisal": 1.0061754665002809e-06
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "30468": {
+   "row": 30468,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 0.09859670698642731
+    },
+    {
+     "name": "vendor_name",
+     "value": "SET ENVIRONMENTAL, INC.",
+     "surprisal": 0.07051674276590347
+    },
+    {
+     "name": "contract_number",
+     "value": "33717",
+     "surprisal": 0.08377786725759506
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 5.245195097813848e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2018",
+     "surprisal": 2.5827078819274902
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 7.390948667307384e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.009793,
+     "surprisal": 0.00013871978444512933
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "department_name",
+    "contract_number"
+   ]
+  },
+  "30563": {
+   "row": 30563,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 3.838465272565372e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "MICHAEL REESE RESEARCH & EDUCATION FOUNDATION",
+     "surprisal": 0.3160180449485779
+    },
+    {
+     "name": "contract_number",
+     "value": "116676",
+     "surprisal": 0.4384830594062805
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00021896349790040404
+    },
+    {
+     "name": "check_year",
+     "value": "2020",
+     "surprisal": 1.5392955541610718
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 7.748573807475623e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.0026,
+     "surprisal": 0.000349000736605376
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "31107": {
+   "row": 31107,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF PUBLIC HEALTH",
+     "surprisal": 2.6507468223571777
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO PARK DISTRICT",
+     "surprisal": 7.9476165771484375
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0009873997187241912
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0005947966128587723
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 4.944941520690918
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0006872437661513686
+    },
+    {
+     "name": "amount",
+     "value": 0.000409,
+     "surprisal": 3.85553648811765e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "31359": {
+   "row": 31359,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.4165363013744354
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO TRANSIT AUTHORITY 01",
+     "surprisal": 6.621067523956299
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0052617397159338
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010282472940161824
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.40106528997421265
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0005129451747052372
+    },
+    {
+     "name": "amount",
+     "value": 0.115955,
+     "surprisal": 0.014026287011802197
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "31641": {
+   "row": 31641,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.02824440971016884
+    },
+    {
+     "name": "vendor_name",
+     "value": "F.H. PASCHEN S.N. NIELSEN & ASSOCIATES, LLC",
+     "surprisal": 0.6939441561698914
+    },
+    {
+     "name": "contract_number",
+     "value": "211302",
+     "surprisal": 0.1886240541934967
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0009912106906995177
+    },
+    {
+     "name": "check_year",
+     "value": "2024",
+     "surprisal": 0.6762802600860596
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0015960109885782003
+    },
+    {
+     "name": "amount",
+     "value": 0.075205,
+     "surprisal": 0.0034740061964839697
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "31842": {
+   "row": 31842,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.33689752221107483
+    },
+    {
+     "name": "vendor_name",
+     "value": "WALSH CONSTRUCTION COMPANY OF ILL",
+     "surprisal": 4.272418022155762
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 1.0510274171829224
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.020198959857225418
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.4186608791351318
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.025389691814780235
+    },
+    {
+     "name": "amount",
+     "value": 0.242016,
+     "surprisal": 0.05812915042042732
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "31866": {
+   "row": 31866,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 1.1778697967529297
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.9906224012374878
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.008941018022596836
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0035166821908205748
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.6034996509552002
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.002309514442458749
+    },
+    {
+     "name": "amount",
+     "value": 0.106665,
+     "surprisal": 0.014120346866548061
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "32373": {
+   "row": 32373,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.045801110565662384
+    },
+    {
+     "name": "vendor_name",
+     "value": "COLLINS ENGINEERS INC",
+     "surprisal": 4.374935150146484
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 4.386817932128906
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0115321921184659
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 4.202834129333496
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0023861052468419075
+    },
+    {
+     "name": "amount",
+     "value": 0.0016,
+     "surprisal": 0.0003974672290496528
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "33281": {
+   "row": 33281,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.5172278881072998
+    },
+    {
+     "name": "vendor_name",
+     "value": "BAKER HEAVY & HIGHWAY",
+     "surprisal": 1.6013680696487427
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.003661715192720294
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0008026715368032455
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.4126018285751343
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00041261743172071874
+    },
+    {
+     "name": "amount",
+     "value": 0.108096,
+     "surprisal": 0.011991092003881931
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "34708": {
+   "row": 34708,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 1.2419320344924927
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.7206825017929077
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.002186290919780731
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0005435658385977149
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.9463307857513428
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00051115796668455
+    },
+    {
+     "name": "amount",
+     "value": 0.019211,
+     "surprisal": 0.000984435435384512
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "35256": {
+   "row": 35256,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.022608501836657524
+    },
+    {
+     "name": "vendor_name",
+     "value": "AMERICAN TRAFFIC SOLUTIONS, INC.",
+     "surprisal": 0.0009124883217737079
+    },
+    {
+     "name": "contract_number",
+     "value": "28009",
+     "surprisal": 0.1425335854291916
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 8.34461570775602e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2018",
+     "surprisal": 2.5691680908203125
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00013505500101018697
+    },
+    {
+     "name": "amount",
+     "value": 0.025495,
+     "surprisal": 0.00029872101731598377
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "35273": {
+   "row": 35273,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.22486288845539093
+    },
+    {
+     "name": "vendor_name",
+     "value": "WALSH CONSTRUCTION COMPANY OF ILL",
+     "surprisal": 2.377206802368164
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.14522685110569
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010177677031606436
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.5830356478691101
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.001531976624391973
+    },
+    {
+     "name": "amount",
+     "value": 0.122172,
+     "surprisal": 0.014702913351356983
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "35569": {
+   "row": 35569,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.9632586240768433
+    },
+    {
+     "name": "vendor_name",
+     "value": "INDUSTRIAL FENCE, INC",
+     "surprisal": 6.58222770690918
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.5300565958023071
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.008126409724354744
+    },
+    {
+     "name": "check_year",
+     "value": "2024",
+     "surprisal": 5.489716529846191
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.004584041424095631
+    },
+    {
+     "name": "amount",
+     "value": 0.003892,
+     "surprisal": 7.285327592398971e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "35592": {
+   "row": 35592,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.0014329414116218686
+    },
+    {
+     "name": "vendor_name",
+     "value": "CONNECT ENGINEERING, DPC",
+     "surprisal": 0.055516283959150314
+    },
+    {
+     "name": "contract_number",
+     "value": "46217",
+     "surprisal": 0.4665028154850006
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 9.536738616588991e-07
+    },
+    {
+     "name": "check_year",
+     "value": "2019",
+     "surprisal": 1.21938955783844
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 9.298280929215252e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.005844,
+     "surprisal": 0.0005415355553850532
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "36802": {
+   "row": 36802,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.00028761065914295614
+    },
+    {
+     "name": "vendor_name",
+     "value": "ALDRIDGE ELECTRIC INC",
+     "surprisal": 0.02339847758412361
+    },
+    {
+     "name": "contract_number",
+     "value": "96175",
+     "surprisal": 1.732071042060852
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.6689286894688848e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2020",
+     "surprisal": 1.577033519744873
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 1.966933996300213e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.016264,
+     "surprisal": 2.9889044981246116e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "vendor_name"
+   ]
+  },
+  "37078": {
+   "row": 37078,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 1.0920439958572388
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.765810251235962
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0031387372873723507
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0007432320853695273
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.9393960237503052
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0006551980040967464
+    },
+    {
+     "name": "amount",
+     "value": 0.033924,
+     "surprisal": 0.0021241861395537853
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "37541": {
+   "row": 37541,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.011237189173698425
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROOT BROTHERS.MANUFACTURING & SUPPLY CO.",
+     "surprisal": 0.010255851782858372
+    },
+    {
+     "name": "contract_number",
+     "value": "29859",
+     "surprisal": 0.43067607283592224
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0008025524439290166
+    },
+    {
+     "name": "check_year",
+     "value": "2022",
+     "surprisal": 2.1963179111480713
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0022971450816839933
+    },
+    {
+     "name": "amount",
+     "value": 0.013483,
+     "surprisal": 2.3750722277782188e-07
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "40632": {
+   "row": 40632,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 6.6756979322235566e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "JOHN BURNS CONSTRUCTION CO.",
+     "surprisal": 0.00047136162174865603
+    },
+    {
+     "name": "contract_number",
+     "value": "136596",
+     "surprisal": 3.1196296215057373
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00013958434283267707
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 2.759176731109619
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00015484087634831667
+    },
+    {
+     "name": "amount",
+     "value": 0.035604,
+     "surprisal": 0.00013804984337184578
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "vendor_name"
+   ]
+  },
+  "41244": {
+   "row": 41244,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.010666146874427795
+    },
+    {
+     "name": "vendor_name",
+     "value": "F.H. PASCHEN S.N. NIELSEN & ASSOCIATES, LLC",
+     "surprisal": 3.6766772270202637
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 6.15354061126709
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PV84",
+     "surprisal": 0.0061373342759907246
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.5365557670593262
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 3.7619805335998535
+    },
+    {
+     "name": "amount",
+     "value": 0.000459,
+     "surprisal": 0.00016039238835219294
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "vendor_name"
+   ]
+  },
+  "41739": {
+   "row": 41739,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.3021572232246399
+    },
+    {
+     "name": "vendor_name",
+     "value": "MUNSTER STEEL COMPANY INC",
+     "surprisal": 6.404155731201172
+    },
+    {
+     "name": "contract_number",
+     "value": "32903",
+     "surprisal": 5.5243611335754395
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.2291887944447808e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 2.834232807159424
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 9.297892393078655e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.001131,
+     "surprisal": 0.0002552703954279423
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "42907": {
+   "row": 42907,
+   "kind": "normal",
+   "department": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.025350872427225113
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROOT BROTHERS.MANUFACTURING & SUPPLY CO.",
+     "surprisal": 0.009792386554181576
+    },
+    {
+     "name": "contract_number",
+     "value": "29859",
+     "surprisal": 1.7870779037475586
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 5.722029527532868e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2017",
+     "surprisal": 0.9404784440994263
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 1.0132738680113107e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.015294,
+     "surprisal": 1.422691457264591e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "48591": {
+   "row": 48591,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00011920218821614981
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 7.998623186722398e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "114044",
+     "surprisal": 2.9431543350219727
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.0265558760002023e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5707150101661682
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 1.402839183807373
+    },
+    {
+     "name": "amount",
+     "value": 0.000462,
+     "surprisal": 1.5497828371735523e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "49339": {
+   "row": 49339,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.421497106552124
+    },
+    {
+     "name": "vendor_name",
+     "value": "PHALANX FAMILY SERVICES",
+     "surprisal": 6.03865909576416
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 3.54708194732666
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0017725008074194193
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.6770877838134766
+    },
+    {
+     "name": "check_month",
+     "value": "08",
+     "surprisal": 2.5946874618530273
+    },
+    {
+     "name": "amount",
+     "value": 0.0004,
+     "surprisal": 2.5492232452961616e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "49874": {
+   "row": 49874,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 2.586808113846928e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.009067901410162449
+    },
+    {
+     "name": "contract_number",
+     "value": "114003",
+     "surprisal": 0.1677546352148056
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 1.883488948806189e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.126774549484253
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 1.646519660949707
+    },
+    {
+     "name": "amount",
+     "value": 0.000414,
+     "surprisal": 0.00018210994312539697
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "50476": {
+   "row": 50476,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0011557810939848423
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.00036971885128878057
+    },
+    {
+     "name": "contract_number",
+     "value": "114044",
+     "surprisal": 2.770922899246216
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 1.9430925021879375e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.9609041213989258
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 2.617971420288086
+    },
+    {
+     "name": "amount",
+     "value": 0.000836,
+     "surprisal": 6.89392572894576e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "50769": {
+   "row": 50769,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0008412636234425008
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.0004260824352968484
+    },
+    {
+     "name": "contract_number",
+     "value": "208843",
+     "surprisal": 3.2198562622070312
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 3.8980677345534787e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.0528099536895752
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 2.6575682163238525
+    },
+    {
+     "name": "amount",
+     "value": 0.000413,
+     "surprisal": 3.0560604500351474e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "53167": {
+   "row": 53167,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00011443436960689723
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.006566139403730631
+    },
+    {
+     "name": "contract_number",
+     "value": "210695",
+     "surprisal": 1.4144799709320068
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.777537883957848e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5615519285202026
+    },
+    {
+     "name": "check_month",
+     "value": "10",
+     "surprisal": 3.1748228073120117
+    },
+    {
+     "name": "amount",
+     "value": 0.000403,
+     "surprisal": 0.0001657367538427934
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "53208": {
+   "row": 53208,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.12357842922210693
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 0.3949090838432312
+    },
+    {
+     "name": "contract_number",
+     "value": "237972",
+     "surprisal": 0.8664129972457886
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0003079893649555743
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.479997456073761
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 2.0693516731262207
+    },
+    {
+     "name": "amount",
+     "value": 0.000403,
+     "surprisal": 0.000508941593579948
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "53676": {
+   "row": 53676,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 2.6161959171295166
+    },
+    {
+     "name": "vendor_name",
+     "value": "PUERTO RICAN CULTURAL CENTER",
+     "surprisal": 4.861496925354004
+    },
+    {
+     "name": "contract_number",
+     "value": "227849",
+     "surprisal": 1.845786213874817
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0002641328901518136
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.2373175621032715
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 1.427484393119812
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 1.6530343600607011e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "contract_number"
+   ]
+  },
+  "54408": {
+   "row": 54408,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.12842243909835815
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHINESE AMERICAN SERVICE LEAGUE, INC.",
+     "surprisal": 0.44719696044921875
+    },
+    {
+     "name": "contract_number",
+     "value": "228096",
+     "surprisal": 2.764019012451172
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.7179348762729205e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5713943839073181
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 2.6745829582214355
+    },
+    {
+     "name": "amount",
+     "value": 0.000415,
+     "surprisal": 7.415007712552324e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "54846": {
+   "row": 54846,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.8435577154159546
+    },
+    {
+     "name": "vendor_name",
+     "value": "HEARTLAND ALLIANCE HEALTH",
+     "surprisal": 7.390003681182861
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.003900777781382203
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": -0.0
+    },
+    {
+     "name": "check_year",
+     "value": "2012",
+     "surprisal": 5.413305759429932
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 1.1920928244535389e-07
+    },
+    {
+     "name": "amount",
+     "value": 0.000481,
+     "surprisal": 0.0002853623009286821
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "55881": {
+   "row": 55881,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 2.5152843591058627e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.09626147150993347
+    },
+    {
+     "name": "contract_number",
+     "value": "319320",
+     "surprisal": 5.271231651306152
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.7894584491150454e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.828907310962677
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 4.054759979248047
+    },
+    {
+     "name": "amount",
+     "value": 0.00043,
+     "surprisal": 3.826920146821067e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "55963": {
+   "row": 55963,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.18976910412311554
+    },
+    {
+     "name": "vendor_name",
+     "value": "NORTHWEST SIDE HOUSING CENTER",
+     "surprisal": 1.3032252788543701
+    },
+    {
+     "name": "contract_number",
+     "value": "329222",
+     "surprisal": 4.706289291381836
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0003073934931308031
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.0490598678588867
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 3.4037885665893555
+    },
+    {
+     "name": "amount",
+     "value": 0.000427,
+     "surprisal": 0.00047427351819351315
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "vendor_name"
+   ]
+  },
+  "56933": {
+   "row": 56933,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.001591488253325224
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.004534913692623377
+    },
+    {
+     "name": "contract_number",
+     "value": "99985",
+     "surprisal": 0.7381589412689209
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00018666432879399508
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.4487527906894684
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 2.623631000518799
+    },
+    {
+     "name": "amount",
+     "value": 0.000411,
+     "surprisal": 0.00022932882711756974
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "57056": {
+   "row": 57056,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0016945539973676205
+    },
+    {
+     "name": "vendor_name",
+     "value": "ERIE NEIGHBORHOOD HOUSE",
+     "surprisal": 0.03934996575117111
+    },
+    {
+     "name": "contract_number",
+     "value": "211681",
+     "surprisal": 2.254974842071533
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000501030299346894
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.6352717280387878
+    },
+    {
+     "name": "check_month",
+     "value": "10",
+     "surprisal": 0.8719666600227356
+    },
+    {
+     "name": "amount",
+     "value": 0.00039,
+     "surprisal": 0.0012002736330032349
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "58388": {
+   "row": 58388,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0015137653099372983
+    },
+    {
+     "name": "vendor_name",
+     "value": "CHICAGO COMMONS ASSOCIATION 02",
+     "surprisal": 5.915014266967773
+    },
+    {
+     "name": "contract_number",
+     "value": "177390",
+     "surprisal": 3.473630666732788
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000256982195423916
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.9096707105636597
+    },
+    {
+     "name": "check_month",
+     "value": "10",
+     "surprisal": 2.402099847793579
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 3.3296233596047387e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "60462": {
+   "row": 60462,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0007938570925034583
+    },
+    {
+     "name": "vendor_name",
+     "value": "SAFER FOUNDATION 01",
+     "surprisal": 2.8114466667175293
+    },
+    {
+     "name": "contract_number",
+     "value": "177415",
+     "surprisal": 3.188652992248535
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00010847456724150106
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.48090043663978577
+    },
+    {
+     "name": "check_month",
+     "value": "07",
+     "surprisal": 2.305039644241333
+    },
+    {
+     "name": "amount",
+     "value": 0.000396,
+     "surprisal": 0.0007375242421403527
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_month"
+   ]
+  },
+  "60873": {
+   "row": 60873,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.7881377516459906e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "LINCOLN PARK COMMUNITY SERVICES",
+     "surprisal": 0.8326272964477539
+    },
+    {
+     "name": "contract_number",
+     "value": "247896",
+     "surprisal": 1.4034435749053955
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 7.593343616463244e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.6128740310668945
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 2.243380546569824
+    },
+    {
+     "name": "amount",
+     "value": 0.000476,
+     "surprisal": 0.0003385469317436218
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "61686": {
+   "row": 61686,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00017975145601667464
+    },
+    {
+     "name": "vendor_name",
+     "value": "NATIONAL MUSEUM OF MEXICAN ART",
+     "surprisal": 6.199056625366211
+    },
+    {
+     "name": "contract_number",
+     "value": "228104",
+     "surprisal": 3.3652610778808594
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0001392267586197704
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5455950498580933
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 4.683365821838379
+    },
+    {
+     "name": "amount",
+     "value": 0.000391,
+     "surprisal": 7.788102266204078e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_month",
+    "contract_number"
+   ]
+  },
+  "61867": {
+   "row": 61867,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.4781842764932662e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.027118142694234848
+    },
+    {
+     "name": "contract_number",
+     "value": "114003",
+     "surprisal": 0.32618391513824463
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 5.2569914259947836e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.3052780330181122
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 2.5517992973327637
+    },
+    {
+     "name": "amount",
+     "value": 0.000426,
+     "surprisal": 0.0003256042255088687
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "63539": {
+   "row": 63539,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.005978795234113932
+    },
+    {
+     "name": "vendor_name",
+     "value": "TEAMWORK ENGLEWOOD",
+     "surprisal": 0.18149572610855103
+    },
+    {
+     "name": "contract_number",
+     "value": "176870",
+     "surprisal": 1.604408860206604
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0004633783537428826
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.7035234570503235
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 2.351496458053589
+    },
+    {
+     "name": "amount",
+     "value": 0.000418,
+     "surprisal": 0.00015605446242261678
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "64393": {
+   "row": 64393,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0012142435880377889
+    },
+    {
+     "name": "vendor_name",
+     "value": "NIGHT MINISTRY",
+     "surprisal": 2.643448829650879
+    },
+    {
+     "name": "contract_number",
+     "value": "174903",
+     "surprisal": 1.5245134830474854
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0010215784423053265
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.242503821849823
+    },
+    {
+     "name": "check_month",
+     "value": "01",
+     "surprisal": 3.082538366317749
+    },
+    {
+     "name": "amount",
+     "value": 0.000447,
+     "surprisal": 0.00014251386164687574
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "64671": {
+   "row": 64671,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.370141863822937
+    },
+    {
+     "name": "vendor_name",
+     "value": "GREATER AUBURN GRESHAM DEVELOPMENT CORPORATION",
+     "surprisal": 8.651805877685547
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.2156456708908081
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.035711951553821564
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.9787054657936096
+    },
+    {
+     "name": "check_month",
+     "value": "12",
+     "surprisal": 2.6088404655456543
+    },
+    {
+     "name": "amount",
+     "value": 0.000405,
+     "surprisal": 0.0006317394436337054
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "66292": {
+   "row": 66292,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00010406429646536708
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.003484132932499051
+    },
+    {
+     "name": "contract_number",
+     "value": "113825",
+     "surprisal": 0.8907828330993652
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000336590368533507
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.2629730999469757
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 2.221506118774414
+    },
+    {
+     "name": "amount",
+     "value": 0.000402,
+     "surprisal": 0.00044083892134949565
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "70886": {
+   "row": 70886,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 3.707340147229843e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "STEPPING STONES EARLY CHILDHOOD LEARNING CENTER INC",
+     "surprisal": 0.0677839145064354
+    },
+    {
+     "name": "contract_number",
+     "value": "114028",
+     "surprisal": 1.7778934240341187
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 3.766942609217949e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.9043778777122498
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 1.6707054376602173
+    },
+    {
+     "name": "amount",
+     "value": 0.000408,
+     "surprisal": 0.00014707731315866113
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "70934": {
+   "row": 70934,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00031728477915748954
+    },
+    {
+     "name": "vendor_name",
+     "value": "HENRY BOOTH HOUSE 01",
+     "surprisal": 0.0009446449112147093
+    },
+    {
+     "name": "contract_number",
+     "value": "113962",
+     "surprisal": 0.1039051041007042
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 1.0251946150674485e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.6057584285736084
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 2.778027057647705
+    },
+    {
+     "name": "amount",
+     "value": 0.000437,
+     "surprisal": 0.0002942947030533105
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "70971": {
+   "row": 70971,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0008382858941331506
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.004851118661463261
+    },
+    {
+     "name": "contract_number",
+     "value": "113825",
+     "surprisal": 1.0415046215057373
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000779205875005573
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.3251771032810211
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 1.8810580968856812
+    },
+    {
+     "name": "amount",
+     "value": 0.000392,
+     "surprisal": 0.00040050281677395105
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "72200": {
+   "row": 72200,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0021012388169765472
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.0032234634272754192
+    },
+    {
+     "name": "contract_number",
+     "value": "99985",
+     "surprisal": 0.7057822346687317
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00016020445036701858
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.515317976474762
+    },
+    {
+     "name": "check_month",
+     "value": "08",
+     "surprisal": 1.8955731391906738
+    },
+    {
+     "name": "amount",
+     "value": 0.000418,
+     "surprisal": 0.00020828587003052235
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "73088": {
+   "row": 73088,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.006027615629136562
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.00018189683032687753
+    },
+    {
+     "name": "contract_number",
+     "value": "113842",
+     "surprisal": 3.0133957862854004
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 4.6491513785440475e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.31826522946357727
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 2.937325954437256
+    },
+    {
+     "name": "amount",
+     "value": 0.000774,
+     "surprisal": 5.7392062444705516e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "73115": {
+   "row": 73115,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.014117610640823841
+    },
+    {
+     "name": "vendor_name",
+     "value": "YWCA METROPOLITAN CHICAGO",
+     "surprisal": 0.43852466344833374
+    },
+    {
+     "name": "contract_number",
+     "value": "177416",
+     "surprisal": 2.2215025424957275
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 4.529942543740617e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2024",
+     "surprisal": 0.3970540165901184
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 3.8265450712060556e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.00057,
+     "surprisal": 0.0007843368803150952
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "73133": {
+   "row": 73133,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0023234295658767223
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.12199036777019501
+    },
+    {
+     "name": "contract_number",
+     "value": "282152",
+     "surprisal": 3.806006669998169
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00015960850578267127
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.5985772013664246
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 1.4745633602142334
+    },
+    {
+     "name": "amount",
+     "value": 0.000418,
+     "surprisal": 0.0002329945855308324
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "73663": {
+   "row": 73663,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.009970976039767265
+    },
+    {
+     "name": "vendor_name",
+     "value": "SGA YOUTH & FAMILY SERVICES, NFP",
+     "surprisal": 3.8341333866119385
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 3.1425962448120117
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.0003252692404203117
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.5663254857063293
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 2.9715452194213867
+    },
+    {
+     "name": "amount",
+     "value": 0.000451,
+     "surprisal": 9.575645526638255e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "74406": {
+   "row": 74406,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 2.038458114839159e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "BETTER BOYS FOUNDATION",
+     "surprisal": 0.12516871094703674
+    },
+    {
+     "name": "contract_number",
+     "value": "211661",
+     "surprisal": 0.9709914326667786
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 8.129743218887597e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.9567760229110718
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 2.5159482955932617
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 0.0007688080077059567
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "74801": {
+   "row": 74801,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.005141844507306814
+    },
+    {
+     "name": "vendor_name",
+     "value": "ERIE NEIGHBORHOOD HOUSE",
+     "surprisal": 0.14469051361083984
+    },
+    {
+     "name": "contract_number",
+     "value": "298234",
+     "surprisal": 2.297994613647461
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00185591506306082
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.929520845413208
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 2.4425854682922363
+    },
+    {
+     "name": "amount",
+     "value": 0.000433,
+     "surprisal": 0.00091367750428617
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "74984": {
+   "row": 74984,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 6.079655122448457e-06
+    },
+    {
+     "name": "vendor_name",
+     "value": "STEPPING STONES EARLY CHILDHOOD LEARNING CENTER INC",
+     "surprisal": 0.013336616568267345
+    },
+    {
+     "name": "contract_number",
+     "value": "114028",
+     "surprisal": 0.13256560266017914
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 5.340433563105762e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.1810041666030884
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 2.9652695655822754
+    },
+    {
+     "name": "amount",
+     "value": 0.000445,
+     "surprisal": 0.00022280908888205886
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "75008": {
+   "row": 75008,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.009674095548689365
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.0002579356369096786
+    },
+    {
+     "name": "contract_number",
+     "value": "113842",
+     "surprisal": 2.977473258972168
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 3.814689989667386e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.29941296577453613
+    },
+    {
+     "name": "check_month",
+     "value": "08",
+     "surprisal": 1.7134709358215332
+    },
+    {
+     "name": "amount",
+     "value": 0.000435,
+     "surprisal": 7.081106014084071e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "76086": {
+   "row": 76086,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.6539676189422607
+    },
+    {
+     "name": "vendor_name",
+     "value": "REVIVE CENTER FOR HOUSING & HEALING",
+     "surprisal": 5.966568470001221
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.014072122052311897
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 8.821448318485636e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2013",
+     "surprisal": 3.154310703277588
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 1.1920922133867862e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.001279,
+     "surprisal": 0.0001757996215019375
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "77411": {
+   "row": 77411,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 5.125868119648658e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.0031424211338162422
+    },
+    {
+     "name": "contract_number",
+     "value": "113825",
+     "surprisal": 1.1819919347763062
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000196556793525815
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.3012080490589142
+    },
+    {
+     "name": "check_month",
+     "value": "04",
+     "surprisal": 2.130004405975342
+    },
+    {
+     "name": "amount",
+     "value": 0.000419,
+     "surprisal": 0.0004007770912721753
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "77566": {
+   "row": 77566,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00024423000286333263
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 3.015949550899677e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "208843",
+     "surprisal": 3.476130723953247
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 1.9311717551317997e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.0416866540908813
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 2.065882444381714
+    },
+    {
+     "name": "amount",
+     "value": 0.000472,
+     "surprisal": 5.970229540253058e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "77996": {
+   "row": 77996,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.1205610462639015e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "LINCOLN PARK COMMUNITY SERVICES",
+     "surprisal": 1.8524665832519531
+    },
+    {
+     "name": "contract_number",
+     "value": "174893",
+     "surprisal": 0.4616418778896332
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00046266341814771295
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.1634749174118042
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 2.6763594150543213
+    },
+    {
+     "name": "amount",
+     "value": 0.000394,
+     "surprisal": 3.8579892134293914e-05
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "79259": {
+   "row": 79259,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.759812355041504
+    },
+    {
+     "name": "vendor_name",
+     "value": "HUMAN RESOURCES DEVELOPMENT INSTITUTE, INC.",
+     "surprisal": 6.592251777648926
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.051371242851018906
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 6.198863957251888e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2016",
+     "surprisal": 3.6347994804382324
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.4437606043647975e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.00164,
+     "surprisal": 4.011072815046646e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "79662": {
+   "row": 79662,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 4.637133679352701e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "GOOD NEWS PARTNERS",
+     "surprisal": 0.07798101752996445
+    },
+    {
+     "name": "contract_number",
+     "value": "331857",
+     "surprisal": 0.511009931564331
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.2053474822314456e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.4222601652145386
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 3.137472152709961
+    },
+    {
+     "name": "amount",
+     "value": 0.000441,
+     "surprisal": 0.00023827013501431793
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "79862": {
+   "row": 79862,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 2.586808113846928e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.009067901410162449
+    },
+    {
+     "name": "contract_number",
+     "value": "114003",
+     "surprisal": 0.16779464483261108
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 1.883488948806189e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.1268963813781738
+    },
+    {
+     "name": "check_month",
+     "value": "06",
+     "surprisal": 1.646449327468872
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 0.00018237352196592838
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "79866": {
+   "row": 79866,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.156323378381785e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "Urban Male Network",
+     "surprisal": 5.892807960510254
+    },
+    {
+     "name": "contract_number",
+     "value": "309169",
+     "surprisal": 3.9357528686523438
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00013815402053296566
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 1.2249796390533447
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 1.2103440761566162
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 7.77445256971987e-06
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "81736": {
+   "row": 81736,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.002161787124350667
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 0.10035259276628494
+    },
+    {
+     "name": "contract_number",
+     "value": "211759",
+     "surprisal": 3.166815757751465
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.000286657246761024
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.5407994985580444
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 3.9144608974456787
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 0.00027507884078659117
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "82337": {
+   "row": 82337,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.1444026313256472e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "PUI TAK CENTER",
+     "surprisal": 4.481422424316406
+    },
+    {
+     "name": "contract_number",
+     "value": "228108",
+     "surprisal": 6.161404609680176
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 9.894321920000948e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.3540290594100952
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 3.143812417984009
+    },
+    {
+     "name": "amount",
+     "value": 0.000435,
+     "surprisal": 7.293673843378201e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_month"
+   ]
+  },
+  "82795": {
+   "row": 82795,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 9.715084888739511e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUNG MEN'S CHRISTIAN ASSOCIATION OF CHICAGO",
+     "surprisal": 1.7881233361549675e-05
+    },
+    {
+     "name": "contract_number",
+     "value": "208843",
+     "surprisal": 3.5316078662872314
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 5.8412379075889476e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.44046053290367126
+    },
+    {
+     "name": "check_month",
+     "value": "07",
+     "surprisal": 3.2638559341430664
+    },
+    {
+     "name": "amount",
+     "value": 0.000411,
+     "surprisal": 0.00014326072414405644
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "83376": {
+   "row": 83376,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.5258672647178173e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "YOUTH ADVOCATE PROGRAM INC.",
+     "surprisal": 9.249842643737793
+    },
+    {
+     "name": "contract_number",
+     "value": "242190",
+     "surprisal": 2.6673429012298584
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00012575789878610522
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.21114076673984528
+    },
+    {
+     "name": "check_month",
+     "value": "04",
+     "surprisal": 1.1989150047302246
+    },
+    {
+     "name": "amount",
+     "value": 0.000456,
+     "surprisal": 8.795581379672512e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "83449": {
+   "row": 83449,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.4781842764932662e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "N & K CORPORATION",
+     "surprisal": 0.027145057916641235
+    },
+    {
+     "name": "contract_number",
+     "value": "114003",
+     "surprisal": 0.32615432143211365
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 5.2569914259947836e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.30519282817840576
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 2.551625967025757
+    },
+    {
+     "name": "amount",
+     "value": 0.00041,
+     "surprisal": 0.00032618906698189676
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "84329": {
+   "row": 84329,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.017555562779307365
+    },
+    {
+     "name": "vendor_name",
+     "value": "AFTER-SCHOOL MATTERS, INC.",
+     "surprisal": 3.9051296710968018
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 5.189254283905029
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00021801002731081098
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.0974574089050293
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 2.5621612071990967
+    },
+    {
+     "name": "amount",
+     "value": 0.000415,
+     "surprisal": 6.645572284469381e-05
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_month"
+   ]
+  },
+  "84543": {
+   "row": 84543,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.2040065485052764e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "CASA CENTRAL SOCIAL SERVICES CORPORATION",
+     "surprisal": 0.9380370378494263
+    },
+    {
+     "name": "contract_number",
+     "value": "214473",
+     "surprisal": 4.176339149475098
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00011717586312443018
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.6628794074058533
+    },
+    {
+     "name": "check_month",
+     "value": "10",
+     "surprisal": 3.284855842590332
+    },
+    {
+     "name": "amount",
+     "value": 0.000433,
+     "surprisal": 4.024406280223047e-06
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "vendor_name"
+   ]
+  },
+  "85577": {
+   "row": 85577,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.00041392818093299866
+    },
+    {
+     "name": "vendor_name",
+     "value": "ERIE NEIGHBORHOOD HOUSE",
+     "surprisal": 0.26940611004829407
+    },
+    {
+     "name": "contract_number",
+     "value": "113808",
+     "surprisal": 2.042278289794922
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.00159708212595433
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.35847461223602295
+    },
+    {
+     "name": "check_month",
+     "value": "02",
+     "surprisal": 2.5466904640197754
+    },
+    {
+     "name": "amount",
+     "value": 0.000393,
+     "surprisal": 0.0006148475222289562
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "85756": {
+   "row": 85756,
+   "kind": "normal",
+   "department": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.1086402082582936e-05
+    },
+    {
+     "name": "vendor_name",
+     "value": "GOOD NEWS PARTNERS",
+     "surprisal": 0.0003175231395289302
+    },
+    {
+     "name": "contract_number",
+     "value": "174601",
+     "surprisal": 0.05635754391551018
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 3.480850500636734e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.27085956931114197
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 1.263018250465393
+    },
+    {
+     "name": "amount",
+     "value": 0.000438,
+     "surprisal": 0.00017887323338072747
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "108145": {
+   "row": 108145,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.00870776642113924
+    },
+    {
+     "name": "vendor_name",
+     "value": "CENTER JOINT VENTURE",
+     "surprisal": 0.043819360435009
+    },
+    {
+     "name": "contract_number",
+     "value": "27207",
+     "surprisal": 0.07198486477136612
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010673070792108774
+    },
+    {
+     "name": "check_year",
+     "value": "2020",
+     "surprisal": 3.056220054626465
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0008659188752062619
+    },
+    {
+     "name": "amount",
+     "value": 0.099222,
+     "surprisal": 0.0022431325633078814
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "108664": {
+   "row": 108664,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 1.200443148612976
+    },
+    {
+     "name": "vendor_name",
+     "value": "F H PASCHEN & ASSOCIATES INC",
+     "surprisal": 5.475260257720947
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.007556781638413668
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00010692501382436603
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.075526475906372
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0003819928097072989
+    },
+    {
+     "name": "amount",
+     "value": 0.057568,
+     "surprisal": 0.003565421560779214
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "109309": {
+   "row": 109309,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 1.631237268447876
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 1.7922821044921875
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.000726197671610862
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 6.460934673668817e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 0.44835755228996277
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00010764019680209458
+    },
+    {
+     "name": "amount",
+     "value": 0.014643,
+     "surprisal": 0.0006510576931759715
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "111142": {
+   "row": 111142,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 2.1159257888793945
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 2.6402347087860107
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0024529388174414635
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 8.284702198579907e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2005",
+     "surprisal": 2.9453375339508057
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 8.284702198579907e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.018738,
+     "surprisal": 0.0007402850314974785
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "vendor_name",
+    "department_name"
+   ]
+  },
+  "111687": {
+   "row": 111687,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 3.8898165225982666
+    },
+    {
+     "name": "vendor_name",
+     "value": "PRODUCTION DISTRIBUTION COMPANIES",
+     "surprisal": 7.9945573806762695
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.5683649778366089
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00010179955279454589
+    },
+    {
+     "name": "check_year",
+     "value": "2017",
+     "surprisal": 2.1401772499084473
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00016425691137555987
+    },
+    {
+     "name": "amount",
+     "value": 0.000393,
+     "surprisal": 0.00017137663962785155
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "department_name",
+    "check_year"
+   ]
+  },
+  "112289": {
+   "row": 112289,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.07749494910240173
+    },
+    {
+     "name": "vendor_name",
+     "value": "RELIABLE ASPHALT CORP.",
+     "surprisal": 0.01649446040391922
+    },
+    {
+     "name": "contract_number",
+     "value": "19943",
+     "surprisal": 0.25806206464767456
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00012218205665703863
+    },
+    {
+     "name": "check_year",
+     "value": "2018",
+     "surprisal": 4.488861083984375
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.706014311115723e-05
+    },
+    {
+     "name": "amount",
+     "value": 0.113347,
+     "surprisal": 0.0057589332573115826
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "112551": {
+   "row": 112551,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 4.261168003082275
+    },
+    {
+     "name": "vendor_name",
+     "value": "URS CORPORATION",
+     "surprisal": 3.8791399002075195
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.2150712013244629
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.4305104514278355e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 4.500292778015137
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.50339189733495e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.000404,
+     "surprisal": 0.0006054223631508648
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "department_name",
+    "vendor_name"
+   ]
+  },
+  "112570": {
+   "row": 112570,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.03418587148189545
+    },
+    {
+     "name": "vendor_name",
+     "value": "CENTER JOINT VENTURE",
+     "surprisal": 0.015360509045422077
+    },
+    {
+     "name": "contract_number",
+     "value": "27207",
+     "surprisal": 0.3933962285518646
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 3.6954811548639555e-06
+    },
+    {
+     "name": "check_year",
+     "value": "2014",
+     "surprisal": 1.8902225494384766
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 2.145764938177308e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.090031,
+     "surprisal": 0.0016191736795008183
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "113072": {
+   "row": 113072,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.09869369864463806
+    },
+    {
+     "name": "vendor_name",
+     "value": "RELIABLE ASPHALT CORP.",
+     "surprisal": 0.12838417291641235
+    },
+    {
+     "name": "contract_number",
+     "value": "19943",
+     "surprisal": 0.171937495470047
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 2.0503786799963564e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2014",
+     "surprisal": 2.524282217025757
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 4.410734163684538e-06
+    },
+    {
+     "name": "amount",
+     "value": 0.128818,
+     "surprisal": 0.007877357304096222
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "113114": {
+   "row": 113114,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.38610658049583435
+    },
+    {
+     "name": "vendor_name",
+     "value": "__OTHER__",
+     "surprisal": 8.509300231933594
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.32516729831695557
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PV88",
+     "surprisal": 0.28631591796875
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.15330587327480316
+    },
+    {
+     "name": "check_month",
+     "value": "09",
+     "surprisal": 1.3001693487167358
+    },
+    {
+     "name": "amount",
+     "value": 0.001896,
+     "surprisal": 0.00012488597712945193
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_month",
+    "department_name"
+   ]
+  },
+  "113119": {
+   "row": 113119,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.0019821536261588335
+    },
+    {
+     "name": "vendor_name",
+     "value": "EJ USA, INC.",
+     "surprisal": 0.04193095862865448
+    },
+    {
+     "name": "contract_number",
+     "value": "29140",
+     "surprisal": 0.10143738985061646
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": -0.0
+    },
+    {
+     "name": "check_year",
+     "value": "2014",
+     "surprisal": 2.689364433288574
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": -0.0
+    },
+    {
+     "name": "amount",
+     "value": 0.007105,
+     "surprisal": 0.0022796886041760445
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "113783": {
+   "row": 113783,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 3.386073589324951
+    },
+    {
+     "name": "vendor_name",
+     "value": "G & V CONSTRUCTION COMPANY, INC.",
+     "surprisal": 6.997686386108398
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.08714569360017776
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 1.4185804502631072e-05
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 4.247189998626709
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.000164018536452204
+    },
+    {
+     "name": "amount",
+     "value": 0.000423,
+     "surprisal": 0.0002224489871878177
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "114509": {
+   "row": 114509,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.006335649639368057
+    },
+    {
+     "name": "vendor_name",
+     "value": "PAN-OCEANIC ENGINEERING CO INC",
+     "surprisal": 1.312939167022705
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 1.5298405885696411
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PV88",
+     "surprisal": 0.015126284211874008
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.2922283709049225
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 2.0074315071105957
+    },
+    {
+     "name": "amount",
+     "value": 0.010551,
+     "surprisal": 2.5473036657785997e-05
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "115683": {
+   "row": 115683,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 1.1079378128051758
+    },
+    {
+     "name": "vendor_name",
+     "value": "MECCON IND INC",
+     "surprisal": 2.1835615634918213
+    },
+    {
+     "name": "contract_number",
+     "value": "__OTHER__",
+     "surprisal": 0.0785878449678421
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0006027788622304797
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.4230917692184448
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0020009512081742287
+    },
+    {
+     "name": "amount",
+     "value": 0.141802,
+     "surprisal": 0.018992304801940918
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "department_name"
+   ]
+  },
+  "116214": {
+   "row": 116214,
+   "kind": "normal",
+   "department": "DEPARTMENT OF WATER MANAGEMENT",
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.07685058563947678
+    },
+    {
+     "name": "vendor_name",
+     "value": "CENTER JOINT VENTURE",
+     "surprisal": 0.01889106072485447
+    },
+    {
+     "name": "contract_number",
+     "value": "27207",
+     "surprisal": 0.2327246516942978
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0002177716523874551
+    },
+    {
+     "name": "check_year",
+     "value": "2016",
+     "surprisal": 2.4083709716796875
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.00023016665363684297
+    },
+    {
+     "name": "amount",
+     "value": 0.11784,
+     "surprisal": 0.003852163441479206
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "134565": {
+   "row": 134565,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.253652811050415
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0002",
+     "surprisal": 0.9659406542778015
+    },
+    {
+     "name": "contract_number",
+     "value": "GLOBAL_RARE_contract_number_0002",
+     "surprisal": 5.225405693054199
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 2.437211036682129
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.8661656379699707
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 2.4582772254943848
+    },
+    {
+     "name": "amount",
+     "value": 0.31347,
+     "surprisal": 0.08890026807785034
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "voucher_prefix"
+   ]
+  },
+  "134567": {
+   "row": 134567,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF TRANSPORTATION",
+     "surprisal": 0.035828929394483566
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0004",
+     "surprisal": 1.783003568649292
+    },
+    {
+     "name": "contract_number",
+     "value": "91165",
+     "surprisal": 1.5592269897460938
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.9466474056243896
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.880399227142334
+    },
+    {
+     "name": "check_month",
+     "value": "GLOBAL_RARE_check_month_0004",
+     "surprisal": 3.1750762462615967
+    },
+    {
+     "name": "amount",
+     "value": 0.457151,
+     "surprisal": 0.19110825657844543
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "134577": {
+   "row": 134577,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPT OF GENERAL SERVICES",
+     "surprisal": 0.06294485181570053
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0014",
+     "surprisal": 0.5925607681274414
+    },
+    {
+     "name": "contract_number",
+     "value": "167490",
+     "surprisal": 1.8060059547424316
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.08560699969530106
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.3792441487312317
+    },
+    {
+     "name": "check_month",
+     "value": "GLOBAL_RARE_check_month_0014",
+     "surprisal": 0.7389906644821167
+    },
+    {
+     "name": "amount",
+     "value": 0.346021,
+     "surprisal": 0.1128852590918541
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "vendor_name"
+   ]
+  },
+  "134591": {
+   "row": 134591,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF PLANNING AND DEVELOPMENT",
+     "surprisal": 0.35477274656295776
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0028",
+     "surprisal": 1.942034363746643
+    },
+    {
+     "name": "contract_number",
+     "value": "20606",
+     "surprisal": 0.7248136401176453
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.04939846694469452
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 2.191835641860962
+    },
+    {
+     "name": "check_month",
+     "value": "GLOBAL_RARE_check_month_0028",
+     "surprisal": 1.6085572242736816
+    },
+    {
+     "name": "amount",
+     "value": 0.478168,
+     "surprisal": 0.20311497151851654
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "vendor_name",
+    "check_month"
+   ]
+  },
+  "134599": {
+   "row": 134599,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.16777217388153076
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0036",
+     "surprisal": 0.3376232981681824
+    },
+    {
+     "name": "contract_number",
+     "value": "173332",
+     "surprisal": 5.180931091308594
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.02047591470181942
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.4512159526348114
+    },
+    {
+     "name": "check_month",
+     "value": "GLOBAL_RARE_check_month_0036",
+     "surprisal": 3.0694570541381836
+    },
+    {
+     "name": "amount",
+     "value": 0.376792,
+     "surprisal": 0.11142746359109879
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "check_month",
+    "check_year"
+   ]
+  },
+  "134601": {
+   "row": 134601,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 1.849269986152649
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0038",
+     "surprisal": 1.0332280397415161
+    },
+    {
+     "name": "contract_number",
+     "value": "GLOBAL_RARE_contract_number_0038",
+     "surprisal": 3.709423065185547
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.00015722469834145159
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 0.5996633172035217
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0012807984603568912
+    },
+    {
+     "name": "amount",
+     "value": 0.221178,
+     "surprisal": 0.04070797935128212
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "department_name",
+    "vendor_name"
+   ]
+  },
+  "134605": {
+   "row": 134605,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 3.4036366939544678
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0042",
+     "surprisal": 1.92012357711792
+    },
+    {
+     "name": "contract_number",
+     "value": "C027428",
+     "surprisal": 2.5164475440979004
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "GLOBAL_RARE_voucher_prefix_0042",
+     "surprisal": 1.7773653268814087
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.4050109386444092
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.3555056154727936
+    },
+    {
+     "name": "amount",
+     "value": 0.445171,
+     "surprisal": 0.18489989638328552
+    }
+   ],
+   "reason_codes": [
+    "department_name",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "134607": {
+   "row": 134607,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "CHICAGO DEPARTMENT OF AVIATION",
+     "surprisal": 0.00048637480358593166
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0044",
+     "surprisal": 0.7373055815696716
+    },
+    {
+     "name": "contract_number",
+     "value": "71261",
+     "surprisal": 2.44848370552063
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 0.17281711101531982
+    },
+    {
+     "name": "check_year",
+     "value": "2025",
+     "surprisal": 0.638775110244751
+    },
+    {
+     "name": "check_month",
+     "value": "GLOBAL_RARE_check_month_0044",
+     "surprisal": 3.9537177085876465
+    },
+    {
+     "name": "amount",
+     "value": 0.229162,
+     "surprisal": 0.04118290916085243
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "134637": {
+   "row": 134637,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF HUMAN RESOURCES",
+     "surprisal": 0.7592223882675171
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0074",
+     "surprisal": 1.967665672302246
+    },
+    {
+     "name": "contract_number",
+     "value": "13359",
+     "surprisal": 1.587912917137146
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "GLOBAL_RARE_voucher_prefix_0074",
+     "surprisal": 2.5677192211151123
+    },
+    {
+     "name": "check_year",
+     "value": "2007",
+     "surprisal": 2.5625498294830322
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.33303606510162354
+    },
+    {
+     "name": "amount",
+     "value": 0.361155,
+     "surprisal": 0.13195934891700745
+    }
+   ],
+   "reason_codes": [
+    "voucher_prefix",
+    "check_year",
+    "vendor_name"
+   ]
+  },
+  "134647": {
+   "row": 134647,
+   "kind": "global_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF HUMAN RESOURCES",
+     "surprisal": 0.24341998994350433
+    },
+    {
+     "name": "vendor_name",
+     "value": "GLOBAL ANOMALY VENDOR 0084",
+     "surprisal": 2.416684627532959
+    },
+    {
+     "name": "contract_number",
+     "value": "D6952180003",
+     "surprisal": 4.718769073486328
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "GLOBAL_RARE_voucher_prefix_0084",
+     "surprisal": 0.9039331078529358
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.1585772037506104
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.7278550267219543
+    },
+    {
+     "name": "amount",
+     "value": 0.507757,
+     "surprisal": 0.2514285445213318
+    }
+   ],
+   "reason_codes": [
+    "contract_number",
+    "vendor_name",
+    "check_year"
+   ]
+  },
+  "134680": {
+   "row": 134680,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FAMILY AND SUPPORT SERVICES",
+     "surprisal": 0.0467330627143383
+    },
+    {
+     "name": "vendor_name",
+     "value": "METROPOLITAN FAMILY SERVICE",
+     "surprisal": 2.5094432830810547
+    },
+    {
+     "name": "contract_number",
+     "value": "401",
+     "surprisal": 3.7401185035705566
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 6.716445446014404
+    },
+    {
+     "name": "check_year",
+     "value": "2024",
+     "surprisal": 2.637511968612671
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0013342535821720958
+    },
+    {
+     "name": "amount",
+     "value": 0.000478,
+     "surprisal": 0.000392251560697332
+    }
+   ],
+   "reason_codes": [
+    "voucher_prefix",
+    "contract_number",
+    "check_year"
+   ]
+  },
+  "134687": {
+   "row": 134687,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF PLANNING AND DEVELOPMENT",
+     "surprisal": 0.87892746925354
+    },
+    {
+     "name": "vendor_name",
+     "value": "BIGANE PAVING COMPANY",
+     "surprisal": 6.688697338104248
+    },
+    {
+     "name": "contract_number",
+     "value": "192525",
+     "surprisal": 3.8548378944396973
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "CVIP",
+     "surprisal": 0.8423341512680054
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 0.8555499315261841
+    },
+    {
+     "name": "check_month",
+     "value": "11",
+     "surprisal": 2.0506324768066406
+    },
+    {
+     "name": "amount",
+     "value": 0.000571,
+     "surprisal": 0.0008251347462646663
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  },
+  "134701": {
+   "row": 134701,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 0.9569023847579956
+    },
+    {
+     "name": "vendor_name",
+     "value": "ROOT BROTHERS.MANUFACTURING & SUPPLY CO.",
+     "surprisal": 2.4984233379364014
+    },
+    {
+     "name": "contract_number",
+     "value": "8446",
+     "surprisal": 6.355156898498535
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.014018991030752659
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 1.5153179168701172
+    },
+    {
+     "name": "check_month",
+     "value": "05",
+     "surprisal": 9.347658157348633
+    },
+    {
+     "name": "amount",
+     "value": 0.004727,
+     "surprisal": 4.2141342419199646e-05
+    }
+   ],
+   "reason_codes": [
+    "check_month",
+    "contract_number",
+    "vendor_name"
+   ]
+  },
+  "134702": {
+   "row": 134702,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF WATER MANAGEMENT",
+     "surprisal": 2.2672643661499023
+    },
+    {
+     "name": "vendor_name",
+     "value": "ACCESS LIVING OF METROPOLITAN CHICAGO",
+     "surprisal": 5.5449419021606445
+    },
+    {
+     "name": "contract_number",
+     "value": "192525",
+     "surprisal": 4.477776527404785
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 8.943889617919922
+    },
+    {
+     "name": "check_year",
+     "value": "2010",
+     "surprisal": 3.961902141571045
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.0710933730006218
+    },
+    {
+     "name": "amount",
+     "value": 0.000392,
+     "surprisal": 7.095704495441169e-05
+    }
+   ],
+   "reason_codes": [
+    "voucher_prefix",
+    "vendor_name",
+    "contract_number"
+   ]
+  },
+  "134706": {
+   "row": 134706,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FLEET AND FACILITY MANAGEMENT",
+     "surprisal": 3.7443697452545166
+    },
+    {
+     "name": "vendor_name",
+     "value": "URBAN SOLUTIONS ASSOCIATION INC",
+     "surprisal": 1.8163142204284668
+    },
+    {
+     "name": "contract_number",
+     "value": "5971",
+     "surprisal": 4.458266258239746
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 1.8016647100448608
+    },
+    {
+     "name": "check_year",
+     "value": "2013",
+     "surprisal": 7.092703819274902
+    },
+    {
+     "name": "check_month",
+     "value": "12",
+     "surprisal": 0.7340563535690308
+    },
+    {
+     "name": "amount",
+     "value": 0.000413,
+     "surprisal": 0.0004374267009552568
+    }
+   ],
+   "reason_codes": [
+    "check_year",
+    "contract_number",
+    "department_name"
+   ]
+  },
+  "134711": {
+   "row": 134711,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF BUILDINGS",
+     "surprisal": 3.3299083709716797
+    },
+    {
+     "name": "vendor_name",
+     "value": "TRANSYSTEMS CORPORATION",
+     "surprisal": 6.841184616088867
+    },
+    {
+     "name": "contract_number",
+     "value": "192525",
+     "surprisal": 5.088099479675293
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 4.358031749725342
+    },
+    {
+     "name": "check_year",
+     "value": "2023",
+     "surprisal": 6.261834144592285
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 5.860023021697998
+    },
+    {
+     "name": "amount",
+     "value": 0.000444,
+     "surprisal": 0.0001285219332203269
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "check_year",
+    "check_month"
+   ]
+  },
+  "134713": {
+   "row": 134713,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF FLEET AND FACILITY MANAGEMENT",
+     "surprisal": 3.1767213344573975
+    },
+    {
+     "name": "vendor_name",
+     "value": "CENTRAL STATES SER, JOBS FOR PROGRESS, INC.",
+     "surprisal": 10.199681282043457
+    },
+    {
+     "name": "contract_number",
+     "value": "C019616",
+     "surprisal": 4.136504650115967
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "PVCI",
+     "surprisal": 5.4151291847229
+    },
+    {
+     "name": "check_year",
+     "value": "2026",
+     "surprisal": 1.1975598335266113
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 4.791932106018066
+    },
+    {
+     "name": "amount",
+     "value": 0.000394,
+     "surprisal": 5.6389217206742615e-05
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "voucher_prefix",
+    "check_month"
+   ]
+  },
+  "134721": {
+   "row": 134721,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF PLANNING AND DEVELOPMENT",
+     "surprisal": 4.082998752593994
+    },
+    {
+     "name": "vendor_name",
+     "value": "BUILDERS CHICAGO CORPORATION",
+     "surprisal": 0.043464794754981995
+    },
+    {
+     "name": "contract_number",
+     "value": "129971",
+     "surprisal": 1.2619655132293701
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.0010561132803559303
+    },
+    {
+     "name": "check_year",
+     "value": "2015",
+     "surprisal": 1.661848783493042
+    },
+    {
+     "name": "check_month",
+     "value": "NA",
+     "surprisal": 0.000621840707026422
+    },
+    {
+     "name": "amount",
+     "value": 0.000458,
+     "surprisal": 8.262471237685531e-05
+    }
+   ],
+   "reason_codes": [
+    "department_name",
+    "check_year",
+    "contract_number"
+   ]
+  },
+  "134758": {
+   "row": 134758,
+   "kind": "local_anomaly",
+   "department": null,
+   "fields": [
+    {
+     "name": "department_name",
+     "value": "DEPARTMENT OF HUMAN RESOURCES",
+     "surprisal": 0.9609485864639282
+    },
+    {
+     "name": "vendor_name",
+     "value": "SERENDIPITY CHILD CARE INC",
+     "surprisal": 9.242849349975586
+    },
+    {
+     "name": "contract_number",
+     "value": "11809",
+     "surprisal": 6.538332939147949
+    },
+    {
+     "name": "voucher_prefix",
+     "value": "NONE",
+     "surprisal": 0.10669605433940887
+    },
+    {
+     "name": "check_year",
+     "value": "2002",
+     "surprisal": 3.601163864135742
+    },
+    {
+     "name": "check_month",
+     "value": "03",
+     "surprisal": 5.597934722900391
+    },
+    {
+     "name": "amount",
+     "value": 0.000846,
+     "surprisal": 0.0002477809030096978
+    }
+   ],
+   "reason_codes": [
+    "vendor_name",
+    "contract_number",
+    "check_month"
+   ]
+  }
+ }
+}
