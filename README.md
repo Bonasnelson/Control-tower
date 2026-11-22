@@ -32,6 +32,22 @@ python scripts/run_baselines.py --model masked --regimes single joint finetune
 
 Results are written to `results/baselines_<city>_<model>[_tag].csv`, with a mean ± std table in `*_summary.md`.
 
+### Week 1 result: Philadelphia, one-hot AE, 5 seeds × 100 epochs (`results/summary_philadelphia_baseline_ae.md`)
+
+| Regime | ΔFP ×10³ (ours) | ΔFP (paper, Table 2) | L_Rec(A') ×10³ ours / paper | FN ratio | AUPRC | Recall@1% |
+|---|---|---|---|---|---|---|
+| SEL (any decay) | +1.41 ± 0.04 | +1.45 / +1.40 / +1.45 | 6.26 / 6.59 | 0.98 ± 0.04 | 0.15 ± 0.02 | 0.24 ± 0.07 |
+| JEL | −1.44 ± 0.06 | −1.36 ± 0.05 | 1.88 / 2.04 | 0.62 ± 0.13 | 0.36 ± 0.07 | 0.69 ± 0.07 |
+
+SEL is identical across the linear, exponential and instant scenarios because it only trains on the last
+experience, which is the same in all three (A' at 1%). The paper's small SEL differences are seed noise.
+Local and global anomaly losses are lower than in the paper (JEL local 11.9 vs 36.7), so our injected anomalies are
+somewhat harder. Run time: SEL ≈ 4 min per seed, JEL ≈ 40–75 min per seed on a 12-core CPU.
+
+Preliminary M1 check (1 seed, 10 epochs, `results/baselines_philadelphia_masked_m1check.csv`): fine-tuning the
+masked-feature model over the 10 experiences gives AUPRC 0.74 and Recall@1% 0.95. In
+`scripts/check_reason_codes.py`, 70% of its top-3 reason codes on global anomalies are the corrupted fields.
+
 ## Layout
 
 ```
@@ -68,6 +84,6 @@ docs/meetings/           agendas + .ics invites; docs/literature/ novelty check
    with 10 + 10 entering the last experience. We generate them without the Faker library.
 4. **JEL is true joint training** on the union of experiences, as the paper defines it. The reference code
    calls Avalanche `Naive.train(stream)`, which trains the experiences one after another.
-5. **Loss scale.** We report mean BCE per input dimension (the reference code's `BCELoss()`). The paper's tables are on a
-   different, unstated scale, so compare signs and rankings, not absolute values.
+5. **Loss scale.** We report mean BCE per input dimension (the reference code's `BCELoss()`). The paper does not
+   state its unit, but our values × 10³ land on the paper's scale (see below).
 6. Departments with fewer than 10,000 records run out in experiences 7–10. This matches the reference code.

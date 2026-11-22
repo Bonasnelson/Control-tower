@@ -1,0 +1,23 @@
+philadelphia: 180,884 records, one-hot dim 5,825, model=baseline_ae, cfg={'encoder_dim': [128, 64, 32, 16, 8, 4, 2], 'bottleneck': 'tanh', 'lr': 0.0001, 'weight_decay': 1e-06, 'batch_size': 128, 'epochs': 100}
+[single   linear      s0] dFP=+0.00135 FP=0.00 FN=1.00 AUPRC=0.135 R@1%=0.15 (252s)
+[single   linear      s1] dFP=+0.00143 FP=0.00 FN=0.90 AUPRC=0.157 R@1%=0.30 (294s)
+[single   linear      s2] dFP=+0.00145 FP=0.00 FN=1.00 AUPRC=0.177 R@1%=0.25 (239s)
+[single   linear      s3] dFP=+0.00143 FP=0.00 FN=1.00 AUPRC=0.137 R@1%=0.20 (253s)
+[single   linear      s4] dFP=+0.00141 FP=0.00 FN=1.00 AUPRC=0.168 R@1%=0.30 (242s)
+[single   exponential s0] dFP=+0.00135 FP=0.00 FN=1.00 AUPRC=0.135 R@1%=0.15 (236s)
+[single   exponential s1] dFP=+0.00143 FP=0.00 FN=0.90 AUPRC=0.157 R@1%=0.30 (209s)
+[single   exponential s2] dFP=+0.00145 FP=0.00 FN=1.00 AUPRC=0.177 R@1%=0.25 (253s)
+[single   exponential s3] dFP=+0.00143 FP=0.00 FN=1.00 AUPRC=0.137 R@1%=0.20 (223s)
+[single   exponential s4] dFP=+0.00141 FP=0.00 FN=1.00 AUPRC=0.168 R@1%=0.30 (230s)
+[single   instant     s0] dFP=+0.00135 FP=0.00 FN=1.00 AUPRC=0.135 R@1%=0.15 (222s)
+[single   instant     s1] dFP=+0.00143 FP=0.00 FN=0.90 AUPRC=0.157 R@1%=0.30 (229s)
+[single   instant     s2] dFP=+0.00145 FP=0.00 FN=1.00 AUPRC=0.177 R@1%=0.25 (256s)
+[single   instant     s3] dFP=+0.00143 FP=0.00 FN=1.00 AUPRC=0.137 R@1%=0.20 (283s)
+[single   instant     s4] dFP=+0.00141 FP=0.00 FN=1.00 AUPRC=0.168 R@1%=0.30 (234s)
+# Baselines: philadelphia, baseline_ae, epochs=100, seeds=[0, 1, 2, 3, 4]
+
+| regime | scenario | delta_fp | fp_ratio | fn_ratio | L_rec_target | L_rec_local | L_rec_global | auprc | recall_at_1pct | train_seconds |
+|---|---|---|---|---|---|---|---|---|---|---|
+| single | exponential | 0.001414 ± 3.7e-05 | 0 ± 0 | 0.98 ± 0.045 | 0.006262 ± 3.6e-05 | 0.00501 ± 0.00017 | 0.006444 ± 0.0001 | 0.1548 ± 0.018 | 0.24 ± 0.065 | 230.4 ± 16 |
+| single | instant | 0.001414 ± 3.7e-05 | 0 ± 0 | 0.98 ± 0.045 | 0.006262 ± 3.6e-05 | 0.00501 ± 0.00017 | 0.006444 ± 0.0001 | 0.1548 ± 0.018 | 0.24 ± 0.065 | 244.7 ± 25 |
+| single | linear | 0.001414 ± 3.7e-05 | 0 ± 0 | 0.98 ± 0.045 | 0.006262 ± 3.6e-05 | 0.00501 ± 0.00017 | 0.006444 ± 0.0001 | 0.1548 ± 0.018 | 0.24 ± 0.065 | 256 ± 22 |

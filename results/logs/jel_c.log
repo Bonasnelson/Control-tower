@@ -1,0 +1,7 @@
+philadelphia: 180,884 records, one-hot dim 5,825, model=baseline_ae, cfg={'encoder_dim': [128, 64, 32, 16, 8, 4, 2], 'bottleneck': 'tanh', 'lr': 0.0001, 'weight_decay': 1e-06, 'batch_size': 128, 'epochs': 100}
+[joint    full        s4] dFP=-0.00142 FP=0.06 FN=0.50 AUPRC=0.430 R@1%=0.75 (4551s)
+# Baselines: philadelphia, baseline_ae, epochs=100, seeds=[4]
+
+| regime | scenario | delta_fp | fp_ratio | fn_ratio | L_rec_target | L_rec_local | L_rec_global | auprc | recall_at_1pct | train_seconds |
+|---|---|---|---|---|---|---|---|---|---|---|
+| joint | full | -0.001418 ± 0 | 0.064 ± 0 | 0.5 ± 0 | 0.001883 ± 0 | 0.01288 ± 0 | 0.006236 ± 0 | 0.4303 ± 0 | 0.75 ± 0 | 4551 ± 0 |

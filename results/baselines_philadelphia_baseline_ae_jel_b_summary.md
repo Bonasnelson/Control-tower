@@ -1,0 +1,5 @@
+# Baselines: philadelphia, baseline_ae, epochs=100, seeds=[2, 3]
+
+| regime | scenario | delta_fp | fp_ratio | fn_ratio | L_rec_target | L_rec_local | L_rec_global | auprc | recall_at_1pct | train_seconds |
+|---|---|---|---|---|---|---|---|---|---|---|
+| joint | full | -0.001487 ± 9.5e-05 | 0.0475 ± 0.0021 | 0.65 ± 0.071 | 0.001865 ± 3.7e-05 | 0.01002 ± 0.003 | 0.00936 ± 0.0027 | 0.3023 ± 0.048 | 0.625 ± 0.035 | 3493 ± 1.6e+03 |
