@@ -50,7 +50,8 @@ def run_one(data, exps, cfg, strategy, rule, seed, forgetting: int = 0):
     if "ewc" in strategy:
         parts.append(EWC(data, cfg["ewc_lambda"], n_samples=cfg.get("ewc_samples", 2048), seed=seed))
     if "replay" in strategy:
-        buf = ReplayBuffer(data, cfg["buffer_size"], rule, seed=seed, max_candidates=cfg.get("buffer_candidates", 5000))
+        buf = ReplayBuffer(data, cfg["buffer_size"], rule, seed=seed, max_candidates=cfg.get("buffer_candidates", 5000),
+                           filter_q=cfg.get("buffer_filter_q", 0.05))
         parts.append(buf)
     hooks = combine_hooks(*parts) if parts else None
     composition = []
@@ -59,8 +60,13 @@ def run_one(data, exps, cfg, strategy, rule, seed, forgetting: int = 0):
         if buf is not None:
             g = data.group[buf.replay_indices()]
             vals, counts = np.unique(g, return_counts=True)
-            composition.append({"experience": f"E{e + 1}", "size": int(len(g)),
-                                "counts": {group_name(data, v): int(c) for v, c in zip(vals, counts)}})
+            entry = {"experience": f"E{e + 1}", "size": int(len(g)),
+                     "counts": {group_name(data, v): int(c) for v, c in zip(vals, counts)}}
+            if rule == "filtered":  # what the anomaly filter removed at this refresh
+                dropped = buf.last_dropped
+                entry["dropped"] = int(len(dropped))
+                entry["dropped_injected"] = int((data.group[dropped] >= GLOBAL_ANOMALY).sum())
+            composition.append(entry)
 
     tracker = None
     if forgetting:  # optional (off by default): hold out normal records of E1..E9, never trained on
@@ -106,6 +112,10 @@ def main() -> None:
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--quick", action="store_true", help="2 epochs; outputs get a _quick suffix")
     ap.add_argument("--summary-only", action="store_true")
+    ap.add_argument("--configs", nargs="*", default=None, metavar="STRATEGY[:RULE]",
+                    help="run only these configurations, e.g. replay:random replay:filtered (default: the 6 standard ones)")
+    ap.add_argument("--append", action="store_true",
+                    help="keep existing rows / buffer runs of other seeds in the output files and add this run's seeds")
     ap.add_argument("--forgetting", type=int, default=0, metavar="N",
                     help="hold out N normal records per experience E1..E9 and report forgetting (default 0 = off). "
                          "Outputs get a _forgetting suffix; the default outputs are not touched")
@@ -116,7 +126,10 @@ def main() -> None:
         return
     if a.quick:
         a.epochs = 2
-    sfx = ("_forgetting" if a.forgetting else "") + ("_quick" if a.quick else "")
+    # non-default scenario or configuration set -> separate output files, so the standard results stay untouched
+    configs = CONFIGS if a.configs is None else [(c.split(":")[0], c.split(":")[1] if ":" in c else None) for c in a.configs]
+    sfx = ((f"_{a.scenario}" if a.scenario != "linear" else "") + ("_forgetting" if a.forgetting else "")
+           + ("_quick" if a.quick else ""))
     torch.set_num_threads(a.threads)
     cfg = copy.deepcopy(load_yaml(ROOT / "configs" / "train.yaml")["masked"])
     if a.epochs is not None:
@@ -131,10 +144,20 @@ def main() -> None:
                    "departments": data.dept_names, "target_department": data.dept_names[data.target_group],
                    "runs": []}
         rows, flog = [], []
+        if a.append:  # keep earlier seeds (e.g. seed 0) and add the seeds of this run
+            if csv_path.exists():
+                old = pd.read_csv(csv_path, dtype={"buffer_rule": object})
+                old = old[~old["seed"].isin(a.seeds)]
+                rows = [{k: (None if (isinstance(v, float) and np.isnan(v)) else v) for k, v in r.items()}
+                        for r in old.to_dict("records")]
+            if buf_path.exists():
+                prev = json.loads(buf_path.read_text(encoding="utf-8"))
+                buffers["runs"] = [r for r in prev["runs"] if r["seed"] not in a.seeds]
+            print(f"--append: kept {len(rows)} rows and {len(buffers['runs'])} buffer runs of other seeds", flush=True)
         print(f"{city}: {len(data):,} records, cfg={cfg}", flush=True)
         for seed in a.seeds:
             exps = build_experiences(data, scen, np.random.default_rng(seed))
-            for strategy, rule in CONFIGS:
+            for strategy, rule in configs:
                 res, hist, comp = run_one(data, exps, cfg, strategy, rule, seed, forgetting=a.forgetting)
                 row = {"city": city, "seed": seed, "strategy": strategy, "buffer_rule": rule,
                        **{m: res[m] for m in METRICS}, "train_seconds": round(hist.seconds, 1),
@@ -142,6 +165,13 @@ def main() -> None:
                        "ewc_lambda": cfg["ewc_lambda"] if "ewc" in strategy else None,
                        "buffer_size": cfg["buffer_size"] if rule else None, "scenario": a.scenario,
                        "scorer": "field_surprisal"}
+                if comp:  # injected records in the buffers used for training (states after E1..E9)
+                    inj = {c["experience"]: c["counts"].get("GLOBAL_ANOM", 0) + c["counts"].get("LOCAL_ANOM", 0)
+                           for c in comp}
+                    row.update({f"buffer_injected_after_{k}": inj.get(k, 0) for k in [f"E{i}" for i in range(5, 10)]})
+                    row["buffer_injected_used_total"] = int(sum(v for k, v in inj.items() if k != comp[-1]["experience"]))
+                    if rule == "filtered":
+                        row["filter_dropped_injected_total"] = int(sum(c.get("dropped_injected", 0) for c in comp))
                 if "forgetting" in res:
                     f = res["forgetting"]
                     row.update(forgetting_final_mean=f["final_mean"], forgetting_mean=f["forgetting_mean"],
@@ -157,7 +187,7 @@ def main() -> None:
                 print(f"[{city} s{seed} {strategy:10s} {rule or '-':10s}] AUPRC={row['auprc']:.3f} "
                       f"R@1%={row['recall_at_1pct']:.2f} dFP={row['delta_fp']:+.4f} FP={row['fp_ratio']:.2f} "
                       f"FN={row['fn_ratio']:.2f} ({hist.seconds:.0f}s)", flush=True)
-    if not a.quick and not a.forgetting:
+    if not a.quick and not a.forgetting and a.scenario == "linear" and a.configs is None:
         write_summary(out_dir, ["philadelphia", "chicago"])
 
 

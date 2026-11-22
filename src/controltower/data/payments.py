@@ -218,7 +218,12 @@ def build_experiences(data: TabularData, scenario: dict, rng: np.random.Generato
     For each department the shuffled record indices are cut into disjoint slices of
     ``n_dept_samples_per_exp``; experience ``e`` keeps the first ``perc[e]`` share of
     slice ``e``. Departments with fewer than 10,000 records get shorter late slices,
-    exactly as in the reference code. Anomaly pools enter only the last experience.
+    exactly as in the reference code. Anomaly pools enter only the last experience
+    in the paper's scenarios. A scenario may also give earlier experiences a non-zero
+    ``anomaly_dept_data_perc`` (e.g. ``linear_spread``): the last experience then still
+    takes the first slice of each pool (the same records as in the default scenarios) and
+    earlier experiences take the following, disjoint slices. No extra random numbers are
+    drawn, so the normal records of every experience are unchanged.
     """
     n_exp = scenario["n_experiences"]
     per = scenario["n_dept_samples_per_exp"]
@@ -231,6 +236,17 @@ def build_experiences(data: TabularData, scenario: dict, rng: np.random.Generato
         rng.shuffle(idx)
         pools[g] = idx
 
+    # anomaly slices: last experience first (pool[:n], as before), then earlier ones in order
+    anom: dict[int, list[np.ndarray]] = {e: [] for e in range(n_exp)}
+    for g in (GLOBAL_ANOMALY, LOCAL_ANOMALY):
+        offset = 0
+        for e in [n_exp - 1] + list(range(n_exp - 1)):
+            n = int(scenario["anomaly_dept_data_perc"][e] * len(pools[g]))
+            if offset + n > len(pools[g]):
+                raise ValueError(f"anomaly pool {g} has {len(pools[g])} records; the scenario needs more")
+            anom[e].append(pools[g][offset:offset + n])
+            offset += n
+
     experiences = []
     for e in range(n_exp):
         parts = []
@@ -241,10 +257,7 @@ def build_experiences(data: TabularData, scenario: dict, rng: np.random.Generato
                 p = rng.integers(lo, 101) / 100.0
             chunk = pools[g][e * per:(e + 1) * per]
             parts.append(chunk[: int(p * len(chunk))])
-        if e == n_exp - 1:
-            for g in (GLOBAL_ANOMALY, LOCAL_ANOMALY):
-                p = scenario["anomaly_dept_data_perc"][e]
-                parts.append(pools[g][: int(p * len(pools[g]))])
+        parts.extend(anom[e])
         experiences.append(np.sort(np.concatenate(parts)))
     return experiences
 

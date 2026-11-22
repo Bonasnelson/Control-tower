@@ -1,0 +1,11 @@
+# Opt-in variant of "linear" for the anomaly-aware replay study (not one of the paper's scenarios).
+# Normal records are identical to "linear" (same random draws). Injected anomalies enter E5-E10
+# instead of only E10: 10% of each pool (10 global + 10 local of 100 each) per experience, 60 of
+# each pool in total. E10 holds the same 10 + 10 anomaly records as "linear" (build_experiences
+# gives the last experience the first slice of each pool), so the E10 evaluation is comparable.
+reduction_type: "linear"
+n_experiences: 10
+n_dept_samples_per_exp: 1000
+min_sampling_perc: 0.9
+target_dept_data_perc: [1.0, 0.89, 0.78, 0.67, 0.56, 0.45, 0.34, 0.23, 0.12, 0.01]
+anomaly_dept_data_perc: [0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]

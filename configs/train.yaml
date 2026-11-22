@@ -13,6 +13,7 @@ baseline_ae:
   buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
   buffer_rule: random    # random | diversity | high_error
   buffer_candidates: 5000  # new-experience records considered by diversity / high_error
+  buffer_filter_q: 0.05    # "filtered" rule: share of (buffer + new experience) with the highest anomaly score dropped
 # Masked-feature tabular model (M1)
 masked:
   d_embed: 16
@@ -31,3 +32,4 @@ masked:
   buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
   buffer_rule: random    # random | diversity | high_error
   buffer_candidates: 5000  # new-experience records considered by diversity / high_error
+  buffer_filter_q: 0.05    # "filtered" rule: share of (buffer + new experience) with the highest anomaly score dropped

@@ -23,7 +23,7 @@ from controltower.models.autoencoder import OneHotAutoencoder
 from controltower.training.loop import TrainHooks, tensors
 
 STRATEGIES = ("none", "ewc", "replay", "ewc+replay")
-BUFFER_RULES = ("random", "diversity", "high_error")
+BUFFER_RULES = ("random", "diversity", "high_error", "filtered")
 
 
 def _device(model: torch.nn.Module):
@@ -151,10 +151,16 @@ class ReplayBuffer:
       score among (buffer U candidates). No labels are used, so the buffer holds the
       "hardest" records, which may include rare-but-normal records (and, in a real
       audit, undetected anomalies).
+    * ``filtered`` (anomaly-aware replay): score (buffer U the new experience) with the
+      current model's anomaly score, drop the top ``filter_q`` share (default 5%), then
+      run reservoir sampling on what is left: surviving buffer records stay, surviving new
+      records enter by reservoir sampling. Unsupervised (no labels); the aim is to keep
+      likely anomalies out of the replayed "normal" data. ``last_dropped`` holds the
+      indices dropped at the most recent refresh.
     """
 
     def __init__(self, data: TabularData, size: int, rule: str = "random", seed: int = 0,
-                 max_candidates: int = 5000):
+                 max_candidates: int = 5000, filter_q: float = 0.05):
         if rule not in BUFFER_RULES:
             raise ValueError(f"rule must be one of {BUFFER_RULES}")
         self.data, self.size, self.rule = data, int(size), rule
@@ -162,6 +168,10 @@ class ReplayBuffer:
         self.rng = np.random.default_rng(seed)
         self.buffer = np.empty(0, dtype=np.int64)
         self.n_seen = 0
+        if not 0.0 <= filter_q < 1.0:
+            raise ValueError("filter_q must be in [0, 1)")
+        self.filter_q = float(filter_q)
+        self.last_dropped = np.empty(0, dtype=np.int64)
 
     def replay_indices(self) -> np.ndarray:
         return self.buffer
@@ -182,6 +192,17 @@ class ReplayBuffer:
         idx = np.asarray(idx, dtype=np.int64)
         if self.rule == "random":
             self._reservoir(idx)
+            return
+        if self.rule == "filtered":
+            pool = np.concatenate([self.buffer, idx])
+            k = int(np.ceil(self.filter_q * len(pool)))
+            if k:
+                s = anomaly_scores(model, self.data, pool)
+                self.last_dropped = np.sort(pool[np.argsort(-s, kind="stable")[:k]])
+            else:
+                self.last_dropped = np.empty(0, dtype=np.int64)
+            self.buffer = self.buffer[~np.isin(self.buffer, self.last_dropped)]
+            self._reservoir(idx[~np.isin(idx, self.last_dropped)])
             return
         self.n_seen += len(idx)
         new = self.rng.permutation(idx)[: self.max_candidates]
@@ -234,5 +255,6 @@ def make_hooks(strategy: str, cfg: dict, data: TabularData, seed: int = 0) -> Tr
         parts.append(EWC(data, cfg.get("ewc_lambda", 1.0), n_samples=cfg.get("ewc_samples", 2048), seed=seed))
     if "replay" in strategy:
         parts.append(ReplayBuffer(data, cfg.get("buffer_size", 2000), cfg.get("buffer_rule", "random"),
-                                  seed=seed, max_candidates=cfg.get("buffer_candidates", 5000)))
+                                  seed=seed, max_candidates=cfg.get("buffer_candidates", 5000),
+                                  filter_q=cfg.get("buffer_filter_q", 0.05)))
     return combine_hooks(*parts)
