@@ -23,6 +23,7 @@ import torch
 from controltower.data.payments import build_experiences, load_or_prepare, load_yaml
 from controltower.metrics import evaluate_last_experience
 from controltower.training.loop import run_regime, score_records
+from controltower.training.strategies import BUFFER_RULES, STRATEGIES, make_hooks
 
 ROOT = Path(__file__).resolve().parents[1]
 COLS = ["delta_fp", "fp_ratio", "fn_ratio", "L_rec_target", "L_rec_local", "L_rec_global",
@@ -41,6 +42,10 @@ def main() -> None:
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--quick", action="store_true", help="2 epochs, seed 0, linear only")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--strategy", default="none", choices=STRATEGIES,
+                    help="continual strategy for the finetune regime (single/joint ignore it)")
+    ap.add_argument("--buffer-rule", default=None, choices=BUFFER_RULES,
+                    help="replay selection rule (overrides configs/train.yaml)")
     a = ap.parse_args()
     if a.quick:
         a.epochs, a.seeds, a.scenarios = 2, [0], ["linear"]
@@ -49,6 +54,8 @@ def main() -> None:
     cfg = copy.deepcopy(load_yaml(ROOT / "configs" / "train.yaml")[a.model])
     if a.epochs is not None:
         cfg["epochs"] = a.epochs
+    if a.buffer_rule is not None:
+        cfg["buffer_rule"] = a.buffer_rule
     data = load_or_prepare(a.city, ROOT, seed=0)
     print(f"{a.city}: {len(data):,} records, one-hot dim {data.onehot_dim:,}, model={a.model}, cfg={cfg}")
 
@@ -59,10 +66,12 @@ def main() -> None:
             scen = load_yaml(ROOT / "configs" / "scenarios" / f"{scen_name}.yaml")
             for seed in a.seeds:
                 exps = build_experiences(data, scen, np.random.default_rng(seed))
-                model, hist = run_regime(regime, a.model, data, exps, cfg, seed)
+                strategy = a.strategy if regime == "finetune" else "none"
+                hooks = make_hooks(strategy, cfg, data, seed)
+                model, hist = run_regime(regime, a.model, data, exps, cfg, seed, hooks=hooks)
                 scores = score_records(model, data, exps[-1])
                 res = evaluate_last_experience(scores, data, exps[-1])
-                res.update(regime=regime, scenario=scen_name, seed=seed, model=a.model,
+                res.update(regime=regime, scenario=scen_name, seed=seed, model=a.model, strategy=strategy,
                            train_seconds=round(hist.seconds, 1),
                            final_train_loss=hist.epoch_loss[-1][-1], epochs=cfg["epochs"])
                 print(f"[{regime:8s} {scen_name:11s} s{seed}] dFP={res['delta_fp']:+.5f} "
@@ -74,7 +83,9 @@ def main() -> None:
     df = pd.DataFrame(rows)
     out_dir = ROOT / "results"
     out_dir.mkdir(exist_ok=True)
-    stem = f"baselines_{a.city}_{a.model}{('_' + a.tag) if a.tag else ''}{'_quick' if a.quick else ''}"
+    strat = "" if a.strategy == "none" else "_" + a.strategy.replace("+", "-") + (
+        "_" + cfg["buffer_rule"] if "replay" in a.strategy else "")
+    stem = f"baselines_{a.city}_{a.model}{strat}{('_' + a.tag) if a.tag else ''}{'_quick' if a.quick else ''}"
     df.to_csv(out_dir / f"{stem}.csv", index=False)
     summary = df.groupby(["regime", "scenario"])[COLS].agg(["mean", "std"])
     lines = [f"# Baselines: {a.city}, {a.model}, epochs={cfg['epochs']}, seeds={a.seeds}", "",

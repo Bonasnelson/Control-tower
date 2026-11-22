@@ -54,10 +54,12 @@ masked-feature model over the 10 experiences gives AUPRC 0.74 and Recall@1% 0.95
 configs/                 city configs, training hyper-parameters, decay scenarios (linear/exponential/instant/full)
 src/controltower/
   data/payments.py       Philadelphia & Chicago: top-10 departments, anomaly injection, encoding, 10 experiences
-  data/elliptic.py       Elliptic Bitcoin loader (started in Week 1; data from Kaggle)
+  data/elliptic.py       Elliptic Bitcoin: loader, edge features, delayed-label stream, npz cache
+                         (data from Kaggle; tested on synthetic CSVs only so far)
   models/autoencoder.py  baseline one-hot autoencoder (Hemati et al., 2022)
   models/masked.py       M1 masked-feature model (embeddings + masked reconstruction, per-field scores)
   training/loop.py       training loop; regimes single / joint / finetune; hooks for EWC & replay (Week 2)
+  training/strategies.py EWC and replay buffer (random / diversity / high_error) as loop hooks
   metrics.py             dFP, FP/FN ratios, AUPRC, recall@1%, reason codes
 scripts/                 download, prepare, run baselines
 tests/                   synthetic-data tests (fresh-clone check)

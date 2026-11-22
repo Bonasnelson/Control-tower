@@ -6,6 +6,12 @@ baseline_ae:
   weight_decay: 1.0e-6
   batch_size: 128
   epochs: 100
+  # continual strategies (training/strategies.py; used by the finetune regime)
+  ewc_lambda: 1.0e+4     # sanity run (Philadelphia, linear, 3 epochs): lambda/2*penalty ~ loss under free drift
+  ewc_samples: 2048      # records sampled per experience for the diagonal Fisher
+  buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
+  buffer_rule: random    # random | diversity | high_error
+  buffer_candidates: 5000  # new-experience records considered by diversity / high_error
 # Masked-feature tabular model (M1)
 masked:
   d_embed: 16
@@ -17,3 +23,9 @@ masked:
   weight_decay: 1.0e-5
   batch_size: 256
   epochs: 30
+  # continual strategies (training/strategies.py; used by the finetune regime)
+  ewc_lambda: 1.0e+4     # sanity run (Philadelphia, linear, 3 epochs): lambda/2*penalty ~ loss under free drift
+  ewc_samples: 2048      # records sampled per experience for the diagonal Fisher
+  buffer_size: 2000      # replay memory (~20% of a ~9.5k-record experience)
+  buffer_rule: random    # random | diversity | high_error
+  buffer_candidates: 5000  # new-experience records considered by diversity / high_error
