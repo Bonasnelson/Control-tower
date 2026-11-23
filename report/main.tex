@@ -401,7 +401,99 @@ JEL & full & $-1.44 \pm 0.06$ & $-1.36 \pm 0.05$ & $0.05 \pm 0.01$ & $0.62 \pm 0
 \end{tabular}
 \end{table}
 \subsection{Ablations}
-\todo{1 drift gate, 2 scoring function, 3 replay buffer, 4 EWC strength,
+All ablations fine-tune the masked-feature model sequentially over
+$E_1,\dots,E_{10}$ for 30 epochs per experience and score $E_{10}$ with the
+field surprisal $s_{\text{surp}}$ (Eq.~\eqref{eq:score-model}). The memory holds
+$|\mathcal{M}| = 2{,}000$ records and EWC uses $\lambda = 10^{4}$. Values are
+mean $\pm$ std over seeds 0, 1 and 2; with three seeds we read differences
+smaller than the spread as noise and make no significance claims.
+
+\paragraph{Continual strategy and replay rule.}
+Table~\ref{tab:abl-strategies} compares the strategies of Section~\ref{sec:approach}
+in the linear scenario, where the injected anomalies appear only in $E_{10}$. On
+Chicago, EWC, alone or with random replay, gives the highest AUPRC, roughly
+double that of plain fine-tuning, and the most negative $\Delta$FP; this supports
+the EWC penalty of Eq.~\eqref{eq:ewc}. On Philadelphia no strategy clearly beats
+plain fine-tuning: diversity replay has the highest AUPRC, but within the seed
+spread, and EWC, alone or with replay, lowers AUPRC but gives the only negative
+$\Delta$FP values.
+The best strategy therefore depends on the dataset, which questions a single
+default. The memory refreshed after $E_{10}$ (never trained on here) already
+shows a risk of the label-free rules: it holds 16.7 (Philadelphia) and 15.3
+(Chicago) of the 20 injected anomalies under the diversity rule, and 19.3 and
+18.0 under the high-error rule, against 0.3 and 0.0 under random sampling, with
+or without EWC.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Strategy ablation, masked-feature model, linear scenario, last
+experience $E_{10}$, mean $\pm$ std over 3 seeds, 30 epochs
+(\texttt{results/strategies\_\{philadelphia,chicago\}.csv}). $\Delta$FP is in
+our own unit, mean BCE $\times10^{3}$. ``EWC + replay'' uses the random rule.}
+\label{tab:abl-strategies}
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{3}{c}{Philadelphia} & \multicolumn{3}{c}{Chicago} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Strategy & AUPRC & Recall@1\% & $\Delta$FP & AUPRC & Recall@1\% & $\Delta$FP \\
+\midrule
+None (fine-tuning) & $0.67{\pm}0.09$ & $0.78{\pm}0.10$ & $1.27{\pm}0.44$ & $0.41{\pm}0.05$ & $0.50{\pm}0.00$ & $-3.45{\pm}0.83$ \\
+EWC & $0.60{\pm}0.02$ & $0.68{\pm}0.06$ & $-0.68{\pm}0.27$ & $0.80{\pm}0.13$ & $0.88{\pm}0.06$ & $-8.09{\pm}0.94$ \\
+Replay, random & $0.67{\pm}0.07$ & $0.80{\pm}0.05$ & $2.82{\pm}0.33$ & $0.59{\pm}0.15$ & $0.67{\pm}0.19$ & $-2.72{\pm}1.36$ \\
+Replay, diversity & $0.73{\pm}0.11$ & $0.83{\pm}0.06$ & $1.35{\pm}0.25$ & $0.50{\pm}0.08$ & $0.58{\pm}0.14$ & $-2.83{\pm}0.95$ \\
+Replay, high-error & $0.63{\pm}0.06$ & $0.78{\pm}0.03$ & $3.02{\pm}0.48$ & $0.59{\pm}0.18$ & $0.62{\pm}0.23$ & $-3.36{\pm}0.61$ \\
+EWC + replay & $0.57{\pm}0.05$ & $0.60{\pm}0.09$ & $-0.38{\pm}0.06$ & $0.81{\pm}0.09$ & $0.92{\pm}0.03$ & $-8.05{\pm}1.15$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Anomaly-aware replay.}
+To test whether keeping anomalies out of the memory helps, we add a
+\emph{filtered} rule: it drops the top $q = 0.05$ of the candidates by field
+surprisal and fills the memory from the rest by reservoir sampling. We run it in
+a \emph{linear-spread} scenario, in which 10 global and 10 local anomalies are
+injected into each of $E_5,\dots,E_{10}$ (120 in total), so that the memories
+used for training can be contaminated; $E_{10}$ is identical to the linear
+scenario. Table~\ref{tab:abl-filtered} gives the results. The filter keeps the
+replayed memories almost free of injected anomalies, while the diversity and
+high-error rules accumulate them, which supports the filter as a contamination
+guard. Most of the records it drops, however, are normal. Detection on $E_{10}$
+stays within the seed spread of random replay in both cities, so at this
+injection rate and with three seeds the lower contamination does not translate
+into a measurable gain. We report this as a neutral result.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Replay rules in the linear-spread scenario (20 anomalies injected in
+each of $E_5$--$E_{10}$), last experience $E_{10}$, mean $\pm$ std over 3 seeds
+(\texttt{results/strategies\_\{philadelphia,chicago\}\_linear\_spread.csv}).
+``Inj.\ replayed'' sums the injected anomalies in the memories kept after
+$E_1,\dots,E_9$, the ones used for training, so an anomaly kept for several
+experiences counts several times. ``Dropped'' is the number of the 120 injected
+anomalies removed by the filter.}
+\label{tab:abl-filtered}
+\begin{tabular}{llcccc}
+\toprule
+City & Rule & AUPRC & Recall@1\% & Inj.\ replayed & Dropped \\
+\midrule
+Philadelphia & none (fine-tuning) & $0.655{\pm}0.069$ & $0.75{\pm}0.10$ & -- & -- \\
+             & random     & $0.592{\pm}0.045$ & $0.72{\pm}0.08$ & $11.7{\pm}4.7$ & -- \\
+             & diversity  & $0.581{\pm}0.058$ & $0.65{\pm}0.05$ & $157.3{\pm}21.0$ & -- \\
+             & high-error & $0.574{\pm}0.046$ & $0.63{\pm}0.10$ & $171.7{\pm}28.2$ & -- \\
+             & filtered   & $0.584{\pm}0.065$ & $0.68{\pm}0.03$ & $0.0{\pm}0.0$ & $108.0{\pm}3.5$ \\
+\midrule
+Chicago      & none (fine-tuning) & $0.330{\pm}0.072$ & $0.47{\pm}0.12$ & -- & -- \\
+             & random     & $0.491{\pm}0.155$ & $0.58{\pm}0.18$ & $6.7{\pm}7.2$ & -- \\
+             & diversity  & $0.487{\pm}0.116$ & $0.55{\pm}0.05$ & $148.7{\pm}40.4$ & -- \\
+             & high-error & $0.301{\pm}0.110$ & $0.45{\pm}0.05$ & $117.3{\pm}15.0$ & -- \\
+             & filtered   & $0.433{\pm}0.102$ & $0.52{\pm}0.10$ & $3.0{\pm}4.4$ & $84.0{\pm}8.5$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\todo{Remaining ablations: 1 drift gate, 2 scoring function, 4 EWC strength,
 5 analyst feedback, 6 mask ratio, 7 percentile calibration, 8 canary rollback.}
 
 % ---------------------------------------------------------------------
