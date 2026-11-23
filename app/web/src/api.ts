@@ -104,3 +104,13 @@ export type StrategiesResp = {
       runs: { strategy: string; buffer_rule: string; seeds: number[]; label: string; experiences: BufferExp[] }[] } | null;
   }>;
 };
+
+export type SpreadRow = {
+  strategy: string; buffer_rule: string | null; label: string; seeds: number[];
+  auprc: MeanStd; recall_at_1pct: MeanStd; delta_fp: MeanStd; fn_ratio: MeanStd;
+  buffer_injected_used_total: MeanStd | null; buffer_injected_after_E9: MeanStd | null; filter_dropped_injected_total: MeanStd | null;
+};
+export type SpreadResp = {
+  status: "ok"; scenario: string; description: string;
+  cities: Record<string, { source: string; scenario: string; seeds: number[]; rows: SpreadRow[] }>;
+};

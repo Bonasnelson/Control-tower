@@ -169,3 +169,36 @@ def test_strategies(monkeypatch, tmp_path):
     assert b["runs"][0]["seeds"] == [0]
     assert (e9["target_share"]["mean"], e9["injected"]["mean"]) == (0.4, 0)
     assert (e10["target"]["mean"], e10["injected"]["mean"]) == (1, 3)
+
+
+def test_strategies_linear_spread(monkeypatch, tmp_path):
+    # real repo: separate endpoint; the main endpoint never reads the linear_spread files
+    c = load_app(monkeypatch, ROOT)
+    sp = c.get("/api/strategies/linear_spread").json()
+    main_ = c.get("/api/strategies").json()
+    if main_["status"] == "ok":
+        assert all(v["source"] == f"results/strategies_{k}.csv" and "spread" not in v for k, v in main_["cities"].items())
+    if sp["status"] == "ok":
+        assert sp["scenario"] == "linear_spread"
+        for city, v in sp["cities"].items():
+            assert v["source"] == f"results/strategies_{city}_linear_spread.csv"
+            labels = [r["label"] for r in v["rows"]]
+            assert "Replay, filtered" in labels and "None (plain fine-tuning)" in labels
+            none = next(r for r in v["rows"] if r["strategy"] == "none")
+            assert none["buffer_injected_used_total"] is None and none["filter_dropped_injected_total"] is None
+
+    # temp root: pending without files; aggregation over seeds; filtered-only column
+    (tmp_path / "results").mkdir()
+    c = load_app(monkeypatch, tmp_path)
+    assert c.get("/api/strategies/linear_spread").json()["status"] == "pending"
+    head = ("city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fn_ratio,"
+            "buffer_injected_used_total,buffer_injected_after_E9,filter_dropped_injected_total\n")
+    (tmp_path / "results" / "strategies_x_linear_spread.csv").write_text(
+        head + "x,0,replay,filtered,0.5,0.6,1,0.2,0,0,100\nx,1,replay,filtered,0.7,0.6,1,0.2,2,1,104\n"
+        "x,0,replay,random,0.4,0.5,2,0.3,10,2,\n")
+    sp = c.get("/api/strategies/linear_spread").json()
+    f, r = sp["cities"]["x"]["rows"]
+    assert f["seeds"] == [0, 1] and f["auprc"]["mean"] == pytest.approx(0.6)
+    assert f["filter_dropped_injected_total"]["mean"] == pytest.approx(102) and f["buffer_injected_used_total"]["mean"] == 1
+    assert r["filter_dropped_injected_total"] is None and r["buffer_injected_after_E9"]["mean"] == 2
+    assert c.get("/api/strategies").json()["status"] == "pending"   # main endpoint ignores the spread file

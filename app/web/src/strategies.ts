@@ -1,5 +1,5 @@
 // Formatting shared by the Strategies page and checks/strategies_values.ts (plain TS, no JSX).
-import type { BufferExp, MeanStd, StrategyRow } from "./api";
+import type { BufferExp, MeanStd, SpreadRow, StrategyRow } from "./api";
 
 export const STRATEGY_METRICS = ["auprc", "recall_at_1pct", "delta_fp", "fn_ratio"] as const;
 export type StrategyMetric = (typeof STRATEGY_METRICS)[number];
@@ -28,3 +28,12 @@ export const strategyCells = (r: StrategyRow) => ({
 /** The buffer the model replays while training E10 is the state after E9. */
 export const usedForE10 = (exps: BufferExp[]) => exps.find((e) => e.experience === "E9");
 export const afterE10 = (exps: BufferExp[]) => exps.find((e) => e.experience === "E10");
+
+/** Cells of the linear_spread (anomaly-aware replay) table; counts with 1 decimal, "—" where not applicable. */
+export const spreadCells = (r: SpreadRow) => ({
+  label: r.label,
+  auprc: fmtMS(r.auprc), recall_at_1pct: fmtMS(r.recall_at_1pct), delta_fp: fmtMS(r.delta_fp), fn_ratio: fmtMS(r.fn_ratio),
+  used: r.buffer_injected_used_total ? fmtMS(r.buffer_injected_used_total, 1) : "—",
+  e9: r.buffer_injected_after_E9 ? fmtMS(r.buffer_injected_after_E9, 1) : "—",
+  dropped: r.filter_dropped_injected_total ? fmtMS(r.filter_dropped_injected_total, 1) : "—",
+});

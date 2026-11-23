@@ -347,3 +347,45 @@ def strategies() -> dict:
             "buffer": _buffer_summary(RESULTS / "dashboard" / f"{city}_buffer.json"),
         }
     return {"status": "ok", "metrics": STRATEGY_METRICS, "cities": out}
+
+
+SPREAD_METRICS = ["auprc", "recall_at_1pct", "delta_fp", "fn_ratio", "buffer_injected_used_total",
+                  "buffer_injected_after_E9", "filter_dropped_injected_total"]
+
+
+def _spread_summary(path: Path) -> dict | None:
+    """linear_spread study (injected anomalies in E5-E10): per configuration mean ± std over seeds of the
+    E10 metrics and of the buffer contamination columns written by run_strategies.py."""
+    if not path.exists():
+        return None
+    rows = read_csv(path)
+    configs: dict[tuple, list] = {}
+    for r in rows:
+        configs.setdefault((r["strategy"], r["buffer_rule"] or None), []).append(r)
+    return {"source": f"results/{path.name}", "scenario": "linear_spread",
+            "seeds": sorted({int(r["seed"]) for r in rows}),
+            "rows": [{"strategy": s_, "buffer_rule": rule, "label": strategy_label(s_, rule),
+                      "seeds": sorted(int(r["seed"]) for r in rs),
+                      **{m: (_ms([num(r.get(m)) for r in rs]) if any(num(r.get(m)) is not None for r in rs) else None)
+                         for m in SPREAD_METRICS}}
+                     for (s_, rule), rs in configs.items()]}
+
+
+@app.get("/api/strategies/linear_spread")
+def strategies_linear_spread() -> dict:
+    """Separate study, scenario linear_spread (anomalies injected in E5-E10): reads only
+    results/strategies_<city>_linear_spread.csv. /api/strategies never includes these files."""
+    files = [p for p in sorted(RESULTS.glob("strategies_*_linear_spread.csv"))
+             if re.fullmatch(r"strategies_[a-z]+_linear_spread\.csv", p.name)]
+    if not files:
+        return pending("results/strategies_<city>_linear_spread.csv",
+                       "python scripts/run_strategies.py --scenario linear_spread --seeds 0 1 2 --configs none "
+                       "replay:random replay:diversity replay:high_error replay:filtered")
+    cities = {}
+    for p in files:
+        rows = read_csv(p)
+        if rows:
+            cities[rows[0]["city"]] = _spread_summary(p)
+    return {"status": "ok", "scenario": "linear_spread",
+            "description": "anomalies injected in E5-E10 (10 global + 10 local per experience); E10 as in linear",
+            "cities": cities}

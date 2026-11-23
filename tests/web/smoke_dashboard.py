@@ -212,3 +212,24 @@ def test_mobile_nav_reaches_every_page(servers, browser):
 
 if __name__ == "__main__":
     sys.exit(pytest.main([__file__, "-q", "-p", "no:cacheprovider"]))
+
+
+def test_strategies_spread_panel(servers, browser):
+    """Separate-scenario panel: shown (labelled) when the linear_spread files exist, absent otherwise."""
+    label = "Separate scenario: anomalies injected in E5–E10"
+    have = any((ROOT / "results").glob("strategies_*_linear_spread.csv"))
+    page, problems = open_page(browser, f"{servers['real'].url}/#strategies", 1440, 1000)
+    try:
+        page.wait_for_function("() => document.querySelectorAll('table').length > 0", timeout=10_000)
+        page.wait_for_timeout(500)
+        assert page.get_by_text(label).count() == (1 if have else 0)
+        if have:
+            assert page.get_by_role("heading", name="Anomaly-aware replay: what gets replayed when anomalies arrive earlier").is_visible()
+        assert problems == [], problems
+    finally:
+        page.close()
+    page, problems = open_page(browser, f"{servers['empty'].url}/#strategies", 1440, 1000)
+    try:
+        assert page.get_by_text(label).count() == 0
+    finally:
+        page.close()

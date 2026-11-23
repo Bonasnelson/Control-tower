@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, ErrorBar, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import type { ScoringResp, StrategiesResp } from "../api";
+import type { ScoringResp, SpreadResp, StrategiesResp } from "../api";
 import { isPending, useApi } from "../api";
-import { BETTER, METRIC_LABEL, STRATEGY_METRICS, type StrategyMetric, afterE10, fmtMS, pctMS, strategyCells, usedForE10 } from "../strategies";
+import { BETTER, METRIC_LABEL, STRATEGY_METRICS, type StrategyMetric, afterE10, fmtMS, pctMS, spreadCells, strategyCells, usedForE10 } from "../strategies";
 import { ChartPanel, DataTable, Loader, PageHeader, Panel, Segmented, Source, axisProps, tooltipProps } from "../components/ui";
 import { CHART, CITY_COLOR, CONTEXT, EMPHASIS } from "../palette";
 
@@ -204,6 +204,79 @@ function BufferChart({ b, city }: { b: NonNullable<StrategiesResp["cities"][stri
   );
 }
 
+/** Anomaly-aware replay study (linear_spread scenario): buffer contamination next to E10 detection. */
+function SpreadSection({ cities }: { cities: string[] }) {
+  const st = useApi<SpreadResp>("/api/strategies/linear_spread");
+  const narrow = useNarrow();
+  if (!st.data || isPending(st.data)) return null;   // optional study: nothing shown until its files exist
+  const sp = st.data;
+  const have = cities.filter((c) => sp.cities[c]);
+  if (!have.length) return null;
+  const labels = sp.cities[have[0]].rows.filter((r) => r.buffer_injected_used_total).map((r) => r.label);
+  const cell = (c: string, label: string) => sp.cities[c].rows.find((r) => r.label === label)?.buffer_injected_used_total;
+  const data = labels.map((label) => ({
+    label, ...Object.fromEntries(have.flatMap((c) => [[c, cell(c, label)?.mean ?? null], [`${c}_sd`, cell(c, label)?.std ?? 0]])),
+  }));
+  const seeds = sp.cities[have[0]].seeds;
+  return (
+    <section aria-labelledby="spread" className="space-y-4 border-t border-line-strong pt-8">
+      <div>
+        <p className="text-sm font-medium text-beacon">Separate scenario: anomalies injected in E5–E10</p>
+        <h2 id="spread" className="mt-1 text-lg font-semibold">Anomaly-aware replay: what gets replayed when anomalies arrive earlier</h2>
+        <p className="mt-1 max-w-[76ch] text-sm text-ink-2">
+          Not the main comparison above. In the opt-in <code className="font-code">linear_spread</code> scenario, 10 global
+          and 10 local injected anomalies enter each of E5–E10; E10 holds the same records as in the main scenario, but
+          the models trained on different data, so these numbers are not comparable row-by-row with the tables above. The new “filtered” rule drops the 5% of
+          buffer and new records with the highest anomaly score before reservoir sampling; no labels are used.
+          Mean ± standard deviation over seeds {seeds.join(", ")}.
+        </p>
+      </div>
+      <ChartPanel title="Injected anomalies in the buffers used for training"
+        lead="Summed over the buffers replayed while training E2–E10 (states after E1–E9). Lower means less fraud replayed as normal data."
+        source={have.map((c) => sp.cities[c].source).join(", ")}>
+        <ChartPanel.Chart height={narrow ? 360 : 300}
+          summary={`Bar chart of injected records in the replay buffers per rule for ${have.map((c) => CITY_NAME[c] ?? c).join(" and ")}, mean over seeds ${seeds.join(", ")}.`}>
+          <CityLegend cities={have} />
+          <ResponsiveContainer width="100%" height="84%">
+            <BarChart data={data} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }} barGap={2} accessibilityLayer>
+              <CartesianGrid stroke={CHART.grid} horizontal={false} />
+              {/* counts cannot be negative: the axis starts at 0 even when mean - std < 0 */}
+              <XAxis type="number" {...axisProps} domain={[0, "auto"]} allowDataOverflow />
+              <YAxis type="category" dataKey="label" {...axisProps} width={narrow ? 104 : 140} interval={0} />
+              <Tooltip {...tooltipProps} formatter={(_v: number, k: string, item: { payload?: { label: string } }) =>
+                [fmtMS(cell(k, item.payload?.label ?? "") ?? undefined, 1), CITY_NAME[k] ?? k]} />
+              {have.map((c) => (
+                <Bar key={c} dataKey={c} name={c} fill={CITY_COLOR[c]} radius={[0, 4, 4, 0]} isAnimationActive={false} maxBarSize={22}>
+                  <ErrorBar dataKey={`${c}_sd`} width={4} strokeWidth={1.5} stroke={CHART.ink2} direction="x" />
+                </Bar>
+              ))}
+            </BarChart>
+          </ResponsiveContainer>
+        </ChartPanel.Chart>
+        <ChartPanel.Table>
+          <DataTable caption="Injected anomalies in the buffers used for training, mean ± std over seeds"
+            columns={[{ key: "label", label: "Rule" }, ...have.map((c) => ({ key: c, label: CITY_NAME[c] ?? c, align: "right" as const }))]}
+            rows={labels.map((label) => ({ label, ...Object.fromEntries(have.map((c) => [c, fmtMS(cell(c, label) ?? undefined, 1)])) }))} />
+        </ChartPanel.Table>
+      </ChartPanel>
+      {have.map((c) => (
+        <Panel key={c} title={`Contamination and E10 detection, ${CITY_NAME[c] ?? c} (anomalies in E5–E10)`}
+          lead="“Used buffers”: injected records summed over the buffers replayed in training. “After E9”: in the buffer replayed while training E10. “Dropped”: injected records the filter removed over all refreshes (120 arrive in total).">
+          <DataTable caption={`linear_spread study, ${CITY_NAME[c] ?? c}, mean ± std over seeds`}
+            columns={[
+              { key: "label", label: "Configuration" }, { key: "auprc", label: "AUPRC", align: "right" },
+              { key: "recall_at_1pct", label: "Recall@1%", align: "right" }, { key: "delta_fp", label: "ΔFP", align: "right" },
+              { key: "fn_ratio", label: "FN ratio", align: "right" }, { key: "used", label: "Injected, used buffers", align: "right" },
+              { key: "e9", label: "Injected, after E9", align: "right" }, { key: "dropped", label: "Dropped by filter", align: "right" },
+            ]}
+            rows={sp.cities[c].rows.map(spreadCells)} />
+          <div className="mt-3"><Source path={sp.cities[c].source} /></div>
+        </Panel>
+      ))}
+    </section>
+  );
+}
+
 export default function Strategies() {
   const st = useApi<StrategiesResp>("/api/strategies");
   const v1 = useApi<ScoringResp>("/api/v1/scoring");
@@ -238,6 +311,7 @@ export default function Strategies() {
               <StrategyChart s={s} cities={cities} />
               {cities.map((c) => <FullTable key={c} s={s} city={c} />)}
               <BufferSection s={s} cities={cities} />
+              <SpreadSection cities={cities} />
             </div>
           );
         }}

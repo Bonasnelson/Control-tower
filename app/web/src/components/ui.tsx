@@ -60,7 +60,7 @@ export const Stat = ({ label, value, hint }: { label: string; value: ReactNode; 
   <Figure label={label} value={value} note={hint} />;
 
 export function Source({ path }: { path: string }) {
-  return <span className="text-xs text-ink-3">Source: <code className="font-code" translate="no">{path}</code></span>;
+  return <span className="text-xs text-ink-3 [overflow-wrap:anywhere]">Source: <code className="font-code" translate="no">{path}</code></span>;
 }
 
 /* ---------------------------------------------------------- data states */
