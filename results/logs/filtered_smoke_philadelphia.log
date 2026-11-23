@@ -1,0 +1,5 @@
+philadelphia: 180,884 records, cfg={'d_embed': 16, 'hidden': [256, 128], 'latent': 32, 'mask_ratio': 0.3, 'dropout': 0.1, 'lr': 0.001, 'weight_decay': 1e-05, 'batch_size': 256, 'epochs': 2, 'ewc_lambda': 10000.0, 'ewc_samples': 2048, 'buffer_size': 2000, 'buffer_rule': 'random', 'buffer_candidates': 5000, 'buffer_filter_q': 0.05}
+[philadelphia s0 replay     random    ] AUPRC=0.371 R@1%=0.60 dFP=-4.6674 FP=0.00 FN=0.70 (58s)
+[philadelphia s0 replay     diversity ] AUPRC=0.486 R@1%=0.65 dFP=-3.6571 FP=0.00 FN=0.70 (78s)
+[philadelphia s0 replay     high_error] AUPRC=0.668 R@1%=0.90 dFP=-3.8039 FP=0.00 FN=0.50 (74s)
+[philadelphia s0 replay     filtered  ] AUPRC=0.352 R@1%=0.60 dFP=-5.0070 FP=0.00 FN=0.70 (85s)

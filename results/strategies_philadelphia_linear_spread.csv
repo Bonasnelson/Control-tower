@@ -1,0 +1,16 @@
+city,seed,strategy,buffer_rule,auprc,recall_at_1pct,delta_fp,fp_ratio,fn_ratio,train_seconds,final_train_loss,epochs,ewc_lambda,buffer_size,scenario,scorer,buffer_injected_after_E5,buffer_injected_after_E6,buffer_injected_after_E7,buffer_injected_after_E8,buffer_injected_after_E9,buffer_injected_used_total,filter_dropped_injected_total
+philadelphia,0,none,,0.7338189820714454,0.85,0.9329471588134766,0.0,0.2,404.5,0.7889838534824836,30,,,linear_spread,field_surprisal,,,,,,,
+philadelphia,0,replay,random,0.6440397169446659,0.7,3.007939338684082,0.0,0.2,444.7,0.8006265681305617,30,,2000.0,linear_spread,field_surprisal,1.0,1.0,2.0,2.0,2.0,8.0,
+philadelphia,0,replay,diversity,0.5149654305477708,0.65,1.7667951583862305,0.0,0.3,454.8,0.8985186256404852,30,,2000.0,linear_spread,field_surprisal,10.0,16.0,24.0,37.0,49.0,136.0,
+philadelphia,0,replay,high_error,0.5623289284131657,0.6,3.1753149032592773,0.0,0.1,462.8,0.9165912815652999,30,,2000.0,linear_spread,field_surprisal,14.0,24.0,30.0,40.0,51.0,159.0,
+philadelphia,0,replay,filtered,0.6462019057391525,0.7,3.166168689727783,0.0,0.2,463.6,0.7821390673848088,30,,2000.0,linear_spread,field_surprisal,0.0,0.0,0.0,0.0,0.0,0.0,112.0
+philadelphia,1,none,,0.6271105222991562,0.75,2.165879726409912,0.0,0.3,358.4,0.8190027931969813,30,,,linear_spread,field_surprisal,,,,,,,
+philadelphia,1,replay,random,0.5639262763190998,0.8,2.9394845962524414,0.0,0.3,447.3,0.8204299804103168,30,,2000.0,linear_spread,field_surprisal,2.0,2.0,2.0,2.0,2.0,10.0,
+philadelphia,1,replay,diversity,0.6021788138577244,0.7,1.148946762084961,0.0,0.1,467.2,0.9011938177164761,30,,2000.0,linear_spread,field_surprisal,11.0,20.0,32.0,41.0,54.0,158.0,
+philadelphia,1,replay,high_error,0.5355162428114799,0.55,3.1006693840026855,0.0,0.2,476.0,0.9233161680488772,30,,2000.0,linear_spread,field_surprisal,13.0,21.0,28.0,41.0,49.0,152.0,
+philadelphia,1,replay,filtered,0.5156415621142001,0.7,4.276183128356934,0.1,0.3,468.1,0.7980602428765873,30,,2000.0,linear_spread,field_surprisal,0.0,0.0,0.0,0.0,0.0,0.0,106.0
+philadelphia,2,none,,0.6040211075192953,0.65,0.3869514465332031,0.0,0.1,368.2,0.8002918381757835,30,,,linear_spread,field_surprisal,,,,,,,
+philadelphia,2,replay,random,0.5678293452400008,0.65,2.8166275024414062,0.0,0.1,438.4,0.8023180478237678,30,,2000.0,linear_spread,field_surprisal,3.0,3.0,3.0,4.0,4.0,17.0,
+philadelphia,2,replay,diversity,0.6244660075980325,0.6,1.1049060821533203,0.0,0.0,287.0,0.9021052810975748,30,,2000.0,linear_spread,field_surprisal,13.0,25.0,35.0,46.0,59.0,178.0,
+philadelphia,2,replay,high_error,0.6255640208051807,0.75,2.5033397674560547,0.0,0.2,290.0,0.9191605874178603,30,,2000.0,linear_spread,field_surprisal,15.0,30.0,42.0,55.0,62.0,204.0,
+philadelphia,2,replay,filtered,0.5896088968889349,0.65,2.660996913909912,0.0,0.1,295.8,0.7913926271626007,30,,2000.0,linear_spread,field_surprisal,0.0,0.0,0.0,0.0,0.0,0.0,106.0
